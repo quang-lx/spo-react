@@ -1,12 +1,25 @@
-import * as React from 'react';
+import React, {useEffect} from 'react';
 import Layout from 'layouts/main';
+// import { useSelector, useDispatch } from "react-redux";
+// import { RootState } from '../../store';
+// import { getList } from '../../store/actions/requestActions';
 
 const RequestList: React.FunctionComponent = () => {
-    return (
-        <Layout>
-            <div>This is Request List component</div>
-        </Layout>
-    );
+  // const requests = useSelector((state: RootState) => state.requestReducer.requests);
+
+  const testFunction = () => {
+    console.log('use effect');
+  }
+
+  useEffect(() => {
+    testFunction();
+  })
+
+  return (
+    <Layout>
+      <div>This is Request List component</div>
+    </Layout>
+  );
 }
 
 export default RequestList;

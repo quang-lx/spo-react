@@ -1,7 +1,8 @@
 let endpoints = {
 	//SSO
 	LOGIN: '/sso/verifyuser',
-	UPDATE_PROFILE: '/sso/userprofile'
+	UPDATE_PROFILE: '/sso/userprofile',
+	GET_REQUESTS: '/'
 }
 
 let API_BOOK = {
