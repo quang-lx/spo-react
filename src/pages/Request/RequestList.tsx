@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import Layout from 'layouts/main';
 // import { useSelector, useDispatch } from "react-redux";
 // import { RootState } from '../../store';
 // import { getList } from '../../store/actions/requestActions';
@@ -16,9 +15,7 @@ const RequestList: React.FunctionComponent = () => {
   })
 
   return (
-    <Layout>
-      <div>This is Request List component</div>
-    </Layout>
+    <div>This is Request List component</div>
   );
 }
 
