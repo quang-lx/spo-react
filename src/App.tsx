@@ -1,8 +1,7 @@
 import React from 'react';
-import { Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Routes from './routes';
 import MainLayout from "./layouts/main";
-import { history } from 'helpers/common';
 import store from 'store';
 import { Provider } from 'react-redux';
 import { Provider as FluentProvider, teamsTheme } from '@fluentui/react-northstar';
@@ -10,11 +9,12 @@ import { Provider as FluentProvider, teamsTheme } from '@fluentui/react-northsta
 const App : React.FunctionComponent = () => (
     <Provider store={store}>
         <FluentProvider theme={teamsTheme}>
-            <Router history={history}>
-              <MainLayout>
+            <BrowserRouter>
+              <h1>Hello routes</h1>
+              {/* <MainLayout> */}
                 <Routes />
-              </MainLayout>
-            </Router>
+              {/* </MainLayout> */}
+            </BrowserRouter>
         </FluentProvider>
     </Provider>
 )

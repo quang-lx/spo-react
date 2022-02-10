@@ -10,8 +10,8 @@ export const Header: React.FunctionComponent<HeaderProps> = (props) => {
   console.log("hello header");
   return (
     <>
-      <Link to={location => ({ ...location, pathname: "/app" })}>App page</Link>
-      <Link to={location => ({ ...location, pathname: "/request" })}>Request page</Link>
+      {/* <Link to={location => ({ ...location, pathname: "/app" })}>App page</Link>
+      <Link to={location => ({ ...location, pathname: "/request" })}>Request page</Link> */}
     </>
   );
 }
