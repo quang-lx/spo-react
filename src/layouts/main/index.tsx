@@ -1,6 +1,8 @@
 import * as React from 'react';
-import * as S from './style';
-import Header from "../../components/Header";
+import Header from "../../containers/Header";
+import Menu from "../../containers/Menu";
+import MainContainer from "../../containers/MainContainer";
+import { Flex } from '@fluentui/react-northstar';
 
 interface MainLayoutLayoutProps {
 
@@ -9,14 +11,23 @@ interface MainLayoutLayoutProps {
 const MainLayout: React.FunctionComponent<MainLayoutLayoutProps> = (props) => {
     const { children } = props
     return (
-        <S.Document>
-            <Header />
-            <S.Menu>Menu</S.Menu>
-            <S.RightBar>Right Bar</S.RightBar>
-            <S.MainContainer>
+      <Flex column>
+        <Flex.Item size="size.large">
+          <Header {...props} />
+        </Flex.Item>
+        <Flex.Item size="size.large">
+          <Flex>
+            <Flex.Item className="app-menu">
+              <Menu {...props} />
+            </Flex.Item>
+            <Flex.Item className="app-content">
+              <MainContainer {...props}>
                 {children}
-            </S.MainContainer>
-        </S.Document>
+              </MainContainer>
+            </Flex.Item>
+          </Flex>
+        </Flex.Item>
+      </Flex>
     );
 }
 
