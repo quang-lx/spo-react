@@ -6,10 +6,10 @@ interface MainContainerProps {
 }
 
 export const MainContainer: React.FunctionComponent<MainContainerProps> = (props) => {
-  // const { children, to, className } = props
+  const { children } = props
   return (
     <S.MainContainerBlock>
-      main
+      {children}
     </S.MainContainerBlock>
   );
 }
