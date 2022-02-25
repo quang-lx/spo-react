@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { Badge, Table, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'
-import { deleteTaskRedux, getAllTodo, successTaskRedux } from './../../../store/feature/todoSlice'
+import React from 'react';
+// import { Badge, Table, Button } from 'react-bootstrap';
+// import { useNavigate } from 'react-router-dom'
+// import { deleteTaskRedux, getAllTodo, successTaskRedux } from './../../../store/feature/todoSlice'
 // import './index.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from './../../../store/index';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { RootState } from './../../../store/index';
 // import { formatDate } from './../utils/function'
 
 const TaskRedux = () => {

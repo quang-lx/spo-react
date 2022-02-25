@@ -1,27 +1,27 @@
 import * as React from 'react';
-import Header from "../../containers/Header";
-import Menu from "../../containers/Menu";
 import SubMenu from "../../containers/SubMenu";
-import MainContainer from "../../containers/MainContainer";
+import Container from "../../containers/Container";
 import { Flex } from '@fluentui/react-northstar';
+import { Outlet } from 'react-router-dom';
 
 interface SubMenuLayoutProps {
 
 }
 
-const MainLayout: React.FunctionComponent<SubMenuLayoutProps> = (props) => {
-    const { children } = props
+const SunMenuLayout: React.FunctionComponent<SubMenuLayoutProps> = (props) => {
     return (
       <Flex column>
         <Flex.Item size="size.large" align="stretch">
           <Flex>
-            <Flex.Item className="app-menu">
+            <Flex.Item>
               <SubMenu {...props} />
             </Flex.Item>
-            <Flex.Item className="app-content">
-              <MainContainer {...props}>
-                {children}
-              </MainContainer>
+            <Flex.Item grow>
+              <Flex column>
+                <Container {...props}>
+                  <Outlet />
+                </Container>
+              </Flex>
             </Flex.Item>
           </Flex>
         </Flex.Item>
@@ -29,4 +29,4 @@ const MainLayout: React.FunctionComponent<SubMenuLayoutProps> = (props) => {
     );
 }
 
-export default MainLayout;
+export default SunMenuLayout;

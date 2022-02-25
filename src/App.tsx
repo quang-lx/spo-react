@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from "react-router-dom";
-import Routes from './routes';
+import RenderRoutes from './routes';
 // import MainLayout from "./layouts/Main";
 import store from 'store';
 import {Provider} from 'react-redux';
@@ -17,7 +17,7 @@ const App: React.FunctionComponent = () => (
       <FluentProvider theme={teamsTheme}>
         <BrowserRouter>
           <GlobalStyle/>
-          <Routes/>
+          <RenderRoutes/>
         </BrowserRouter>
       </FluentProvider>
     </ThemeProvider>

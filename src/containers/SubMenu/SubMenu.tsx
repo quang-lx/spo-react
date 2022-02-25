@@ -1,11 +1,11 @@
 import React from 'react';
 import * as S from './SubMenu.style';
 
-interface MenuProps {
+interface SubMenuProps {
 
 }
 
-export const SubMenu: React.FunctionComponent<MenuProps> = (props) => {
+export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
   // const { children, to, className } = props
   return (
     <S.MenuBlock>

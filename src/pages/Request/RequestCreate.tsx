@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 // import { RootState } from '../../store';
 // import { getList } from '../../store/actions/requestActions';
 
-const RequestList: React.FunctionComponent = () => {
+const RequestCreate: React.FunctionComponent = () => {
   // const requests = useSelector((state: RootState) => state.requestReducer.requests);
 
   const testFunction = () => {
@@ -15,8 +15,8 @@ const RequestList: React.FunctionComponent = () => {
   })
 
   return (
-    <div className="test">This is Request List component</div>
+    <div>This is Request Create component</div>
   );
 }
 
-export default RequestList;
+export default RequestCreate;
