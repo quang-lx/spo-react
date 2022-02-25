@@ -11,12 +11,12 @@ interface MainLayoutProps {
 
 const MainLayout: React.FunctionComponent<MainLayoutProps> = (props) => {
     return (
-      <Flex column>
+      <Flex column fill>
         <Flex.Item size="size.large">
           <Header {...props} />
         </Flex.Item>
-        <Flex.Item size="size.large">
-          <Flex>
+        <Flex.Item size="size.large" grow>
+          <Flex fill>
             <Flex.Item>
               <Menu {...props} />
             </Flex.Item>

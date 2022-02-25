@@ -10,8 +10,8 @@ interface SubMenuLayoutProps {
 
 const SunMenuLayout: React.FunctionComponent<SubMenuLayoutProps> = (props) => {
     return (
-      <Flex column>
-        <Flex.Item size="size.large" align="stretch">
+      <Flex column fill>
+        <Flex.Item size="size.large" grow>
           <Flex>
             <Flex.Item>
               <SubMenu {...props} />

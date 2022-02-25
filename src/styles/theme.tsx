@@ -4,9 +4,10 @@
 */
 
 const appTheme = {
-  headerHeight: "4.8rem",
-  menuWidth: "6.8rem",
-  subMenuWidth: "32rem"
+  headerHeight: "3rem",
+  menuWidth: "4.25rem",
+  subMenuWidth: "20rem",
+  mainColor: "#444791"
 }
 
 export default appTheme
