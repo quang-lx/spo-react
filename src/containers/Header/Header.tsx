@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './Header.style';
 import { Layout, Avatar, Text, Flex, Button } from '@fluentui/react-northstar';
-import { BellIcon } from '@fluentui/react-icons-northstar';
+import { BellIcon, ToDoListIcon } from '@fluentui/react-icons-northstar';
 import { Link } from 'react-router-dom';
 
 interface HeaderProps {
@@ -42,8 +42,9 @@ const Search = () => {
 const Profile = () => {
   return (
     <div>
-      <Button icon={<BellIcon />} text iconOnly title="Thông báo" />
-      <Avatar name="User Profile"/>
+      <Button icon={<BellIcon size="large" />} text iconOnly title="Thông báo" className="text-white mr-2" />
+      <Button icon={<ToDoListIcon size="large" />} text iconOnly title="Công việc" className="text-white mr-3" />
+      <Avatar name="User Profile" className="mr-3" />
     </div>
   )
 }

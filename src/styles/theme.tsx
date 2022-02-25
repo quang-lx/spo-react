@@ -7,7 +7,7 @@ const appTheme = {
   headerHeight: "3rem",
   menuWidth: "4.25rem",
   subMenuWidth: "20rem",
-  mainColor: "#444791"
+  mainColor: "#DA2128"
 }
 
 export default appTheme
