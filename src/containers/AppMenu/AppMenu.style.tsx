@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export const SubMenuBlock = styled.div`
-  width: ${props => props.theme.subMenuWidth};
-  background-color: ${props => props.theme.subMenuBackgroundColor};
+export const MenuBlock = styled.div`
+  width: ${props => props.theme.menuWidth};
+  //height: calc(100% - ${props => props.theme.headerHeight});
+  background-color: ${props => props.theme.menuBackgroundColor};
   
-  .app-sub-menu {
+  .app-menu {
     position: relative;
-
+    
     &::before {
       background: linear-gradient(to right,transparent,#aaa);
       content: "";

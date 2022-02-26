@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Header from "../../containers/Header";
-import Menu from "../../containers/Menu";
+import AppMenu from "../../containers/AppMenu";
 import MainContainer from "../../containers/MainContainer";
 import { Flex } from '@fluentui/react-northstar';
 import { Outlet } from 'react-router-dom';
@@ -18,7 +18,7 @@ const MainLayout: React.FunctionComponent<MainLayoutProps> = (props) => {
         <Flex.Item size="size.large" grow>
           <Flex fill>
             <Flex.Item>
-              <Menu {...props} />
+              <AppMenu {...props} />
             </Flex.Item>
             <Flex.Item>
               <MainContainer {...props}>

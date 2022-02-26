@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 export const ContainerBlock = styled.div `
-  background-color: beige;
+  background-color: ${props => props.theme.headerHeight};
   height: 100%;
 `

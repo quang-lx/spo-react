@@ -1,8 +1,9 @@
 import React from 'react';
 import * as S from './Header.style';
-import { Layout, Avatar, Text, Flex, Button } from '@fluentui/react-northstar';
+import { Layout, Text, Flex, Popup, Avatar } from '@fluentui/react-northstar';
 import { BellIcon, ToDoListIcon } from '@fluentui/react-icons-northstar';
-import { Link } from 'react-router-dom';
+import { useFluentContext } from '@fluentui/react-bindings';
+
 
 interface HeaderProps {
 
@@ -25,7 +26,7 @@ export const Header: React.FunctionComponent<HeaderProps> = (props) => {
 
 const Logo = () => {
   return (
-    <Text content="SPSVN" size="large" color="white" weight="semibold" />
+    <Text content="SPSVN" size="large" color="white" weight="semibold" className="ml-3" />
   )
 }
 
@@ -41,10 +42,51 @@ const Search = () => {
 
 const Profile = () => {
   return (
-    <div>
-      <Button icon={<BellIcon size="large" />} text iconOnly title="Thông báo" className="text-white mr-2" />
-      <Button icon={<ToDoListIcon size="large" />} text iconOnly title="Công việc" className="text-white mr-3" />
-      <Avatar name="User Profile" className="mr-3" />
-    </div>
+    <S.ProfileBlock>
+      <S.ActionButton icon={<BellIcon size="large" />} text iconOnly title="Thông báo" className="text-white" />
+      <S.ActionButton icon={<ToDoListIcon size="large" />} text iconOnly title="Công việc" className="text-white" />
+      <ProfilePopup />
+    </S.ProfileBlock>
+  )
+}
+
+const ProfilePopup = () => {
+  return (
+    <Popup trigger={<S.HeaderAvatar name="User Profile" className="mr-1" />} content={<ProfilePopupContent />} />
+  )
+}
+
+interface ProfilePopupContentProps {
+
+}
+
+const ProfilePopupContent: React.FunctionComponent<ProfilePopupContentProps> = (props) => {
+  const context = useFluentContext();
+
+  return (
+    <S.ProfilePopupContent>
+      <Flex>
+        <Flex.Item size="size.large">
+          <Flex vAlign="center">
+            <Flex.Item size="size.quarter">
+              <Avatar name="User Profile" size="larger" />
+            </Flex.Item>
+            <Flex.Item>
+              <div>
+                <div>
+                  <Text content="Nguyễn Mạnh Cường" weight="semibold" truncated />
+                </div>
+                <div>
+                  <Text content={context.theme.siteVariables.contextualColors.brand[100]} size="small" truncated color="#fff" />
+                </div>
+                <div>
+                  <Text content="Chuyên viên lập trình - SPSVN" size="small" truncated />
+                </div>
+              </div>
+            </Flex.Item>
+          </Flex>
+        </Flex.Item>
+      </Flex>
+    </S.ProfilePopupContent>
   )
 }

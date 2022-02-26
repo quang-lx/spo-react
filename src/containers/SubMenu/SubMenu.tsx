@@ -8,82 +8,8 @@ interface SubMenuProps {
 export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
   // const { children, to, className } = props
   return (
-    <S.MenuBlock>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-      <p>sub menu</p>
-    </S.MenuBlock>
+    <S.SubMenuBlock>
+      <div className="app-sub-menu h-100">Sub Menu</div>
+    </S.SubMenuBlock>
   );
 }
