@@ -2,7 +2,6 @@ import React from 'react';
 import * as S from './AppMenu.style';
 import { Menu, Text } from '@fluentui/react-northstar';
 import { SendIcon, SurveyIcon, GridIcon, PollIcon, DoorArrowLeftIcon } from '@fluentui/react-icons-northstar';
-// import { Alert20Regular } from '@fluentui/react-icons';
 
 interface MenuProps {
 
@@ -12,30 +11,25 @@ export const AppMenu: React.FunctionComponent<MenuProps> = (props) => {
   // const { children, to, className } = props
   const items = [
     {
-      icon: <SurveyIcon />,
       key: 'request',
-      content: 'Request'
+      content: <MenuItem icon={<SurveyIcon />} content="Request" />
     },
     {
-      icon: <SendIcon {...{outline: true}} />,
       key: 'vb-di',
-      content: 'VB Đi'
+      content: <MenuItem icon={<SendIcon {...{outline: true}} />} content="VB đi" />
     },
     {
-      icon: <DoorArrowLeftIcon {...{outline: true}} />,
       key: 'vb-den',
-      content: 'VB Đến'
+      content: <MenuItem icon={<DoorArrowLeftIcon {...{outline: true}} />} content="VB đến" />
     },
     {
-      icon: <PollIcon {...{outline: true}} />,
       key: 'cv',
-      content: 'Công việc'
+      content: <MenuItem icon={<PollIcon {...{outline: true}} />} content="Công việc" />
     },
     {
-      icon: <GridIcon {...{outline: true}} />,
       key: 'da',
-      content: 'Dự án'
-    },
+      content: <MenuItem icon={<GridIcon {...{outline: true}} />} content="Dự án" />
+    }
   ]
 
   return (
@@ -47,29 +41,22 @@ export const AppMenu: React.FunctionComponent<MenuProps> = (props) => {
         pointing
         className="pt-0 pb-0 w-100 bg-transparent h-100 app-menu"
         iconOnly
-      >
-        {items.map((item, index) => (
-          <MenuItem {...item} index={index} />
-        ))}
-      </Menu>
+        items={items}
+      />
     </S.MenuBlock>
   );
 }
 
 interface MenuItemProps {
   icon: JSX.Element,
-  key: string,
-  content: string,
-  index: number
+  content: string
 }
 
 const MenuItem: React.FunctionComponent<MenuItemProps> = (props) => {
   return (
-    <Menu.Item index={props.index} className="item-wrapper">
-      <Menu.ItemContent className="text-center">
-        {props.icon}
-        <Text content={props.content} size="smaller" truncated className="d-block mt-1" />
-      </Menu.ItemContent>
-    </Menu.Item>
+    <div className="text-center">
+      {props.icon}
+      <Text content={props.content} size="smaller" truncated className="d-block mt-1" />
+    </div>
   );
 }

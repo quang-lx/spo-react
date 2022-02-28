@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button, Avatar, Popup } from '@fluentui/react-northstar';
+import { Button, Avatar, Text } from '@fluentui/react-northstar';
 
 export const HeaderBlock = styled.div `
   height: ${props => props.theme.headerHeight};
@@ -35,4 +35,5 @@ export const HeaderAvatar = styled(Avatar) `
 
 export const ProfilePopupContent = styled.div `
   width: ${props => props.theme.profilePopupWidth};
+  margin: 0 -1rem -0.8rem;
 `

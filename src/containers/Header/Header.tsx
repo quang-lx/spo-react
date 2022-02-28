@@ -1,9 +1,7 @@
 import React from 'react';
 import * as S from './Header.style';
-import { Layout, Text, Flex, Popup, Avatar } from '@fluentui/react-northstar';
-import { BellIcon, ToDoListIcon } from '@fluentui/react-icons-northstar';
-import { useFluentContext } from '@fluentui/react-bindings';
-
+import {Layout, Text, Flex, Popup, Avatar, ItemLayout, Divider, Button, List} from '@fluentui/react-northstar';
+import {BellIcon, ToDoListIcon, ContactCardIcon} from '@fluentui/react-icons-northstar';
 
 interface HeaderProps {
 
@@ -16,7 +14,7 @@ export const Header: React.FunctionComponent<HeaderProps> = (props) => {
       <S.HeaderBlock>
         <Flex vAlign="center" fill>
           <Flex.Item size="size.large" grow>
-            <Layout start={<Logo />} main={<Search />} end={<Profile />} />
+            <Layout start={<Logo/>} main={<Search/>} end={<Profile/>}/>
           </Flex.Item>
         </Flex>
       </S.HeaderBlock>
@@ -26,7 +24,7 @@ export const Header: React.FunctionComponent<HeaderProps> = (props) => {
 
 const Logo = () => {
   return (
-    <Text content="SPSVN" size="large" color="white" weight="semibold" className="ml-3" />
+    <Text content="SPSVN" size="large" color="white" weight="semibold" className="ml-3"/>
   )
 }
 
@@ -43,16 +41,16 @@ const Search = () => {
 const Profile = () => {
   return (
     <S.ProfileBlock>
-      <S.ActionButton icon={<BellIcon size="large" />} text iconOnly title="Thông báo" className="text-white" />
-      <S.ActionButton icon={<ToDoListIcon size="large" />} text iconOnly title="Công việc" className="text-white" />
-      <ProfilePopup />
+      <S.ActionButton icon={<BellIcon size="medium"/>} text iconOnly title="Thông báo" className="text-white"/>
+      <S.ActionButton icon={<ToDoListIcon size="medium"/>} text iconOnly title="Công việc" className="text-white"/>
+      <ProfilePopup/>
     </S.ProfileBlock>
   )
 }
 
 const ProfilePopup = () => {
   return (
-    <Popup trigger={<S.HeaderAvatar name="User Profile" className="mr-1" />} content={<ProfilePopupContent />} />
+    <Popup trigger={<S.HeaderAvatar name="User Profile" className="mr-1"/>} content={<ProfilePopupContent/>}/>
   )
 }
 
@@ -61,32 +59,56 @@ interface ProfilePopupContentProps {
 }
 
 const ProfilePopupContent: React.FunctionComponent<ProfilePopupContentProps> = (props) => {
-  const context = useFluentContext();
+  const items = [
+    {
+      key: 'account-setting',
+      content: (
+        <Button
+          icon={<ContactCardIcon className="text-secondary"/>}
+          className="p-0 justify-content-start"
+          text
+          fluid
+          content={
+            <Text className="text-secondary" content="Cài đặt tài khoản" weight="regular"/>
+          }
+        />
+      )
+    }
+  ];
+
+  const signOut = [
+    {
+      key: 'account-setting',
+      content: (
+        <Button
+          className="p-0 justify-content-start"
+          text
+          fluid
+          content={
+            <Text className="text-secondary" content="Đăng xuất" weight="regular"/>
+          }
+        />
+      )
+    }
+  ];
 
   return (
     <S.ProfilePopupContent>
-      <Flex>
-        <Flex.Item size="size.large">
-          <Flex vAlign="center">
-            <Flex.Item size="size.quarter">
-              <Avatar name="User Profile" size="larger" />
-            </Flex.Item>
-            <Flex.Item>
-              <div>
-                <div>
-                  <Text content="Nguyễn Mạnh Cường" weight="semibold" truncated />
-                </div>
-                <div>
-                  <Text content={context.theme.siteVariables.contextualColors.brand[100]} size="small" truncated color="#fff" />
-                </div>
-                <div>
-                  <Text content="Chuyên viên lập trình - SPSVN" size="small" truncated />
-                </div>
-              </div>
-            </Flex.Item>
-          </Flex>
-        </Flex.Item>
-      </Flex>
+      <ItemLayout
+        className="pb-2"
+        media={<Avatar name="User Profile" size="larger"/>}
+        header={<Text content={<Text content="" />} weight="semibold" truncated/>}
+        content={
+          <div>
+            <Text as="div" className="text-secondary" content="cuongnm@spsvn.com" size="small" truncated/>
+            <Text as="div" className="pt-1" content="Chuyên viên lập trình - SPSVN" size="small" truncated/>
+          </div>
+        }
+      />
+      <Divider/>
+      <List className="list-auto-height" navigable items={items}/>
+      <Divider/>
+      <List className="list-auto-height" navigable items={signOut}/>
     </S.ProfilePopupContent>
   )
 }

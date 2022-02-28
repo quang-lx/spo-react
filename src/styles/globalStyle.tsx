@@ -1,6 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
+import { ThemeType } from './theme';
 
-export default createGlobalStyle`
+export default createGlobalStyle<{ theme: ThemeType }>`
   html {
     height: 100%;
     overflow: hidden;
@@ -22,5 +23,14 @@ export default createGlobalStyle`
   .ui-provider {
     height: 100%;
     overflow: hidden;
+  }
+  .text-secondary {
+    color: ${({ theme }) => theme.secondaryColor};
+  }
+  .list-auto-height {
+    .ui-list__item {
+      height: auto;
+      min-height: unset;
+    }
   }
 `

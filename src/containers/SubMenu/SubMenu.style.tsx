@@ -1,22 +1,36 @@
 import styled from "styled-components";
 
 export const SubMenuBlock = styled.div`
-  width: ${props => props.theme.subMenuWidth};
+  min-width: ${props => props.theme.bigSubMenuWidth};
   background-color: ${props => props.theme.subMenuBackgroundColor};
-  
-  .app-sub-menu {
-    position: relative;
+  border-right: 1px solid ${props => props.theme.borderColor};
+`
 
-    &::before {
-      background: linear-gradient(to right,transparent,#aaa);
-      content: "";
-      height: 100%;
-      opacity: .2;
-      pointer-events: none;
-      position: absolute;
-      right: 0;
-      width: .8rem;
-      z-index: 2;
-    }
-  }
+export const SmallSubMenuBlock = styled.div `
+  width: ${props => props.theme.smallSubMenuWidth};
+  border-right: 1px solid ${props => props.theme.borderColor};
+  background-color: ${props => props.theme.smallSubMenuBackgroundColor};
+`
+
+export const BigSubMenuBlock = styled.div `
+  width: ${props => props.theme.bigSubMenuWidth};
+`
+
+export const SubMenuButtonsBlock = styled.div `
+  height: ${props => props.theme.buttonsBlockHeight};
+  border-bottom: 1px solid ${props => props.theme.borderColor};
+  background-color: ${props => props.theme.subMenuButtonsBlockBackgroundColor};
+`
+
+export const SubMenuButtonsBlockContent = styled.div `
+  height: ${props => props.theme.buttonsBlockHeight};
+`
+
+export const SmallSubMenuButtonsBlock = styled.div `
+  width: ${props => props.theme.smallSubMenuWidth};
+  border-right: 1px solid transparent;
+`
+
+export const BigSubMenuButtonsBlock = styled.div `
+  width: ${props => props.theme.bigSubMenuWidth};
 `
