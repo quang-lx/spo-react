@@ -13,28 +13,33 @@ export const appTheme = {
   bigSubMenuWidth: "20rem",
   profilePopupWidth: "20rem",
   buttonsBlockHeight: "2.75rem",
-  mainColor: "#DA2128",
-  mainColorHovered: "#c01f23",
+  profileBlockMinWidth: "24rem",
+  mainColor: "#0078d4",
+  mainColorHovered: "#005a9e",
+  headerBackgroundColor: "#0078d4",
+  headerItemHoverBackgroundColor: "#005a9e",
   menuBackgroundColor: "#f0f0f0",
   secondaryColor: "#616161",
   subMenuBackgroundColor: "#ffffff",
   smallSubMenuBackgroundColor: "#f3f2f1",
   subMenuButtonsBlockBackgroundColor: "#f3f2f1",
   mainContainerBackgroundColor: "#faf9f8",
-  borderColor: "#edebe9"
+  borderColor: "#edebe9",
+  smallSubMenuItemHoverBackgroundColor: "#c7e0f4",
+  smallSubMenuItemHoverTextColor: "#005a9e",
+  blackColor: "#201f1e"
 }
 
 export const customTeamsTheme = {
   siteVariables: {
+    bodyColor: "#616161",
     colors: {
       brand: {
        "600":  appTheme.mainColor
       }
     },
     contextualColors: {
-      // brand: {
-      //   "600":  appTheme.mainColor
-      // }
+
     },
     colorScheme: {
       brand: {
@@ -43,17 +48,6 @@ export const customTeamsTheme = {
         foregroundHover: appTheme.mainColor,
         backgroundHover: appTheme.mainColorHovered,
       }
-      // foreground: appTheme.mainColor,
-      // background: appTheme.mainColor,
-      // foregroundHover: appTheme.mainColor,
-      // foregroundActive: appTheme.mainColor,
-      // backgroundActive: appTheme.mainColor,
-      // foreground1: appTheme.mainColor,
-      // background6: appTheme.mainColor,
-      // foregroundActive1: appTheme.mainColor,
-      // backgroundActive1: appTheme.mainColor,
-      // foregroundFocus1: appTheme.mainColor,
-      // borderFocus1: appTheme.mainColor,
     }
   },
   componentVariables: {

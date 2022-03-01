@@ -1,7 +1,9 @@
 import React from 'react';
 import * as S from './SubMenu.style';
-import {Flex, Button, Menu, Toolbar, Tree} from '@fluentui/react-northstar';
-import {MenuIcon, BookmarkIcon, WordIcon, TriangleDownIcon, TriangleEndIcon} from '@fluentui/react-icons-northstar';
+import {Flex} from '@fluentui/react-northstar';
+import SmallSubMenuButtons from "./SmallSubMenuButtons";
+import SmallSubMenu from "./SmallSubMenu";
+import BigSubMenu from "./BigSubMenu";
 
 interface SubMenuProps {
 
@@ -34,12 +36,12 @@ export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
           <Flex className="h-100">
             <Flex.Item>
               <S.SmallSubMenuBlock>
-                small sub menu
+                <SmallSubMenu/>
               </S.SmallSubMenuBlock>
             </Flex.Item>
             <Flex.Item>
               <S.BigSubMenuBlock>
-                big sub menu
+                <BigSubMenu/>
               </S.BigSubMenuBlock>
             </Flex.Item>
           </Flex>
@@ -47,56 +49,4 @@ export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
       </Flex>
     </S.SubMenuBlock>
   );
-}
-
-export const SmallSubMenuButtons = () => {
-  const items = [
-    {
-      key: 'toggle',
-      kind: 'custom',
-      content: <Button flat text iconOnly icon={<MenuIcon/>} primary/>,
-    },
-    {
-      key: 'add-button',
-      kind: 'custom',
-      content: <Button content="Thêm mới" flat primary/>,
-      fitted: 'horizontally',
-    }
-  ]
-
-  return (
-    <Toolbar
-      aria-label="Toolbar can contain custom content"
-      items={items}
-    />
-  )
-}
-
-export const SmallSubMenu = () => {
-  const items = [
-    {
-      icon: (
-        <BookmarkIcon
-          {...{
-            outline: true,
-          }}
-        />
-      ),
-      key: 'editorials',
-      content: 'Editorials',
-    },
-    {
-      icon: <WordIcon {...{}} />,
-      key: 'review',
-      content: 'Reviews',
-    },
-    {
-      key: 'events',
-      content: 'Upcoming Events',
-    }
-  ];
-
-  return (
-    <Menu defaultActiveIndex={0} items={items} vertical/>
-  )
 }
