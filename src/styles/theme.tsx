@@ -27,6 +27,7 @@ export const appTheme = {
   borderColor: "#edebe9",
   smallSubMenuItemHoverBackgroundColor: "#c7e0f4",
   smallSubMenuItemHoverTextColor: "#005a9e",
+  bigSubMenuItemActiveBackgroundColor: "#c7e0f4",
   blackColor: "#201f1e"
 }
 
@@ -47,6 +48,9 @@ export const customTeamsTheme = {
         background: appTheme.mainColor,
         foregroundHover: appTheme.mainColor,
         backgroundHover: appTheme.mainColorHovered,
+      },
+      default: {
+        backgroundActive1: appTheme.bigSubMenuItemActiveBackgroundColor
       }
     }
   },

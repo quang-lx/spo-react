@@ -7,7 +7,8 @@ import {
   TriangleEndIcon,
   StarIcon,
   UrgentIcon,
-  RedbangIcon
+  RedbangIcon,
+  TabsIcon
 } from "@fluentui/react-icons-northstar";
 import React from "react";
 
@@ -16,6 +17,17 @@ interface SmallSubMenuProps {
 }
 const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
   const items = [
+    {
+      id: 'all',
+      title: <Button
+        content={<Text content="Tất cả" weight="regular" size="medium"/>}
+        className="p-0 justify-content-start"
+        icon={<TabsIcon />}
+        text
+        fluid
+      />,
+      className: 'tree-item-parent-node'
+    },
     {
       id: 'my',
       title: 'Của tôi',

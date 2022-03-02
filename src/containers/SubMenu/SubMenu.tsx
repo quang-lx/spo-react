@@ -4,6 +4,7 @@ import {Flex} from '@fluentui/react-northstar';
 import SmallSubMenuButtons from "./SmallSubMenuButtons";
 import SmallSubMenu from "./SmallSubMenu";
 import BigSubMenu from "./BigSubMenu";
+import BigSubMenuButtons from "./BigSubMenuButtons";
 
 interface SubMenuProps {
 
@@ -25,7 +26,7 @@ export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
                 </Flex.Item>
                 <Flex.Item>
                   <S.BigSubMenuButtonsBlock>
-
+                    <BigSubMenuButtons/>
                   </S.BigSubMenuButtonsBlock>
                 </Flex.Item>
               </Flex>

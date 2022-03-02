@@ -1,6 +1,6 @@
 import React from "react";
-import {Image, List, Text} from "@fluentui/react-northstar";
-import {TagIcon, RedbangIcon, UrgentIcon, StarIcon, ChatIcon} from "@fluentui/react-icons-northstar";
+import {Image, List, Text, Button} from "@fluentui/react-northstar";
+import {TagIcon, RedbangIcon, UrgentIcon, StarIcon, ChatIcon, MoreIcon} from "@fluentui/react-icons-northstar";
 
 class BigSubMenu extends React.Component {
   state = {
@@ -8,7 +8,7 @@ class BigSubMenu extends React.Component {
   }
   items = [
     {
-      key: 'item-1',
+      key: "item-1",
       media: (
         <Image
           src="https://yt3.ggpht.com/ytc/AKedOLTebUysiOUr2VCeE1wqYTQkrVM00kZZO2CgnL7t9g=s900-c-k-c0x00ffffff-no-rj"
@@ -25,10 +25,11 @@ class BigSubMenu extends React.Component {
                 <Text color="brand">
                   <span className="d-block w-100 pt-1"><ChatIcon size="smaller" {...{outline: true}}/> Phê duyệt tờ trình</span>
                 </Text>
-              </Text>
+              </Text>,
+      endMedia: <Button text iconOnly icon={<MoreIcon/>}/>
     },
     {
-      key: 'item-2',
+      key: "item-2",
       className: "unseen",
       media: (
         <Image
@@ -45,10 +46,11 @@ class BigSubMenu extends React.Component {
                 <Text color="brand">
                   <span className="d-block w-100 pt-1"><ChatIcon size="smaller" {...{outline: true}}/> Phản hồi thảo luận</span>
                 </Text>
-              </Text>
+              </Text>,
+      endMedia: <Button text iconOnly icon={<MoreIcon/>}/>
     },
     {
-      key: 'item-3',
+      key: "item-3",
       className: "unseen",
       media: (
         <Image
@@ -65,7 +67,7 @@ class BigSubMenu extends React.Component {
         weight="semibold" color="brand"/>,
     },
     {
-      key: 'item-4',
+      key: "item-4",
       media: (
         <Image
           src="https://i.ibb.co/C7QpdVM/72742010-2473508566058165-7682836468292648960-n.jpg"
@@ -80,7 +82,7 @@ class BigSubMenu extends React.Component {
         content="[ITHCM-02/11/2021] Xin duyệt chủ trương mua sắm các thiết bị vật tư cho dự án cửa hàng lẩu Aeon Mall Tân Phú"/>
     },
     {
-      key: 'item-5',
+      key: "item-5",
       media: (
         <Image
           src="https://i.ibb.co/tZcDv99/236285939-3308320666067112-4201085366173673459-n.jpg"
@@ -88,12 +90,12 @@ class BigSubMenu extends React.Component {
         />
       ),
       header: <Text content="Trần Hoàng Huy"/>,
-      headerMedia: '7:26 1/3',
+      headerMedia: "7:26 1/3",
       content: <Text
         content="KTCN. Tạm ứng tiền mặt hàng tháng để mua mẫu nguyên liệu phục vụ nghiên cứu và cảm quan sản phẩm"/>
     },
     {
-      key: 'item-6',
+      key: "item-6",
       className: "unseen",
       media: (
         <Image
@@ -108,7 +110,7 @@ class BigSubMenu extends React.Component {
         weight="semibold" color="brand"/>,
     },
     {
-      key: 'item-7',
+      key: "item-7",
       media: (
         <Image
           src="https://yt3.ggpht.com/ytc/AKedOLTebUysiOUr2VCeE1wqYTQkrVM00kZZO2CgnL7t9g=s900-c-k-c0x00ffffff-no-rj"
@@ -116,7 +118,7 @@ class BigSubMenu extends React.Component {
         />
       ),
       header: <Text content="Nguyễn Mạnh Cường"/>,
-      headerMedia: '7:26 30/12',
+      headerMedia: "7:26 30/12",
       content: <Text
         content="210724/TTR - Đề xuất pr các hạng mục truyền thông khẩu trang kool mask - pr sản phẩm mới"/>
     }

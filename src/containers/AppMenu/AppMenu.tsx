@@ -15,20 +15,20 @@ export const AppMenu: React.FunctionComponent<MenuProps> = (props) => {
       content: <MenuItem icon={<SurveyIcon />} content="Request" />
     },
     {
-      key: 'vb-di',
-      content: <MenuItem icon={<SendIcon {...{outline: true}} />} content="VB đi" />
-    },
-    {
-      key: 'vb-den',
-      content: <MenuItem icon={<DoorArrowLeftIcon {...{outline: true}} />} content="VB đến" />
-    },
-    {
       key: 'cv',
       content: <MenuItem icon={<PollIcon {...{outline: true}} />} content="Công việc" />
     },
     {
       key: 'da',
       content: <MenuItem icon={<GridIcon {...{outline: true}} />} content="Dự án" />
+    },
+    {
+      key: 'vb-di',
+      content: <MenuItem icon={<SendIcon {...{outline: true}} />} content="VB đi" />
+    },
+    {
+      key: 'vb-den',
+      content: <MenuItem icon={<DoorArrowLeftIcon {...{outline: true}} />} content="VB đến" />
     }
   ]
 
