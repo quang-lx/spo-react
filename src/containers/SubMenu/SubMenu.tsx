@@ -25,7 +25,7 @@ export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
                 </Flex.Item>
                 <Flex.Item>
                   <S.BigSubMenuButtonsBlock>
-                    big buttons
+
                   </S.BigSubMenuButtonsBlock>
                 </Flex.Item>
               </Flex>
