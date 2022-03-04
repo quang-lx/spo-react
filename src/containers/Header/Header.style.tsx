@@ -20,7 +20,7 @@ export const ActionButton = styled(Button) `
   border-radius: 0;
   
   &:hover {
-    background-color: ${props => props.theme.headerItemHoverBackgroundColor};
+    background-color: ${props => props.theme.headerItemHoveredBackgroundColor};
   }
 `
 
@@ -31,7 +31,7 @@ export const HeaderAvatar = styled(Avatar) `
   cursor: pointer;
 
   &:hover {
-    background-color: ${props => props.theme.headerItemHoverBackgroundColor};
+    background-color: ${props => props.theme.headerItemHoveredBackgroundColor};
   }
 `
 

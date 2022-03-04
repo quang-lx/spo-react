@@ -11,32 +11,32 @@ const BigSubMenuButtons: React.FunctionComponent<BigSubMenuButtonsProps> = (prop
     {
       key: "toggle",
       kind: "custom",
-      content: <Button disabled flat text icon={<CircleIcon/>}
-                       content="Quy trình phê duyệt giá trên 50tr" className="p-0 text-black justify-content-start"
+      content: <Button disabled flat text icon={<TabsIcon/>}
+                       content="Tất cả" className="p-0 text-black justify-content-start"
       />,
       className: "overflow-hidden"
     },
-    {
-      key: "sorted",
-      kind: "custom",
-      content: <Button content="Thời gian" flat text primary icon={<CloseIcon size="smaller"/>} iconPosition="after"/>,
-      fitted: "horizontally",
-      className: "ml-auto"
-    },
-    {
-      key: "sort-direction",
-      kind: "custom",
-      content: <Button flat text iconOnly icon={<ArrowDownIcon size="small"/>}/>,
-      fitted: "horizontally",
-      className: "mr-2"
-    },
     // {
-    //   key: "add-button",
+    //   key: "sorted",
     //   kind: "custom",
-    //   content: <SortButton/>,
+    //   content: <Button content="Thời gian" flat text primary icon={<CloseIcon size="smaller"/>} iconPosition="after"/>,
+    //   fitted: "horizontally",
+    //   className: "ml-auto"
+    // },
+    // {
+    //   key: "sort-direction",
+    //   kind: "custom",
+    //   content: <Button flat text iconOnly icon={<ArrowDownIcon size="small"/>}/>,
     //   fitted: "horizontally",
     //   className: "mr-2"
-    // }
+    // },
+    {
+      key: "add-button",
+      kind: "custom",
+      content: <SortButton/>,
+      fitted: "horizontally",
+      className: "mr-2 ml-auto"
+    }
   ]
 
   return (
@@ -62,17 +62,17 @@ const SortButton: React.FunctionComponent<SortButtonProps> = (props) => {
           content: 'Tất cả'
         },
         {
-          icon: <AcceptIcon size="small"/>,
+          icon: <AcceptIcon size="small" className="text-transparent"/>,
           key: 'thoi-gian-nhan',
           content: 'Thời gian'
         },
         {
-          icon: <AcceptIcon size="small"/>,
+          icon: <AcceptIcon size="small" className="text-transparent"/>,
           key: 'quy-trinh',
           content: 'Quy trình'
         },
         {
-          icon: <AcceptIcon size="small"/>,
+          icon: <AcceptIcon size="small" className="text-transparent"/>,
           key: 'nguoi-gui',
           content: 'Người gửi'
         }

@@ -12,7 +12,7 @@ const SunMenuLayout: React.FunctionComponent<SubMenuLayoutProps> = (props) => {
     return (
       <Flex column fill>
         <Flex.Item size="size.large" grow>
-          <Flex>
+          <Flex className="h-100">
             <Flex.Item>
               <SubMenu {...props} />
             </Flex.Item>

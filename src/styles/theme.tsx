@@ -17,7 +17,7 @@ export const appTheme = {
   mainColor: "#0078d4",
   mainColorHovered: "#005a9e",
   headerBackgroundColor: "#0078d4",
-  headerItemHoverBackgroundColor: "#005a9e",
+  headerItemHoveredBackgroundColor: "#005a9e",
   menuBackgroundColor: "#f0f0f0",
   secondaryColor: "#616161",
   subMenuBackgroundColor: "#ffffff",
@@ -25,9 +25,10 @@ export const appTheme = {
   subMenuButtonsBlockBackgroundColor: "#f3f2f1",
   mainContainerBackgroundColor: "#faf9f8",
   borderColor: "#edebe9",
-  smallSubMenuItemHoverBackgroundColor: "#c7e0f4",
-  smallSubMenuItemHoverTextColor: "#005a9e",
+  smallSubMenuItemHoveredBackgroundColor: "#c7e0f4",
+  smallSubMenuItemHoveredTextColor: "#005a9e",
   bigSubMenuItemActiveBackgroundColor: "#c7e0f4",
+  bigSubMenuItemHoveredBackgroundColor: "#f5f5f5",
   blackColor: "#201f1e"
 }
 
@@ -40,7 +41,9 @@ export const customTeamsTheme = {
       }
     },
     contextualColors: {
-
+      brand: {
+        "600":  appTheme.mainColor
+      }
     },
     colorScheme: {
       brand: {
@@ -48,6 +51,7 @@ export const customTeamsTheme = {
         background: appTheme.mainColor,
         foregroundHover: appTheme.mainColor,
         backgroundHover: appTheme.mainColorHovered,
+        foreground1: appTheme.mainColor
       },
       default: {
         backgroundActive1: appTheme.bigSubMenuItemActiveBackgroundColor

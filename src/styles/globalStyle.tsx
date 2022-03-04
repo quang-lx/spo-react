@@ -33,6 +33,9 @@ export default createGlobalStyle<{ theme: ThemeType }>`
   .text-black {
     color: ${({theme}) => theme.blackColor};
   }
+  .text-transparent {
+    color: transparent;
+  }
 
   .list-auto-height {
     .ui-list__item {
@@ -47,6 +50,24 @@ export default createGlobalStyle<{ theme: ThemeType }>`
         width: calc(100% - 0.5rem);
         margin: 0 0.25rem;
         border-radius: 4px;
+        
+        &.active {
+          .ui-tree__title {
+            background-color: ${({theme}) => theme.smallSubMenuItemHoveredBackgroundColor};
+            color: ${({theme}) => theme.smallSubMenuItemHoveredTextColor};
+
+            button {
+              color: ${({theme}) => theme.smallSubMenuItemHoveredTextColor};
+              
+              .ui-icon__outline {
+                display: none;
+              }
+              .ui-icon__filled {
+                display: block;
+              }
+            }
+          }
+        }
       }
 
       &__title {
@@ -65,11 +86,11 @@ export default createGlobalStyle<{ theme: ThemeType }>`
         }
 
         &:hover {
-          background-color: ${({theme}) => theme.smallSubMenuItemHoverBackgroundColor};
-          color: ${({theme}) => theme.smallSubMenuItemHoverTextColor};
+          background-color: ${({theme}) => theme.smallSubMenuItemHoveredBackgroundColor};
+          color: ${({theme}) => theme.smallSubMenuItemHoveredTextColor};
           
           button {
-            color: ${({theme}) => theme.smallSubMenuItemHoverTextColor};
+            color: ${({theme}) => theme.smallSubMenuItemHoveredTextColor};
           }
         }
       }
@@ -82,10 +103,25 @@ export default createGlobalStyle<{ theme: ThemeType }>`
   
   .big-sub-menu {
     .ui-list {
+      &__itemendmedia {
+        position: absolute;
+        right: 0;
+        display: block;
+      }
+      
       &__item {
         position: relative;
         border-bottom: 1px solid ${({theme}) => theme.borderColor};
-        padding: 0.5rem 0.75rem;
+        padding: 0.5rem 2rem 0.5rem 0.75rem;
+        
+        &:hover {
+          .ui-list__itemheadermedia {
+            width: auto;
+            height: auto;
+            position: static;
+            margin: 0;
+          }
+        }
         
         &.unseen {
           &::before {
@@ -98,6 +134,23 @@ export default createGlobalStyle<{ theme: ThemeType }>`
             background-color: ${({theme}) => theme.mainColor};
           }
         }
+      }
+    }
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  .custom-popup {
+    &__wrapper {
+      margin: -0.5rem -1rem;
+    }
+    &__item {
+      padding: 0 0.5rem;
+      
+      &:hover {
+        background-color: ${({theme}) => theme.bigSubMenuItemHoveredBackgroundColor};
       }
     }
   }

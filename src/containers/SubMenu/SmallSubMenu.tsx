@@ -11,6 +11,8 @@ import {
   TabsIcon
 } from "@fluentui/react-icons-northstar";
 import React from "react";
+// import { Scrollbars } from 'react-custom-scrollbars';
+import CustomScrollbars from "../../components/CustomScrollbars";
 
 interface SmallSubMenuProps {
 
@@ -26,7 +28,7 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
         text
         fluid
       />,
-      className: 'tree-item-parent-node'
+      className: 'tree-item-parent-node active'
     },
     {
       id: 'my',
@@ -157,7 +159,7 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
         {
           id: 'workflow-3',
           title: <Button
-            content={<Text content="QT mua sắm cho tòa nhà" weight="regular" size="medium"/>}
+            content={<Text content="QT mua sắm cho tòa nhà 123456" weight="regular" size="medium"/>}
             className="p-0 justify-content-start"
             icon={<CircleIcon/>}
             text
@@ -178,13 +180,15 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
   )
 
   return (
-    <Tree
-      aria-label="submenu"
-      className="small-sub-menu pl-0 pt-2"
-      items={items}
-      renderItemTitle={titleRenderer}
-      defaultActiveItemIds={['recently', 'workflow', 'time', 'my']}
-    />
+    <CustomScrollbars disableHorizontalScrolling>
+      <Tree
+        aria-label="submenu"
+        className="small-sub-menu pl-0 pt-2"
+        items={items}
+        renderItemTitle={titleRenderer}
+        defaultActiveItemIds={['recently', 'workflow', 'time', 'my']}
+      />
+    </CustomScrollbars>
   )
 }
 

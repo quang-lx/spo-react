@@ -1,0 +1,1 @@
+export { CustomScrollbars as default } from './CustomScrollbars'
