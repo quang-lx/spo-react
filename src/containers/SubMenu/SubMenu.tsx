@@ -1,10 +1,10 @@
 import React from 'react';
 import * as S from './SubMenu.style';
 import {Flex} from '@fluentui/react-northstar';
-import SmallSubMenuButtons from "./SmallSubMenuButtons";
+import SmallSubMenuToolbar from "./SmallSubMenuToolbar";
 import SmallSubMenu from "./SmallSubMenu";
 import BigSubMenu from "./BigSubMenu";
-import BigSubMenuButtons from "./BigSubMenuButtons";
+import BigSubMenuToolbar from "./BigSubMenuToolbar";
 
 interface SubMenuProps {
 
@@ -16,22 +16,22 @@ export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
     <S.SubMenuBlock>
       <Flex className="h-100" column>
         <Flex.Item>
-          <S.SubMenuButtonsBlock>
-            <S.SubMenuButtonsBlockContent>
+          <S.SubMenuToolbar>
+            <S.SubMenuToolbarContent>
               <Flex className="h-100" vAlign="center">
                 <Flex.Item>
-                  <S.SmallSubMenuButtonsBlock>
-                    <SmallSubMenuButtons/>
-                  </S.SmallSubMenuButtonsBlock>
+                  <S.SmallSubMenuToolbarWrapper>
+                    <SmallSubMenuToolbar/>
+                  </S.SmallSubMenuToolbarWrapper>
                 </Flex.Item>
                 <Flex.Item>
-                  <S.BigSubMenuButtonsBlock>
-                    <BigSubMenuButtons/>
-                  </S.BigSubMenuButtonsBlock>
+                  <S.BigSubMenuToolbarWrapper>
+                    <BigSubMenuToolbar/>
+                  </S.BigSubMenuToolbarWrapper>
                 </Flex.Item>
               </Flex>
-            </S.SubMenuButtonsBlockContent>
-          </S.SubMenuButtonsBlock>
+            </S.SubMenuToolbarContent>
+          </S.SubMenuToolbar>
         </Flex.Item>
         <Flex.Item>
           <Flex className="h-100">

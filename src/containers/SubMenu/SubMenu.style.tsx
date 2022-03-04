@@ -16,21 +16,21 @@ export const BigSubMenuBlock = styled.div `
   width: ${props => props.theme.bigSubMenuWidth};
 `
 
-export const SubMenuButtonsBlock = styled.div `
-  height: ${props => props.theme.buttonsBlockHeight};
+export const SubMenuToolbar = styled.div `
+  height: ${props => props.theme.toolbarHeight};
   border-bottom: 1px solid ${props => props.theme.borderColor};
-  background-color: ${props => props.theme.subMenuButtonsBlockBackgroundColor};
+  background-color: ${props => props.theme.subMenuToolbarBackgroundColor};
 `
 
-export const SubMenuButtonsBlockContent = styled.div `
-  height: ${props => props.theme.buttonsBlockHeight};
+export const SubMenuToolbarContent = styled.div `
+  height: ${props => props.theme.toolbarHeight};
 `
 
-export const SmallSubMenuButtonsBlock = styled.div `
+export const SmallSubMenuToolbarWrapper = styled.div `
   width: ${props => props.theme.smallSubMenuWidth};
   border-right: 1px solid transparent;
 `
 
-export const BigSubMenuButtonsBlock = styled.div `
+export const BigSubMenuToolbarWrapper = styled.div `
   width: ${props => props.theme.bigSubMenuWidth};
 `

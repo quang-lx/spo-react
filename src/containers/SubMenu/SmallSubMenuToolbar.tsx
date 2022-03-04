@@ -2,11 +2,11 @@ import {Button, Toolbar} from "@fluentui/react-northstar";
 import {MenuIcon} from "@fluentui/react-icons-northstar";
 import React from "react";
 
-interface SmallSubMenuButtonsProps {
+interface SmallSubMenuToolbarProps {
 
 }
 
-const SmallSubMenuButtons: React.FunctionComponent<SmallSubMenuButtonsProps> = (props) => {
+const SmallSubMenuToolbar: React.FunctionComponent<SmallSubMenuToolbarProps> = (props) => {
   const items = [
     {
       key: 'toggle',
@@ -29,4 +29,4 @@ const SmallSubMenuButtons: React.FunctionComponent<SmallSubMenuButtonsProps> = (
   )
 }
 
-export default SmallSubMenuButtons;
+export default SmallSubMenuToolbar;
