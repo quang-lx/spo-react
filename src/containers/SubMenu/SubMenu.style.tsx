@@ -26,11 +26,11 @@ export const SubMenuToolbarContent = styled.div `
   height: ${props => props.theme.toolbarHeight};
 `
 
-export const SmallSubMenuToolbarWrapper = styled.div `
+export const SmallSubMenuToolbarInner = styled.div `
   width: ${props => props.theme.smallSubMenuWidth};
   border-right: 1px solid transparent;
 `
 
-export const BigSubMenuToolbarWrapper = styled.div `
+export const BigSubMenuToolbarInner = styled.div `
   width: ${props => props.theme.bigSubMenuWidth};
 `

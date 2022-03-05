@@ -20,14 +20,14 @@ export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
             <S.SubMenuToolbarContent>
               <Flex className="h-100" vAlign="center">
                 <Flex.Item>
-                  <S.SmallSubMenuToolbarWrapper>
+                  <S.SmallSubMenuToolbarInner>
                     <SmallSubMenuToolbar/>
-                  </S.SmallSubMenuToolbarWrapper>
+                  </S.SmallSubMenuToolbarInner>
                 </Flex.Item>
                 <Flex.Item>
-                  <S.BigSubMenuToolbarWrapper>
+                  <S.BigSubMenuToolbarInner>
                     <BigSubMenuToolbar/>
-                  </S.BigSubMenuToolbarWrapper>
+                  </S.BigSubMenuToolbarInner>
                 </Flex.Item>
               </Flex>
             </S.SubMenuToolbarContent>

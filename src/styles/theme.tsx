@@ -23,6 +23,7 @@ export const appTheme = {
   subMenuBackgroundColor: "#ffffff",
   smallSubMenuBackgroundColor: "#f3f2f1",
   subMenuToolbarBackgroundColor: "#f3f2f1",
+  containerToolbarBackgroundColor: "#f3f2f1",
   mainContainerBackgroundColor: "#faf9f8",
   borderColor: "#edebe9",
   smallSubMenuItemHoveredBackgroundColor: "#c7e0f4",
