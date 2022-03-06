@@ -6,7 +6,7 @@ export const SuspenseContainer = styled.div`
     align-items:center;
     justify-content:center;
     .spinner-border{
-        border: 0.25em solid ${props => props.theme.primary};
+        border: 0.25em solid ${props => props.theme.siteVariables.primary};
         border-right-color: white;
         width:3rem;
         height:3rem;

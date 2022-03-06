@@ -28,10 +28,10 @@ export default createGlobalStyle<{ theme: ThemeType }>`
   }
 
   .text-secondary {
-    color: ${({theme}) => theme.secondaryColor};
+    color: ${({theme}) => theme.siteVariables.secondaryColor};
   }
   .text-black {
-    color: ${({theme}) => theme.blackColor};
+    color: ${({theme}) => theme.siteVariables.blackColor};
   }
   .text-transparent {
     color: transparent;
@@ -53,11 +53,11 @@ export default createGlobalStyle<{ theme: ThemeType }>`
         
         &.active {
           .ui-tree__title {
-            background-color: ${({theme}) => theme.smallSubMenuItemHoveredBackgroundColor};
-            color: ${({theme}) => theme.smallSubMenuItemHoveredTextColor};
+            background-color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredBackgroundColor};
+            color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredTextColor};
 
             button {
-              color: ${({theme}) => theme.smallSubMenuItemHoveredTextColor};
+              color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredTextColor};
               
               .ui-icon__outline {
                 display: none;
@@ -79,18 +79,18 @@ export default createGlobalStyle<{ theme: ThemeType }>`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        color: ${({theme}) => theme.secondaryColor};
+        color: ${({theme}) => theme.siteVariables.secondaryColor};
         button {
-          color: ${({theme}) => theme.secondaryColor};
+          color: ${({theme}) => theme.siteVariables.secondaryColor};
           transition: none;
         }
 
         &:hover {
-          background-color: ${({theme}) => theme.smallSubMenuItemHoveredBackgroundColor};
-          color: ${({theme}) => theme.smallSubMenuItemHoveredTextColor};
+          background-color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredBackgroundColor};
+          color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredTextColor};
           
           button {
-            color: ${({theme}) => theme.smallSubMenuItemHoveredTextColor};
+            color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredTextColor};
           }
         }
       }
@@ -111,7 +111,7 @@ export default createGlobalStyle<{ theme: ThemeType }>`
       
       &__item {
         position: relative;
-        border-bottom: 1px solid ${({theme}) => theme.borderColor};
+        border-bottom: 1px solid ${({theme}) => theme.siteVariables.borderColor};
         padding: 0.5rem 2rem 0.5rem 0.75rem;
         
         &:hover {
@@ -131,7 +131,7 @@ export default createGlobalStyle<{ theme: ThemeType }>`
             width: 0.25rem;
             top: 0;
             left: 0;
-            background-color: ${({theme}) => theme.mainColor};
+            background-color: ${({theme}) => theme.siteVariables.mainColor};
           }
         }
       }
@@ -150,12 +150,16 @@ export default createGlobalStyle<{ theme: ThemeType }>`
       padding: 0 0.5rem;
       
       &:hover {
-        background-color: ${({theme}) => theme.bigSubMenuItemHoveredBackgroundColor};
+        background-color: ${({theme}) => theme.siteVariables.bigSubMenuItemHoveredBackgroundColor};
       }
     }
   }
   
   .reserve-flex-width {
     flex: 0 0 auto;
+  }
+  
+  .test-color {
+    color: ${({theme}) => theme.siteVariables.borderColor};
   }
 `

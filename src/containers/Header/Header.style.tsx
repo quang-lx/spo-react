@@ -2,16 +2,16 @@ import styled from "styled-components";
 import { Button, Avatar } from '@fluentui/react-northstar';
 
 export const HeaderBlock = styled.div `
-  height: ${props => props.theme.headerHeight};
-  background-color: ${props => props.theme.headerBackgroundColor};
+  height: ${props => props.theme.siteVariables.headerHeight};
+  background-color: ${props => props.theme.siteVariables.headerBackgroundColor};
 `
 
 export const HeaderWrapper = styled.div `
-  height: ${props => props.theme.headerHeight};
+  height: ${props => props.theme.siteVariables.headerHeight};
 `
 
 export const ProfileBlock = styled.div `
-  min-width: ${props => props.theme.profileBlockMinWidth};
+  min-width: ${props => props.theme.siteVariables.profileBlockMinWidth};
 `
 
 export const ActionButton = styled(Button) `
@@ -20,7 +20,7 @@ export const ActionButton = styled(Button) `
   border-radius: 0;
   
   &:hover {
-    background-color: ${props => props.theme.headerItemHoveredBackgroundColor};
+    background-color: ${props => props.theme.siteVariables.headerItemHoveredBackgroundColor};
   }
 `
 
@@ -31,15 +31,15 @@ export const HeaderAvatar = styled(Avatar) `
   cursor: pointer;
 
   &:hover {
-    background-color: ${props => props.theme.headerItemHoveredBackgroundColor};
+    background-color: ${props => props.theme.siteVariables.headerItemHoveredBackgroundColor};
   }
 `
 
 export const ProfilePopupContent = styled.div `
-  width: ${props => props.theme.profilePopupWidth};
+  width: ${props => props.theme.siteVariables.profilePopupWidth};
   margin: 0 -1rem -0.8rem;
 `
 
 export const LogoWrapper = styled.div `
-  width: calc(${props => props.theme.menuWidth} + ${props => props.theme.smallSubMenuWidth});
+  width: calc(${props => props.theme.siteVariables.menuWidth} + ${props => props.theme.siteVariables.smallSubMenuWidth});
 `
