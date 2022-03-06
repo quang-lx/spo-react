@@ -8,25 +8,21 @@ interface SubMenuLayoutProps {
 
 }
 
-const SunMenuLayout: React.FunctionComponent<SubMenuLayoutProps> = (props) => {
+const SubMenuLayout: React.FunctionComponent<SubMenuLayoutProps> = (props) => {
     return (
-      <Flex column fill>
-        <Flex.Item size="size.large" grow>
-          <Flex className="h-100">
-            <Flex.Item>
-              <SubMenu {...props} />
-            </Flex.Item>
-            <Flex.Item grow>
-              <Flex column>
-                <Container {...props}>
-                  <Outlet />
-                </Container>
-              </Flex>
-            </Flex.Item>
+      <Flex fill className="layout-has-submenu">
+        <Flex.Item  className="layout-submenu">
+          <SubMenu {...props} />
+        </Flex.Item>
+        <Flex.Item grow className="layout-container">
+          <Flex column>
+            <Container {...props}>
+              <Outlet />
+            </Container>
           </Flex>
         </Flex.Item>
       </Flex>
     );
 }
 
-export default SunMenuLayout;
+export default SubMenuLayout;

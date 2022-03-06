@@ -154,4 +154,8 @@ export default createGlobalStyle<{ theme: ThemeType }>`
       }
     }
   }
+  
+  .reserve-flex-width {
+    flex: 0 0 auto;
+  }
 `
