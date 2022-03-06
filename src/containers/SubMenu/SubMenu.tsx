@@ -13,7 +13,7 @@ interface SubMenuProps {
 export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
   // const { children, to, className } = props
   return (
-    <S.SubMenuBlock className="reserve-flex-width">
+    <S.SubMenuBlock>
       <Flex className="h-100" column>
         <Flex.Item>
           <S.SubMenuToolbar>

@@ -4,6 +4,7 @@ export const SubMenuBlock = styled.div`
   min-width: ${props => props.theme.bigSubMenuWidth};
   background-color: ${props => props.theme.subMenuBackgroundColor};
   border-right: 1px solid ${props => props.theme.borderColor};
+  height: 100%;
 `
 
 export const SmallSubMenuBlock = styled.div `
