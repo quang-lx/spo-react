@@ -3,7 +3,6 @@ import * as S from './Container.style';
 import {Flex} from '@fluentui/react-northstar';
 import ContainerToolbar from "./ContainerToolbar";
 import {ContainerContent, ContainerToolbarInner} from "./Container.style";
-import CustomScrollbars from "../../components/CustomScrollbars";
 
 interface ContainerProps {
 

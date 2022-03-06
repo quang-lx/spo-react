@@ -31,7 +31,8 @@ export const appTheme = {
     smallSubMenuItemHoveredTextColor: "#005a9e",
     bigSubMenuItemActiveBackgroundColor: "#c7e0f4",
     bigSubMenuItemHoveredBackgroundColor: "#f5f5f5",
-    blackColor: "#201f1e"
+    blackColor: "#201f1e",
+    rightBarWidth: "13.375rem"
   }
 }
 

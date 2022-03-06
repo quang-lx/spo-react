@@ -12,11 +12,12 @@ const SmallSubMenuToolbar: React.FunctionComponent<SmallSubMenuToolbarProps> = (
       key: 'toggle',
       kind: 'custom',
       content: <Button flat text iconOnly icon={<MenuIcon/>} primary/>,
+      className: 'pl-2 pr-2'
     },
     {
       key: 'add-button',
       kind: 'custom',
-      content: <Button content="Thêm mới" flat primary/>,
+      content: <Button className="pl-2 pr-2" content="Thêm mới" flat primary/>,
       fitted: 'horizontally',
     }
   ]

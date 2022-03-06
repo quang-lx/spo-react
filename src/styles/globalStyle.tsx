@@ -162,4 +162,9 @@ export default createGlobalStyle<{ theme: ThemeType }>`
   .test-color {
     color: ${({theme}) => theme.siteVariables.borderColor};
   }
+  
+  .unset-width {
+    min-width: unset;
+    width: auto;
+  }
 `
