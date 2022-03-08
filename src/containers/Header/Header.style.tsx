@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button, Avatar } from '@fluentui/react-northstar';
+import { Button } from '@fluentui/react-northstar';
 
 export const HeaderBlock = styled.div `
   height: ${props => props.theme.siteVariables.headerHeight};
@@ -24,10 +24,12 @@ export const ActionButton = styled(Button) `
   }
 `
 
-export const HeaderAvatar = styled(Avatar) `
+export const HeaderAvatarWrapper = styled.div `
   padding: 0.5rem;
   height: auto;
   width: auto;
+  //max-height: 2rem;
+  //max-width: 2rem;
   cursor: pointer;
 
   &:hover {

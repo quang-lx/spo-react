@@ -25,7 +25,16 @@ interface ProfilePopupProps {
 }
 const ProfilePopup: React.FunctionComponent<ProfilePopupProps> = () => {
   return (
-    <Popup trigger={<S.HeaderAvatar name="User Profile" className="mr-1"/>} content={<ProfilePopupContent/>}/>
+    <Popup
+      trigger={
+        <S.HeaderAvatarWrapper className="mr-1">
+          <Avatar
+            image="https://yt3.ggpht.com/ytc/AKedOLTebUysiOUr2VCeE1wqYTQkrVM00kZZO2CgnL7t9g=s900-c-k-c0x00ffffff-no-rj"
+          />
+        </S.HeaderAvatarWrapper>
+      }
+      content={<ProfilePopupContent/>}
+    />
   )
 }
 
@@ -71,8 +80,13 @@ const ProfilePopupContent: React.FunctionComponent<ProfilePopupContentProps> = (
     <S.ProfilePopupContent>
       <ItemLayout
         className="pb-2"
-        media={<Avatar name="User Profile" size="larger"/>}
-        header={<Text content={<Text content=""/>} weight="semibold" truncated/>}
+        media={
+          <Avatar
+            size="larger"
+            image="https://yt3.ggpht.com/ytc/AKedOLTebUysiOUr2VCeE1wqYTQkrVM00kZZO2CgnL7t9g=s900-c-k-c0x00ffffff-no-rj"
+          />
+        }
+        header={<Text weight="semibold" truncated>Nguyễn Mạnh Cường</Text>}
         content={
           <div>
             <Text as="div" className="text-secondary" content="cuongnm@spsvn.com" size="small" truncated/>
