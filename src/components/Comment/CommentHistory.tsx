@@ -105,7 +105,7 @@ const Reply = () => {
           timestamp="11:12"
         />
       ),
-      key: 'message-id-9',
+      key: 'message-id-99',
     },
     {
       gutter: <Avatar
@@ -126,7 +126,7 @@ const Reply = () => {
           hasMention: true,
         }}
       />,
-      key: 'message-id-4',
+      key: 'message-id-44',
     },
     {
       gutter: <Avatar
@@ -143,7 +143,7 @@ const Reply = () => {
           timestamp="Hôm qua, 17:28"
         />
       ),
-      key: 'message-id-8',
+      key: 'message-id-88',
     }
   ];
 
@@ -158,9 +158,7 @@ const Reply = () => {
     {
       key: 'reply',
       title: title,
-      content: <Chat
-        items={replyItems}
-      />
+      content: <Chat key="reply-comments" items={replyItems}/>
     }
   ]
 
