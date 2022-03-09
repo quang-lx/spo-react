@@ -1,9 +1,10 @@
 import React from 'react';
-import {Flex, Text, Layout, List, Avatar, ItemLayout, Image} from '@fluentui/react-northstar';
+import {Flex, Text, Layout, List, Avatar, ItemLayout} from '@fluentui/react-northstar';
 import {TagIcon, UrgentIcon} from '@fluentui/react-icons-northstar';
 import {TextContainerTitle} from '../../components/Text';
 import * as S from './RequestDetail.style';
 import CustomScrollbars from "../../components/CustomScrollbars";
+import {Comment} from "../../components/Comment";
 
 const RequestDetail: React.FunctionComponent = () => {
 
@@ -19,25 +20,47 @@ const RequestDetail: React.FunctionComponent = () => {
         </TextContainerTitle>
       </Flex.Item>
       <Flex.Item grow>
-        <CustomScrollbars disableHorizontalScrolling={true}>
-          <S.ContentWrapper>
-            <Layout
-              gap="0.5rem"
-              alignItems="start"
-              main={<RequestDetailContent/>}
-              end={<RequestDetailAdditionInfo/>}
-            />
-          </S.ContentWrapper>
-        </CustomScrollbars>
+        <S.ContentWrapper>
+          <Layout
+            className="h-100 layout-inner-full-height"
+            alignItems="start"
+            main={<RequestDetailContent/>}
+            end={<RequestDetailAdditionInfo/>}
+          />
+        </S.ContentWrapper>
       </Flex.Item>
     </Flex>
   );
 }
 
 const RequestDetailContent: React.FunctionComponent = () => {
+  const items = [
+    {
+      key: 'ykien',
+      header: <Text content="Tóm tắt đề xuất" size="small" weight="semibold"/>,
+      content: <Text as="p" size="medium" className="text-pre-wrap">
+        Kính trình CEO và ban giám đốc.
+        <br/>BP.XDMN trình phát sinh lần 1 công trình Jiang Hu Aeon Mall Tân Phú.
+        <br/>- Phát sinh tăng hạng mục xây dựng, nội thất, M&E ( điều chỉnh BOQ cho phù hợp): 121.914.600đ
+        <br/>- Phát sinh tăng hạng mục quảng cáo ( do thay đổi thiết kế sau khi chốt BOQ) : 11.520.000đ
+        <br/>- Phát sinh giảm: -93.072.500đ
+        <br/>= Tổng phát sinh tăng giảm theo đơn giá dự kiến: 40.362.100đ (chưa VAT) (như file đính kèm : Biên bản hiện trường, BOQ phát sinh ).
+        <br/>
+        <br/>Kính trình anh chị xét duyệt.
+      </Text>,
+      className: "mb-2"
+    }
+  ]
 
   return (
-    <S.Content></S.Content>
+    <S.Content>
+      <CustomScrollbars disableHorizontalScrolling={true}>
+        <S.ContentInner>
+          {/*<List items={items}/>*/}
+          <Comment/>
+        </S.ContentInner>
+      </CustomScrollbars>
+    </S.Content>
   )
 }
 
@@ -45,7 +68,8 @@ const RequestDetailAdditionInfo: React.FunctionComponent = () => {
   const items = [
     {
       key: 'y-kien-title',
-      header: <Text content="Ý KIẾN CHỈ ĐẠO" size="medium" weight="semibold" color="brand"/>
+      header: <Text content="Ý KIẾN CHỈ ĐẠO" size="medium" weight="semibold" color="brand"/>,
+      className: 'unset-height mb-2'
     },
     {
       key: 'ykien',
@@ -60,7 +84,8 @@ const RequestDetailAdditionInfo: React.FunctionComponent = () => {
     },
     {
       key: 'chi-tiet',
-      header: <Text content="CHI TIẾT" size="medium" weight="semibold"/>
+      header: <Text content="CHI TIẾT" size="medium" weight="semibold"/>,
+      className: 'unset-height mt-5 mb-2'
     },
     {
       key: 'trang-thai',
@@ -74,10 +99,7 @@ const RequestDetailAdditionInfo: React.FunctionComponent = () => {
       content: <ItemLayout
         className="pl-0"
         media={
-          <Image
-            src="https://i.ibb.co/Vjq1gg7/148714090-3979558975396760-8986126341265647886-n.jpg"
-            avatar
-          />
+          <Avatar image="https://i.ibb.co/Vjq1gg7/148714090-3979558975396760-8986126341265647886-n.jpg"/>
         }
         header="Trần Đình Thủy"
         content="thuy@spsvn.com"
@@ -110,7 +132,8 @@ const RequestDetailAdditionInfo: React.FunctionComponent = () => {
     },
     {
       key: 'thong-tin-them',
-      header: <Text content="THÔNG TIN THÊM" size="medium" weight="semibold"/>
+      header: <Text content="THÔNG TIN THÊM" size="medium" weight="semibold"/>,
+      className: 'unset-height mt-5 mb-2'
     },
     {
       key: 'nt',
@@ -118,9 +141,8 @@ const RequestDetailAdditionInfo: React.FunctionComponent = () => {
       content: <ItemLayout
         className="pl-0"
         media={
-          <Image
-            src="https://yt3.ggpht.com/ytc/AKedOLTebUysiOUr2VCeE1wqYTQkrVM00kZZO2CgnL7t9g=s900-c-k-c0x00ffffff-no-rj"
-            avatar
+          <Avatar
+            image="https://yt3.ggpht.com/ytc/AKedOLTebUysiOUr2VCeE1wqYTQkrVM00kZZO2CgnL7t9g=s900-c-k-c0x00ffffff-no-rj"
           />
         }
         header="Nguyễn Mạnh Cường"
@@ -140,11 +162,21 @@ const RequestDetailAdditionInfo: React.FunctionComponent = () => {
       content: <Text size="medium" content="Marketing"/>,
       className: "mb-2"
     },
+    {
+      key: 'loai-van-ban',
+      header: <Text content="Loại văn bản" size="small" weight="semibold"/>,
+      content: <Text size="medium" content="Tờ trình đề xuất"/>,
+      className: "mb-2"
+    }
   ]
 
   return (
     <S.AdditionInfo>
-      <List items={items}/>
+      <CustomScrollbars disableHorizontalScrolling={true}>
+        <S.AdditionInfoInner>
+          <List items={items}/>
+        </S.AdditionInfoInner>
+      </CustomScrollbars>
     </S.AdditionInfo>
   )
 }

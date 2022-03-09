@@ -32,7 +32,9 @@ export const appTheme = {
     bigSubMenuItemActiveBackgroundColor: "#c7e0f4",
     bigSubMenuItemHoveredBackgroundColor: "#f5f5f5",
     blackColor: "#201f1e",
-    rightBarWidth: "13.375rem"
+    rightBarWidth: "13.375rem",
+    commentLeftColumnWidth: "2.5rem",
+    commentReplyBackgroundColor: "#fafafa"
   }
 }
 

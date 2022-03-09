@@ -167,4 +167,54 @@ export default createGlobalStyle<{ theme: ThemeType }>`
     min-width: unset;
     width: auto;
   }
+
+  .unset-height {
+    min-height: unset;
+    height: auto;
+  }
+  
+  .layout-inner-full-height {
+    .ui-layout__main {
+      height: 100%;
+    }
+    .ui-layout__end {
+      height: 100%;
+    }
+  }
+  
+  .text-pre-wrap {
+    white-space: pre-wrap;
+  }
+  
+  .comment-reply {
+    .ui-accordion__content {
+      margin-inline-start: 0;
+    }
+    .ui-chat {
+      background-color: ${({theme}) => theme.siteVariables.commentReplyBackgroundColor};
+      padding-left: 1rem;
+      padding-right: 0;
+    }
+    .ui-chat__item {
+      padding-top: 0;
+    }
+    .ui-box {
+      margin-right: 0;
+    }
+    .ui-chat__message {
+      margin-right: 0;
+      background-color: transparent;
+      max-width: unset;
+    }
+    .ui-chat__message__bar {
+      left: -3.5rem;
+    }
+  }
+  
+  .comment-item {
+    .ui-chat__message {
+      margin-right: 0;
+      max-width: unset;
+    }
+  }
 `

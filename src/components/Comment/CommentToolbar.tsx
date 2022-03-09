@@ -11,16 +11,17 @@ import * as S from './Comment.style';
 
 
 interface CommentToolbarProps {
-
+  className?: string
 }
 
 interface CommentToolbarItemProps extends ToolbarItemProps {
   key: string,
   /** kind: toggle, more, custom, divider */
-  kind: string
+  kind?: string
 }
 
 const CommentToolbar: React.FunctionComponent<CommentToolbarProps> = (props) => {
+  const {className} = props;
   const items: CommentToolbarItemProps[] = [
     {
       key: 'thao-luan',
@@ -51,6 +52,7 @@ const CommentToolbar: React.FunctionComponent<CommentToolbarProps> = (props) => 
 
   return (
     <Layout
+      className={className}
       start={<S.CommentToolbarTitle><Text content="Hiển thị:"/></S.CommentToolbarTitle>}
       main={<Toolbar items={items}/>}
     />
