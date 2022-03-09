@@ -17,7 +17,8 @@ import {
   WordColorIcon,
   ExcelColorIcon,
   PowerPointColorIcon,
-  CloseIcon
+  CloseIcon,
+  FilesPdfIcon
 } from '@fluentui/react-icons-northstar';
 import * as S from './Comment.style';
 import { HtmlEditor, Image, Inject, Link, QuickToolbar, RichTextEditorComponent, Toolbar as SyncToolbar, ToolbarSettingsModel, ToolbarType } from '@syncfusion/ej2-react-richtexteditor';
@@ -70,7 +71,7 @@ const CommentInputText = () => {
   };
 
   return (
-    <RichTextEditorComponent toolbarSettings={toolbarSettings}>
+    <RichTextEditorComponent toolbarSettings={toolbarSettings} placeholder="Nhập nội dung thảo luận...">
       <></>
       <Inject services={[SyncToolbar, Image, Link, HtmlEditor, QuickToolbar]} />
     </RichTextEditorComponent>
@@ -115,6 +116,20 @@ const CommentInputAttachment = () => {
           <Attachment
             icon={<PowerPointColorIcon />}
             header="File powerpoint.docx"
+            actionable
+            action={
+              {
+                icon: <CloseIcon />,
+                onClick: handleClick('Remove'),
+                title: 'Close',
+              }
+            }
+          />
+        </div>
+        <div className="col-md-6 p-0">
+          <Attachment
+            icon={<FilesPdfIcon />}
+            header="File pdf.docx"
             actionable
             action={
               {

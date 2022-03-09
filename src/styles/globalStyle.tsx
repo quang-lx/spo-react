@@ -196,9 +196,9 @@ export default createGlobalStyle<{ theme: ThemeType }>`
     }
     .ui-box {
       margin-right: 0;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      //overflow: hidden;
+      //white-space: nowrap;
+      //text-overflow: ellipsis;
     }
     .ui-chat__message {
       margin-right: 0;
@@ -207,6 +207,15 @@ export default createGlobalStyle<{ theme: ThemeType }>`
     }
     .ui-chat__message__bar {
       left: -3.5rem;
+    }
+    .ui-accordion__title__content-wrapper {
+      overflow: hidden;
+      
+      .ui-box {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
   }
   
@@ -218,6 +227,9 @@ export default createGlobalStyle<{ theme: ThemeType }>`
   }
   
   .comment-input {
+    .e-control {
+      font-family: ${({theme}) => theme.siteVariables.bodyFontFamily};
+    }
     .e-richtexteditor {
       border: none !important;
       //.e-toolbar-wrapper {
@@ -234,13 +246,13 @@ export default createGlobalStyle<{ theme: ThemeType }>`
           border-top-right-radius: 4px;
         }
       }
-      
+
       .e-toolbar-items {
         min-height: 2rem !important;
         height: 2rem !important;
         border-top-left-radius: 4px;
       }
-      
+
       .e-toolbar-item {
         &:not(.e-separator) {
           min-width: 2rem !important;
@@ -251,13 +263,13 @@ export default createGlobalStyle<{ theme: ThemeType }>`
             min-width: 2rem !important;
           }
         }
-        
+
         &.e-separator {
           margin-top: 0 !important;
           margin-bottom: 0 !important;
         }
       }
-      
+
       .e-rte-content {
         border-bottom: none;
       }
@@ -265,11 +277,11 @@ export default createGlobalStyle<{ theme: ThemeType }>`
     .e-rte-inline-dropdown .e-rte-color-content .e-rte-elements {
       line-height: inherit;
     }
-    
+
     .e-richtexteditor .e-rte-toolbar .e-toolbar-item .e-icons {
       color: ${({theme}) => theme.siteVariables.bodyColor}; 
     }
-    
+
     .ui-attachment {
       width: calc(100% - 0.25rem);
       box-shadow: none;

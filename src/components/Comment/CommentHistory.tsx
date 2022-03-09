@@ -157,7 +157,7 @@ const Reply = () => {
   const items = [
     {
       key: 'reply',
-      title: title,
+      title: <Text className="pr-1" content={title} truncated/>,
       content: <Chat key="reply-comments" items={replyItems}/>
     }
   ]
