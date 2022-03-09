@@ -14,9 +14,14 @@ export const CommentLeftColumn = styled.div `
   padding-right: 0.5rem;
 `
 
-export const CommentInputBoxWrapper = styled.div`
+export const CommentInputBoxInner = styled.div`
   border-radius: 4px;
-  border: 1px solid ${props => props.theme.siteVariables.naturalColors.grey[400]};
+  border: 1px solid ${props => props.theme.siteVariables.naturalColors.grey[200]};
+  background-color: white;
+`
+
+export const CommentInputBoxWrapper = styled.div`
+  width: calc(100% - 2.5rem);
 `
 
 export const ReplyCommentWrapper = styled.div`
@@ -24,4 +29,8 @@ export const ReplyCommentWrapper = styled.div`
   border-top: 1px solid ${props => props.theme.siteVariables.borderColor};
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+`
+
+export const CommentInputAttachmentWrapper = styled.div `
+  padding: 1rem 1rem 0.75rem 1rem;
 `

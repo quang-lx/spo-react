@@ -7,10 +7,20 @@ import {
   Toolbar,
   ToolbarItemProps,
   Button,
-  MenuButton
+  MenuButton,
+  Attachment
 } from '@fluentui/react-northstar';
-import {AcceptIcon, TriangleDownIcon, UserFriendsIcon} from '@fluentui/react-icons-northstar';
+import {
+  AcceptIcon,
+  TriangleDownIcon,
+  UserFriendsIcon,
+  WordColorIcon,
+  ExcelColorIcon,
+  PowerPointColorIcon,
+  CloseIcon
+} from '@fluentui/react-icons-northstar';
 import * as S from './Comment.style';
+import { HtmlEditor, Image, Inject, Link, QuickToolbar, RichTextEditorComponent, Toolbar as SyncToolbar, ToolbarSettingsModel, ToolbarType } from '@syncfusion/ej2-react-richtexteditor';
 
 
 interface CommentInputProps {
@@ -19,50 +29,104 @@ interface CommentInputProps {
 
 const CommentInput: React.FunctionComponent<CommentInputProps> = (props) => {
   return (
-    <Layout
-      alignItems="start"
-      start={
-        <S.CommentLeftColumn>
-          <Avatar image="https://yt3.ggpht.com/ytc/AKedOLTebUysiOUr2VCeE1wqYTQkrVM00kZZO2CgnL7t9g=s900-c-k-c0x00ffffff-no-rj"/>
-        </S.CommentLeftColumn>
-      }
-      main={
-        <CommentInputBox/>
-      }
-    />
+    <Flex className="comment-input">
+      <S.CommentLeftColumn>
+        <Avatar image="https://yt3.ggpht.com/ytc/AKedOLTebUysiOUr2VCeE1wqYTQkrVM00kZZO2CgnL7t9g=s900-c-k-c0x00ffffff-no-rj"/>
+      </S.CommentLeftColumn>
+      <CommentInputBox/>
+    </Flex>
   )
 }
 
 const CommentInputBox: React.FunctionComponent = () => {
   return (
-    <Flex column>
-      <S.CommentInputBoxWrapper>
-        <Flex column>
-          <CommentInputToolbar/>
-          <CommentInputText/>
-          <CommentInputAttachment/>
-        </Flex>
-      </S.CommentInputBoxWrapper>
-      <CommentInputButtons/>
-    </Flex>
-  )
-}
-
-const CommentInputToolbar = () => {
-  return (
-    <div>CommentInputToolbar</div>
+    <S.CommentInputBoxWrapper>
+      <Flex column>
+        <S.CommentInputBoxInner>
+          <Flex column>
+            <CommentInputText/>
+            <CommentInputAttachment/>
+          </Flex>
+        </S.CommentInputBoxInner>
+        <CommentInputButtons/>
+      </Flex>
+    </S.CommentInputBoxWrapper>
   )
 }
 
 const CommentInputText = () => {
+
+
+  const toolbarSettings: ToolbarSettingsModel = {
+    items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
+      'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
+      'LowerCase', 'UpperCase', '|',
+      'Formats', 'Alignments', 'OrderedList', 'UnorderedList',
+      'Outdent', 'Indent', '|',
+      'CreateLink', 'Image', '|', 'ClearFormat', 'Print',
+      'SourceCode', 'FullScreen', '|', 'Undo', 'Redo'
+    ],
+    type: ToolbarType.Expand
+  };
+
   return (
-    <div>CommentInputText</div>
+    <RichTextEditorComponent toolbarSettings={toolbarSettings}>
+      <></>
+      <Inject services={[SyncToolbar, Image, Link, HtmlEditor, QuickToolbar]} />
+    </RichTextEditorComponent>
   )
 }
 
 const CommentInputAttachment = () => {
+  const handleClick = action => () => console.log(`'${action}' was clicked`)
+
   return (
-    <div>CommentInputAttachment</div>
+    <S.CommentInputAttachmentWrapper>
+      <div className="row m-0">
+        <div className="col-md-6 p-0">
+          <Attachment
+            icon={<WordColorIcon />}
+            header="File word File word File word File word.docx"
+            actionable
+            action={
+              {
+                icon: <CloseIcon />,
+                onClick: handleClick('Remove'),
+                title: 'Close',
+              }
+            }
+          />
+        </div>
+        <div className="col-md-6 p-0">
+          <Attachment
+            icon={<ExcelColorIcon />}
+            header="File excel.docx"
+            actionable
+            action={
+              {
+                icon: <CloseIcon />,
+                onClick: handleClick('Remove'),
+                title: 'Close',
+              }
+            }
+          />
+        </div>
+        <div className="col-md-6 p-0">
+          <Attachment
+            icon={<PowerPointColorIcon />}
+            header="File powerpoint.docx"
+            actionable
+            action={
+              {
+                icon: <CloseIcon />,
+                onClick: handleClick('Remove'),
+                title: 'Close',
+              }
+            }
+          />
+        </div>
+      </div>
+    </S.CommentInputAttachmentWrapper>
   )
 }
 

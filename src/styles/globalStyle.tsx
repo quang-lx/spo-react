@@ -159,10 +159,6 @@ export default createGlobalStyle<{ theme: ThemeType }>`
     flex: 0 0 auto;
   }
   
-  .test-color {
-    color: ${({theme}) => theme.siteVariables.borderColor};
-  }
-  
   .unset-width {
     min-width: unset;
     width: auto;
@@ -200,6 +196,9 @@ export default createGlobalStyle<{ theme: ThemeType }>`
     }
     .ui-box {
       margin-right: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
     .ui-chat__message {
       margin-right: 0;
@@ -215,6 +214,74 @@ export default createGlobalStyle<{ theme: ThemeType }>`
     .ui-chat__message {
       margin-right: 0;
       max-width: unset;
+    }
+  }
+  
+  .comment-input {
+    .e-richtexteditor {
+      border: none !important;
+      //.e-toolbar-wrapper {
+      //  height: 2rem !important;
+      //}
+
+      .e-toolbar {
+        min-height: 2rem !important;
+
+        .e-hor-nav {
+          width: 2rem;
+          min-height: 2rem;
+          height: 2rem;
+          border-top-right-radius: 4px;
+        }
+      }
+      
+      .e-toolbar-items {
+        min-height: 2rem !important;
+        height: 2rem !important;
+        border-top-left-radius: 4px;
+      }
+      
+      .e-toolbar-item {
+        &:not(.e-separator) {
+          min-width: 2rem !important;
+          min-height: 2rem !important;
+
+          .e-tbar-btn {
+            min-height: 2rem !important;
+            min-width: 2rem !important;
+          }
+        }
+        
+        &.e-separator {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+      }
+      
+      .e-rte-content {
+        border-bottom: none;
+      }
+    }
+    .e-rte-inline-dropdown .e-rte-color-content .e-rte-elements {
+      line-height: inherit;
+    }
+    
+    .e-richtexteditor .e-rte-toolbar .e-toolbar-item .e-icons {
+      color: ${({theme}) => theme.siteVariables.bodyColor}; 
+    }
+    
+    .ui-attachment {
+      width: calc(100% - 0.25rem);
+      box-shadow: none;
+      margin-bottom: 0.25rem;
+    }
+    .ui-attachment__body {
+      overflow: hidden;
+    }
+    .ui-attachment__header {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 `
