@@ -18,7 +18,7 @@ export const Content = styled.div `
   padding: 0.5rem 0;
   //background-color: olive;
   height: 100%;
-  background: ${props => props.theme.siteVariables.colors.grey[100]};
+  //background: ${props => props.theme.siteVariables.colors.grey[100]};
 `
 
 export const ContentInner = styled.div `

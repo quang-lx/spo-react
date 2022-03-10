@@ -82,7 +82,7 @@ const CommentHistory: React.FunctionComponent<CommentHistoryProps> = (props) => 
 
   return (
     <Chat
-      className={`pl-0 pr-0 ${className}`}
+      className={`pl-0 pr-0 comment-history ${className}`}
       items={items}
     />
   )

@@ -15,7 +15,7 @@ const Comment: React.FunctionComponent<CommentProps> = (props) => {
       <Flex column>
         <CommentToolbar className="mb-3"/>
         <CommentInput/>
-        <CommentHistory className="mt-3"/>
+        <CommentHistory className="mt-4"/>
       </Flex>
     </S.CommentWrapper>
   )
