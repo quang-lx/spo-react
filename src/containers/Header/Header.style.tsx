@@ -45,3 +45,7 @@ export const ProfilePopupContent = styled.div `
 export const LogoWrapper = styled.div `
   width: calc(${props => props.theme.siteVariables.menuWidth} + ${props => props.theme.siteVariables.smallSubMenuWidth});
 `
+
+export const SearchBarWrapper = styled.div `
+  max-width: ${props => props.theme.siteVariables.bigSubMenuWidth};
+`
