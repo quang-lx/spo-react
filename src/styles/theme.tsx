@@ -34,7 +34,8 @@ export const appTheme = {
     blackColor: "#201f1e",
     rightBarWidth: "13.375rem",
     commentLeftColumnWidth: "2.5rem",
-    commentReplyBackgroundColor: "#fafafa"
+    commentReplyBackgroundColor: "#fafafa",
+    mentionHoveredBackground: "#ebebeb"
   }
 }
 

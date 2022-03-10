@@ -21,8 +21,7 @@ import {
   FilesPdfIcon
 } from '@fluentui/react-icons-northstar';
 import * as S from './Comment.style';
-import { HtmlEditor, Image, Inject, Link, QuickToolbar, RichTextEditorComponent, Toolbar as SyncToolbar, ToolbarSettingsModel, ToolbarType } from '@syncfusion/ej2-react-richtexteditor';
-
+import CommentInputText from "./CommentInputText";
 
 interface CommentInputProps {
 
@@ -52,29 +51,6 @@ const CommentInputBox: React.FunctionComponent = () => {
         <CommentInputButtons/>
       </Flex>
     </S.CommentInputBoxWrapper>
-  )
-}
-
-const CommentInputText = () => {
-
-
-  const toolbarSettings: ToolbarSettingsModel = {
-    items: ['Bold', 'Italic', 'Underline', 'StrikeThrough',
-      'FontName', 'FontSize', 'FontColor', 'BackgroundColor',
-      'LowerCase', 'UpperCase', '|',
-      'Formats', 'Alignments', 'OrderedList', 'UnorderedList',
-      'Outdent', 'Indent', '|',
-      'CreateLink', 'Image', '|', 'ClearFormat', 'Print',
-      'SourceCode', 'FullScreen', '|', 'Undo', 'Redo'
-    ],
-    type: ToolbarType.Expand
-  };
-
-  return (
-    <RichTextEditorComponent toolbarSettings={toolbarSettings} placeholder="Nhập nội dung thảo luận...">
-      <></>
-      <Inject services={[SyncToolbar, Image, Link, HtmlEditor, QuickToolbar]} />
-    </RichTextEditorComponent>
   )
 }
 

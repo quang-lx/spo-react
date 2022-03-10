@@ -296,4 +296,97 @@ export default createGlobalStyle<{ theme: ThemeType }>`
       text-overflow: ellipsis;
     }
   }
+
+  .tribute-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    max-height: 21.875rem;
+    max-width: 25rem;
+    min-width: 18.75rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+    z-index: 999999;
+    margin: 2px 0 0 0;
+    padding: 0 0.125rem;
+    border-radius: 4px;
+    background: white;
+    box-shadow: ${({theme}) => theme.siteVariables.shadow16};
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+        
+        &.highlight {
+          background: ${({theme}) => theme.siteVariables.mentionHoveredBackground};
+        }
+        
+        &.no-match {
+          cursor: default;
+        }
+        
+        &:first-child {
+          margin-top: 0.5rem;
+        }
+        
+        &:last-child {
+          margin-bottom: 0.5rem;
+        }
+
+        span {
+
+        }
+        
+        .mention {
+          &__item {
+            display: flex;
+            align-items: center;
+          }
+          &__itemmedia {
+            img {
+              width: 2rem;
+              height: 2rem;
+              border-radius: 9999px;
+              margin-right: 0.75rem;
+            }
+          }
+          &__item__main {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1
+          }
+          &__itemcontent {
+            font-size: 0.75rem;
+          }
+          &__itemheader {
+            margin-bottom: -0.25rem;
+            span {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+
+    .menu-highlighted {
+
+    }
+  }
+  
+  .comment-history {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .text-mention {
+    color: ${({theme}) => theme.siteVariables.mainColor};
+  }
 `
