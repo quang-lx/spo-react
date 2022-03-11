@@ -389,4 +389,14 @@ export default createGlobalStyle<{ theme: ThemeType }>`
   .text-mention {
     color: ${({theme}) => theme.siteVariables.mainColor};
   }
+  
+  #document-editor_editor_viewerContainer {
+    scrollbar-color: ${({theme}) => theme.siteVariables.naturalColors.grey[200]} transparent !important;
+    scrollbar-width: thin !important;
+  }
+  #document-editor {
+    .e-de-ctnr-properties-pane {
+      border-top: 0;
+    }
+  }
 `

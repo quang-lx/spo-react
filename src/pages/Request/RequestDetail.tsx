@@ -5,6 +5,7 @@ import {TextContainerTitle} from '../../components/Text';
 import * as S from './RequestDetail.style';
 import CustomScrollbars from "../../components/CustomScrollbars";
 import {Comment} from "../../components/Comment";
+import {DocumentView} from "../../components/Document"
 
 const RequestDetail: React.FunctionComponent = () => {
 
@@ -57,6 +58,9 @@ const RequestDetailContent: React.FunctionComponent = () => {
       <CustomScrollbars disableHorizontalScrolling={true}>
         <S.ContentInner>
           {/*<List items={items}/>*/}
+          <S.DocumentWrapper>
+            <DocumentView/>
+          </S.DocumentWrapper>
           <Comment/>
         </S.ContentInner>
       </CustomScrollbars>

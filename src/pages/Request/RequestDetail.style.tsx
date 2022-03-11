@@ -31,3 +31,8 @@ export const ContentInner = styled.div `
 export const AdditionInfoInner = styled.div `
   
 `
+
+export const DocumentWrapper = styled.div `
+  padding: 0 1.125rem 0 1.25rem;
+  margin-bottom: 4rem;
+`

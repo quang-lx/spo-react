@@ -13,6 +13,7 @@
     "@fluentui/react-make-styles": "^9.0.0-beta.4",
     "@fluentui/react-northstar": "^0.60.1",
     "@reduxjs/toolkit": "^1.7.2",
+    "@syncfusion/ej2-react-documenteditor": "^19.4.55",
     "@syncfusion/ej2-react-richtexteditor": "^19.4.55",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
