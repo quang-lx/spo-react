@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Avatar, List, Text, Button, Popup} from "@fluentui/react-northstar";
 import {
   TagIcon,
@@ -49,11 +49,9 @@ const MoreButtons: React.FunctionComponent<MoreButtonsProps> = (props) => {
   )
 }
 
-class BigSubMenu extends React.Component {
-  state = {
-    selectedIndex: -1,
-  }
-  items = [
+const BigSubMenu: React.FunctionComponent = (props) => {
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const items = [
     {
       key: "item-1",
       media: (
@@ -561,25 +559,21 @@ class BigSubMenu extends React.Component {
     }
   ]
 
-  actionSelectItem = (e, newProps) => {
-    this.setState({
-      selectedIndex: newProps?.selectedIndex,
-    })
+  const actionSelectItem = (e, newProps) => {
+    setSelectedIndex(newProps?.selectedIndex)
   }
 
-  render() {
-    return (
-      <CustomScrollbars disableHorizontalScrolling>
-        <List
-          className="big-sub-menu"
-          selectedIndex={this.state.selectedIndex}
-          onSelectedIndexChange={this.actionSelectItem}
-          items={this.items}
-          selectable
-        />
-      </CustomScrollbars>
-    );
-  }
+  return (
+    <CustomScrollbars disableHorizontalScrolling>
+      <List
+        className="big-sub-menu"
+        selectedIndex={selectedIndex}
+        onSelectedIndexChange={actionSelectItem}
+        items={items}
+        selectable
+      />
+    </CustomScrollbars>
+  );
 }
 
 export default BigSubMenu;
