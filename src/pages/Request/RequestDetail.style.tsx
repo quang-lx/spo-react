@@ -40,3 +40,8 @@ export const DocumentWrapper = styled.div `
 export const FollowerWrapper = styled.div `
   padding: 0 1.125rem 0 1.25rem;
 `
+
+export const RequestContentWrapper = styled.div `
+  padding: 0 1.125rem 0 1.25rem;
+  margin-bottom: 3rem;
+`
