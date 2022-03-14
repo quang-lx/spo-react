@@ -23,32 +23,6 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
   });
   const [items, setItems] = useState([] as TreeItemProps[]);
 
-  const selectItem = (newItemIndex: number, newParentIndex: number = -1) => {
-    // console.log({newItemIndex, newParentIndex});
-    // console.log("items", items);
-    // const {itemIndex, parentIndex} = selectedIndexes;
-    // let updatedItems = [...items];
-    //
-    // if(updatedItems.length) {
-    //   if(parentIndex > -1) {
-    //     let previousSelectedItem = updatedItems[parentIndex].items![itemIndex]! as TreeItemProps;
-    //     previousSelectedItem.className = previousSelectedItem.className?.replace("active", "");
-    //   } else {
-    //     updatedItems[itemIndex].className = updatedItems[itemIndex].className?.replace("active", "");
-    //   }
-    //
-    //   if(newParentIndex > -1) {
-    //     let selectedItem = updatedItems[newParentIndex].items![newItemIndex]! as TreeItemProps;
-    //     selectedItem.className = selectedItem.className?.concat("active");
-    //   } else {
-    //     updatedItems[newItemIndex].className = updatedItems[newItemIndex].className?.concat("active");
-    //   }
-
-      setSelectedIndexes({itemIndex: newItemIndex, parentIndex: newParentIndex});
-      // setItems(updatedItems);
-    // }
-  }
-
   const setActiveItem = (newItemIndex: number, newParentIndex: number = -1) => {
     setSelectedIndexes({itemIndex: newItemIndex, parentIndex: newParentIndex});
   }
@@ -216,17 +190,6 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
         ],
       },
     ];
-    data = data.map((item, index) => {
-      // if(item?.items?.length) {
-      //   item.items = item.items.map((it: any, idx) => {
-      //     return {...it, onClick: (e, props) => {setActiveItem(props)}}
-      //   })
-      // } else {
-      //   item = {...item, onClick: (e, props) => {setActiveItem(props)}}
-      // }
-
-      return item
-    });
 
     setItems(data);
   }
@@ -252,36 +215,47 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
     </Component>
   )
 
+  const processNavChilds = (childs, parentIndex) => {
+    childs = childs.map((it, idx) => {
+      it = {...it, onClick: () => {setActiveItem(idx, parentIndex)}}
+
+      if(parentIndex === selectedIndexes.parentIndex && idx === selectedIndexes.itemIndex) {
+        it.className = it.className?.concat(" active");
+      }
+
+      return it;
+    });
+
+    return childs;
+  }
+
+  const processNavs = (navs) => {
+    navs = navs.map((item, index) => {
+      if(Array.isArray(item.items) && item.items.length) {
+        let childs = item.items as unknown as TreeItemProps[];
+        childs = processNavChilds(childs, index);
+
+        item = {...item, items: childs}
+      } else {
+        item = {...item, onClick: () => {setActiveItem(index)}}
+
+        if(index === selectedIndexes.itemIndex && selectedIndexes.parentIndex === -1) {
+          item.className = item.className?.concat(" active");
+        }
+      }
+
+      return item;
+    });
+
+    return navs
+  }
+
   return (
     <CustomScrollbars disableHorizontalScrolling>
       <Tree
         aria-label="submenu"
         className="small-sub-menu pl-0 pt-2"
-        items={items.map((item, index) => {
-          if(Array.isArray(item.items) && item.items.length) {
-            let childs = item.items as unknown as TreeItemProps[];
-
-            childs = childs.map((it, idx) => {
-              it = {...it, onClick: () => {setActiveItem(idx, index)}}
-
-              if(index === selectedIndexes.parentIndex && idx === selectedIndexes.itemIndex) {
-                it.className = it.className?.concat(" active");
-              }
-
-              return it;
-            })
-
-            item = {...item, items: childs}
-          } else {
-            item = {...item, onClick: () => {setActiveItem(index)}}
-
-            if(index === selectedIndexes.itemIndex && selectedIndexes.parentIndex === -1) {
-              item.className = item.className?.concat(" active");
-            }
-          }
-
-          return item;
-        })}
+        items={processNavs(items)}
         renderItemTitle={titleRenderer}
         defaultActiveItemIds={['recently', 'workflow', 'time', 'my']}
       />
