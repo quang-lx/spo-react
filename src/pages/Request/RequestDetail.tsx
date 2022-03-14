@@ -5,6 +5,8 @@ import {TextContainerTitle} from '../../components/Text';
 import * as S from './RequestDetail.style';
 import CustomScrollbars from "../../components/CustomScrollbars";
 import {Comment} from "../../components/Comment";
+import {Follower, IFollower} from "../../components/User";
+import {FollowerWrapper} from "./RequestDetail.style";
 
 const RequestDetail: React.FunctionComponent = () => {
 
@@ -49,6 +51,21 @@ const RequestDetailContent: React.FunctionComponent = () => {
       </Text>,
       className: "mb-2"
     }
+  ];
+
+  const followers: IFollower[] = [
+    {
+      avatar: "https://i.ibb.co/Vjq1gg7/148714090-3979558975396760-8986126341265647886-n.jpg"
+    },
+    {
+      avatar: "https://i.ibb.co/jL8msg3/271914657-2051122095047442-6201605861733351206-n.jpg"
+    },
+    {
+      avatar: "https://i.ibb.co/tZcDv99/236285939-3308320666067112-4201085366173673459-n.jpg"
+    },
+    {
+      name: "+ 5"
+    }
   ]
 
   return (
@@ -56,6 +73,10 @@ const RequestDetailContent: React.FunctionComponent = () => {
       <CustomScrollbars disableHorizontalScrolling={true}>
         <S.ContentInner>
           {/*<List items={items}/>*/}
+          <S.FollowerWrapper>
+            <Follower list={followers}/>
+          </S.FollowerWrapper>
+
           <Comment/>
         </S.ContentInner>
       </CustomScrollbars>

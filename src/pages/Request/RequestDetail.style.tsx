@@ -36,3 +36,7 @@ export const DocumentWrapper = styled.div `
   padding: 0 1.125rem 0 1.25rem;
   margin-bottom: 4rem;
 `
+
+export const FollowerWrapper = styled.div `
+  padding: 0 1.125rem 0 1.25rem;
+`
