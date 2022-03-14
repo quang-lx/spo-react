@@ -399,4 +399,24 @@ export default createGlobalStyle<{ theme: ThemeType }>`
       border-top: 0;
     }
   }
+  
+  .big-sub-menu {
+    .ui-list__item__main {
+      .ui-list__itemheader {
+        .ui-icon svg {
+          margin-top: -1px;
+        }
+      }
+      .ui-list__itemheadermedia {
+        .ui-icon svg {
+          margin-top: -0.25rem;
+        }
+      }
+      .ui-list__itemcontent {
+        .ui-icon svg {
+          margin-top: -0.25rem;
+        }
+      }
+    }
+  }
 `

@@ -22,14 +22,34 @@ export const MenuBlock = styled.div`
     //}
     .ui-menu {
       &__itemwrapper {
-        padding: 4px 0;
+        padding: 4px 0 4px 4px;
         border: 0;
       }
       &__item {
         margin: 0;
-        padding-left: 0;
-        padding-right: 0;
-        border: 0
+        padding: 0;
+        width: 100%;
+        height: 2.25rem;
+        border-left: 2px solid transparent;
+        
+        .ui-menu__itemicon {
+          height: 100%;
+          width: 100%;
+        }
+        
+        .ui-icon {
+          text-align: center;
+          align-items: center;
+          display: flex;
+          
+          svg {
+            margin: auto;
+          }
+        }
+        
+        &.active {
+          border-left-color: ${props => props.theme.siteVariables.mainColor};
+        }
       }
       &__itemcontent {
         margin-right: 0;

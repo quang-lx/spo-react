@@ -24,23 +24,24 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
   const [items, setItems] = useState([] as TreeItemProps[]);
 
   const selectItem = (newItemIndex: number, newParentIndex: number = -1) => {
-
+    console.log({newItemIndex, newParentIndex});
+    console.log("items", items);
     const {itemIndex, parentIndex} = selectedIndexes;
     let updatedItems = [...items];
 
     if(updatedItems.length) {
       if(parentIndex > -1) {
         let previousSelectedItem = updatedItems[parentIndex].items![itemIndex]! as TreeItemProps;
-        previousSelectedItem.className = previousSelectedItem.className?.replace(" active", "");
+        previousSelectedItem.className = previousSelectedItem.className?.replace("active", "");
       } else {
-        updatedItems[itemIndex].className = updatedItems[itemIndex].className?.replace(" active", "");
+        updatedItems[itemIndex].className = updatedItems[itemIndex].className?.replace("active", "");
       }
 
       if(newParentIndex > -1) {
         let selectedItem = updatedItems[newParentIndex].items![newItemIndex]! as TreeItemProps;
-        selectedItem.className = selectedItem.className?.concat(" active");
+        selectedItem.className = selectedItem.className?.concat("active");
       } else {
-        updatedItems[newItemIndex].className = updatedItems[newItemIndex].className?.concat(" active");
+        updatedItems[newItemIndex].className = updatedItems[newItemIndex].className?.concat("active");
       }
 
       setSelectedIndexes({itemIndex: newItemIndex, parentIndex: newParentIndex});
@@ -227,8 +228,8 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
   }
 
   useEffect(() => {
-
-  })
+    getNavs();
+  }, [])
 
   const titleRenderer = (Component, restProps) => (
     <Component expanded={restProps.expanded} hasSubtree={restProps.hasSubtree} {...restProps}>

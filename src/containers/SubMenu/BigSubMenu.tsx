@@ -60,15 +60,16 @@ const BigSubMenu: React.FunctionComponent = (props) => {
 
         />
       ),
-      header: <Text><Text color="brand" title="Gấp"><TagIcon size="smaller"/></Text> <Text title="Nguyễn Mạnh Cường">Nguyễn Mạnh Cường</Text></Text>,
+      header: <Text><Text title="Nguyễn Mạnh Cường">Nguyễn Mạnh Cường</Text></Text>,
       headerMedia: <Text className="text-nowrap">
-                      <Text color="red" className="pr-2" title="Sắp đến hạn"><RedbangIcon size="smaller"/></Text>
-                      <Text color="yellow" className="pr-2" title="Quan trọng"><StarIcon size="smaller"/></Text>7:26
+                      <Text color="red" className="pr-2" title="Sắp đến hạn"><RedbangIcon outline size="small"/></Text>
+                      <Text color="brand" className="pr-2" title="Gấp"><TagIcon outline size="small"/></Text>
+                      <Text color="brand" className="pr-2" title="Quan trọng"><StarIcon outline size="small"/></Text>7:26
                   </Text>,
       content: <Text>
                 210724/TTR - Đề xuất pr các hạng mục truyền thông khẩu trang kool mask - pr sản phẩm mới
                 <Text color="brand">
-                  <span className="d-block w-100 pt-1"><ChatIcon size="smaller" {...{outline: true}}/> Phê duyệt tờ trình</span>
+                  <span className="d-block w-100 pt-1"><ChatIcon size="small" {...{outline: true}}/> Phê duyệt tờ trình</span>
                 </Text>
               </Text>,
       endMedia: <MoreButtons/>,
@@ -84,14 +85,15 @@ const BigSubMenu: React.FunctionComponent = (props) => {
 
         />
       ),
-      header: <Text weight="semibold" className="text-black"><Text color="red"><TagIcon size="smaller"/></Text> Trần Đình Thủy</Text>,
+      header: <Text weight="semibold" className="text-black">Trần Đình Thủy</Text>,
       headerMedia: <Text className="text-black" weight="semibold">
-                    <Text color="yellow" className="pr-2"><StarIcon size="smaller"/></Text>11:30
+                    <Text color="red" className="pr-2"><TagIcon outline size="small"/></Text>
+                    <Text color="brand" className="pr-2" title="Quan trọng"><StarIcon outline size="small"/></Text>11:30
                   </Text>,
       content: <Text color="brand" weight="semibold">
                 Phát sinh tăng hạng mục xây dựng, nội thất, m&e ( điều chỉnh boq cho phù hợp): 121.914.600đ - phát sinh tăng hạng mục quảng cáo ( do thay đổi thiết kế sau khi chốt boq) : 11.520.000đ
                 <Text color="brand">
-                  <span className="d-block w-100 pt-1"><ChatIcon size="smaller" {...{outline: true}}/> Phản hồi thảo luận</span>
+                  <span className="d-block w-100 pt-1"><ChatIcon size="small" {...{outline: true}}/> Phản hồi thảo luận</span>
                 </Text>
               </Text>,
       endMedia: <MoreButtons/>,
@@ -108,7 +110,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       ),
       header: <Text content="Nguyễn Như Hiếu" weight="semibold" className="text-black"/>,
       headerMedia: <Text className="text-black" weight="semibold">
-                    <Text color="red" className="pr-2"><UrgentIcon size="smaller"/></Text>15:30
+                    <Text color="red" className="pr-2"><UrgentIcon outline size="small"/></Text>15:30
                   </Text>,
       content: <Text
         content="[BPXDMN_29/04] Dự Án Lầu 3 Nguyễn Thái Học, 83 Nguyễn Thái Học, Phường Cầu Ông Lãnh, Quận 1, TP HCM"
@@ -124,7 +126,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       ),
       header: <Text content="Ngô Hoàng Nam"/>,
       headerMedia: <Text>
-                    <Text color="red" className="pr-2"><UrgentIcon size="smaller"/></Text>6:45 2/3
+                    <Text color="red" className="pr-2"><UrgentIcon outline size="small"/></Text>6:45 2/3
                   </Text>,
       content: <Text
         content="[ITHCM-02/11/2021] Xin duyệt chủ trương mua sắm các thiết bị vật tư cho dự án cửa hàng lẩu Aeon Mall Tân Phú"/>,
@@ -187,15 +189,16 @@ const BigSubMenu: React.FunctionComponent = (props) => {
 
         />
       ),
-      header: <Text><Text color="brand"><TagIcon size="smaller"/></Text> Nguyễn Mạnh Cường</Text>,
-      headerMedia: <Text>
-        <Text color="red" className="pr-2"><RedbangIcon size="smaller"/></Text>
-        <Text color="yellow" className="pr-2"><StarIcon size="smaller"/></Text>7:26
+      header: <Text><Text title="Nguyễn Mạnh Cường">Nguyễn Mạnh Cường</Text></Text>,
+      headerMedia: <Text className="text-nowrap">
+        <Text color="red" className="pr-2" title="Sắp đến hạn"><RedbangIcon outline size="small"/></Text>
+        <Text color="brand" className="pr-2" title="Gấp"><TagIcon outline size="small"/></Text>
+        <Text color="brand" className="pr-2" title="Quan trọng"><StarIcon outline size="small"/></Text>7:26
       </Text>,
       content: <Text>
         210724/TTR - Đề xuất pr các hạng mục truyền thông khẩu trang kool mask - pr sản phẩm mới
         <Text color="brand">
-          <span className="d-block w-100 pt-1"><ChatIcon size="smaller" {...{outline: true}}/> Phê duyệt tờ trình</span>
+          <span className="d-block w-100 pt-1"><ChatIcon size="small" {...{outline: true}}/> Phê duyệt tờ trình</span>
         </Text>
       </Text>,
       endMedia: <MoreButtons/>,
@@ -211,14 +214,15 @@ const BigSubMenu: React.FunctionComponent = (props) => {
 
         />
       ),
-      header: <Text weight="semibold" className="text-black"><Text color="red"><TagIcon size="smaller"/></Text> Trần Đình Thủy</Text>,
+      header: <Text weight="semibold" className="text-black">Trần Đình Thủy</Text>,
       headerMedia: <Text className="text-black" weight="semibold">
-        <Text color="yellow" className="pr-2"><StarIcon size="smaller"/></Text>11:30
+        <Text color="red" className="pr-2"><TagIcon outline size="small"/></Text>
+        <Text color="brand" className="pr-2" title="Quan trọng"><StarIcon outline size="small"/></Text>11:30
       </Text>,
       content: <Text color="brand" weight="semibold">
         Phát sinh tăng hạng mục xây dựng, nội thất, m&e ( điều chỉnh boq cho phù hợp): 121.914.600đ - phát sinh tăng hạng mục quảng cáo ( do thay đổi thiết kế sau khi chốt boq) : 11.520.000đ
         <Text color="brand">
-          <span className="d-block w-100 pt-1"><ChatIcon size="smaller" {...{outline: true}}/> Phản hồi thảo luận</span>
+          <span className="d-block w-100 pt-1"><ChatIcon size="small" {...{outline: true}}/> Phản hồi thảo luận</span>
         </Text>
       </Text>,
       endMedia: <MoreButtons/>,
@@ -235,7 +239,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       ),
       header: <Text content="Nguyễn Như Hiếu" weight="semibold" className="text-black"/>,
       headerMedia: <Text className="text-black" weight="semibold">
-        <Text color="red" className="pr-2"><UrgentIcon size="smaller"/></Text>15:30
+        <Text color="red" className="pr-2"><UrgentIcon outline size="small"/></Text>15:30
       </Text>,
       content: <Text
         content="[BPXDMN_29/04] Dự Án Lầu 3 Nguyễn Thái Học, 83 Nguyễn Thái Học, Phường Cầu Ông Lãnh, Quận 1, TP HCM"
@@ -251,7 +255,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       ),
       header: <Text content="Ngô Hoàng Nam"/>,
       headerMedia: <Text>
-        <Text color="red" className="pr-2"><UrgentIcon size="smaller"/></Text>6:45 2/3
+        <Text color="red" className="pr-2"><UrgentIcon outline size="small"/></Text>6:45 2/3
       </Text>,
       content: <Text
         content="[ITHCM-02/11/2021] Xin duyệt chủ trương mua sắm các thiết bị vật tư cho dự án cửa hàng lẩu Aeon Mall Tân Phú"/>,
@@ -313,15 +317,16 @@ const BigSubMenu: React.FunctionComponent = (props) => {
 
         />
       ),
-      header: <Text><Text color="brand"><TagIcon size="smaller"/></Text> Nguyễn Mạnh Cường</Text>,
-      headerMedia: <Text>
-        <Text color="red" className="pr-2"><RedbangIcon size="smaller"/></Text>
-        <Text color="yellow" className="pr-2"><StarIcon size="smaller"/></Text>7:26
+      header: <Text><Text title="Nguyễn Mạnh Cường">Nguyễn Mạnh Cường</Text></Text>,
+      headerMedia: <Text className="text-nowrap">
+        <Text color="red" className="pr-2" title="Sắp đến hạn"><RedbangIcon outline size="small"/></Text>
+        <Text color="brand" className="pr-2" title="Gấp"><TagIcon outline size="small"/></Text>
+        <Text color="brand" className="pr-2" title="Quan trọng"><StarIcon outline size="small"/></Text>7:26
       </Text>,
       content: <Text>
         210724/TTR - Đề xuất pr các hạng mục truyền thông khẩu trang kool mask - pr sản phẩm mới
         <Text color="brand">
-          <span className="d-block w-100 pt-1"><ChatIcon size="smaller" {...{outline: true}}/> Phê duyệt tờ trình</span>
+          <span className="d-block w-100 pt-1"><ChatIcon size="small" {...{outline: true}}/> Phê duyệt tờ trình</span>
         </Text>
       </Text>,
       endMedia: <MoreButtons/>,
@@ -337,14 +342,15 @@ const BigSubMenu: React.FunctionComponent = (props) => {
 
         />
       ),
-      header: <Text weight="semibold" className="text-black"><Text color="red"><TagIcon size="smaller"/></Text> Trần Đình Thủy</Text>,
+      header: <Text weight="semibold" className="text-black">Trần Đình Thủy</Text>,
       headerMedia: <Text className="text-black" weight="semibold">
-        <Text color="yellow" className="pr-2"><StarIcon size="smaller"/></Text>11:30
+        <Text color="red" className="pr-2"><TagIcon outline size="small"/></Text>
+        <Text color="brand" className="pr-2" title="Quan trọng"><StarIcon outline size="small"/></Text>11:30
       </Text>,
       content: <Text color="brand" weight="semibold">
         Phát sinh tăng hạng mục xây dựng, nội thất, m&e ( điều chỉnh boq cho phù hợp): 121.914.600đ - phát sinh tăng hạng mục quảng cáo ( do thay đổi thiết kế sau khi chốt boq) : 11.520.000đ
         <Text color="brand">
-          <span className="d-block w-100 pt-1"><ChatIcon size="smaller" {...{outline: true}}/> Phản hồi thảo luận</span>
+          <span className="d-block w-100 pt-1"><ChatIcon size="small" {...{outline: true}}/> Phản hồi thảo luận</span>
         </Text>
       </Text>,
       endMedia: <MoreButtons/>,
@@ -361,7 +367,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       ),
       header: <Text content="Nguyễn Như Hiếu" weight="semibold" className="text-black"/>,
       headerMedia: <Text className="text-black" weight="semibold">
-        <Text color="red" className="pr-2"><UrgentIcon size="smaller"/></Text>15:30
+        <Text color="red" className="pr-2"><UrgentIcon outline size="small"/></Text>15:30
       </Text>,
       content: <Text
         content="[BPXDMN_29/04] Dự Án Lầu 3 Nguyễn Thái Học, 83 Nguyễn Thái Học, Phường Cầu Ông Lãnh, Quận 1, TP HCM"
@@ -377,7 +383,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       ),
       header: <Text content="Ngô Hoàng Nam"/>,
       headerMedia: <Text>
-        <Text color="red" className="pr-2"><UrgentIcon size="smaller"/></Text>6:45 2/3
+        <Text color="red" className="pr-2"><UrgentIcon outline size="small"/></Text>6:45 2/3
       </Text>,
       content: <Text
         content="[ITHCM-02/11/2021] Xin duyệt chủ trương mua sắm các thiết bị vật tư cho dự án cửa hàng lẩu Aeon Mall Tân Phú"/>,
@@ -439,15 +445,16 @@ const BigSubMenu: React.FunctionComponent = (props) => {
 
         />
       ),
-      header: <Text><Text color="brand"><TagIcon size="smaller"/></Text> Nguyễn Mạnh Cường</Text>,
-      headerMedia: <Text>
-        <Text color="red" className="pr-2"><RedbangIcon size="smaller"/></Text>
-        <Text color="yellow" className="pr-2"><StarIcon size="smaller"/></Text>7:26
+      header: <Text><Text title="Nguyễn Mạnh Cường">Nguyễn Mạnh Cường</Text></Text>,
+      headerMedia: <Text className="text-nowrap">
+        <Text color="red" className="pr-2" title="Sắp đến hạn"><RedbangIcon outline size="small"/></Text>
+        <Text color="brand" className="pr-2" title="Gấp"><TagIcon outline size="small"/></Text>
+        <Text color="brand" className="pr-2" title="Quan trọng"><StarIcon outline size="small"/></Text>7:26
       </Text>,
       content: <Text>
         210724/TTR - Đề xuất pr các hạng mục truyền thông khẩu trang kool mask - pr sản phẩm mới
         <Text color="brand">
-          <span className="d-block w-100 pt-1"><ChatIcon size="smaller" {...{outline: true}}/> Phê duyệt tờ trình</span>
+          <span className="d-block w-100 pt-1"><ChatIcon size="small" {...{outline: true}}/> Phê duyệt tờ trình</span>
         </Text>
       </Text>,
       endMedia: <MoreButtons/>,
@@ -463,14 +470,15 @@ const BigSubMenu: React.FunctionComponent = (props) => {
 
         />
       ),
-      header: <Text weight="semibold" className="text-black"><Text color="red"><TagIcon size="smaller"/></Text> Trần Đình Thủy</Text>,
+      header: <Text weight="semibold" className="text-black">Trần Đình Thủy</Text>,
       headerMedia: <Text className="text-black" weight="semibold">
-        <Text color="yellow" className="pr-2"><StarIcon size="smaller"/></Text>11:30
+        <Text color="red" className="pr-2"><TagIcon outline size="small"/></Text>
+        <Text color="brand" className="pr-2" title="Quan trọng"><StarIcon outline size="small"/></Text>11:30
       </Text>,
       content: <Text color="brand" weight="semibold">
         Phát sinh tăng hạng mục xây dựng, nội thất, m&e ( điều chỉnh boq cho phù hợp): 121.914.600đ - phát sinh tăng hạng mục quảng cáo ( do thay đổi thiết kế sau khi chốt boq) : 11.520.000đ
         <Text color="brand">
-          <span className="d-block w-100 pt-1"><ChatIcon size="smaller" {...{outline: true}}/> Phản hồi thảo luận</span>
+          <span className="d-block w-100 pt-1"><ChatIcon size="small" {...{outline: true}}/> Phản hồi thảo luận</span>
         </Text>
       </Text>,
       endMedia: <MoreButtons/>,
@@ -487,7 +495,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       ),
       header: <Text content="Nguyễn Như Hiếu" weight="semibold" className="text-black"/>,
       headerMedia: <Text className="text-black" weight="semibold">
-        <Text color="red" className="pr-2"><UrgentIcon size="smaller"/></Text>15:30
+        <Text color="red" className="pr-2"><UrgentIcon outline size="small"/></Text>15:30
       </Text>,
       content: <Text
         content="[BPXDMN_29/04] Dự Án Lầu 3 Nguyễn Thái Học, 83 Nguyễn Thái Học, Phường Cầu Ông Lãnh, Quận 1, TP HCM"
@@ -503,7 +511,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       ),
       header: <Text content="Ngô Hoàng Nam"/>,
       headerMedia: <Text>
-        <Text color="red" className="pr-2"><UrgentIcon size="smaller"/></Text>6:45 2/3
+        <Text color="red" className="pr-2"><UrgentIcon outline size="small"/></Text>6:45 2/3
       </Text>,
       content: <Text
         content="[ITHCM-02/11/2021] Xin duyệt chủ trương mua sắm các thiết bị vật tư cho dự án cửa hàng lẩu Aeon Mall Tân Phú"/>,

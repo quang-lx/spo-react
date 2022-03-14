@@ -1,7 +1,15 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import * as S from './AppMenu.style';
-import { Menu, Text } from '@fluentui/react-northstar';
-import { SendIcon, SurveyIcon, GridIcon, PollIcon, DoorArrowLeftIcon } from '@fluentui/react-icons-northstar';
+import {Menu, Text, Tooltip} from '@fluentui/react-northstar';
+import {
+  SendIcon,
+  SurveyIcon,
+  GridIcon,
+  PollIcon,
+  DoorArrowLeftIcon,
+  ContentIcon
+
+} from '@fluentui/react-icons-northstar';
 
 interface MenuProps {
 
@@ -9,28 +17,52 @@ interface MenuProps {
 
 export const AppMenu: React.FunctionComponent<MenuProps> = (props) => {
   // const { children, to, className } = props
-  const items = [
+  const initMenuItems = [
+    {
+      key: 'dashboard',
+      icon: <Tooltip trigger={<ContentIcon {...{outline: true}} />} content="Dashboard" pointing position="after"/>,
+      className: "active"
+    },
     {
       key: 'request',
-      content: <MenuItem icon={<SurveyIcon />} content="Request" />
+      icon: <Tooltip trigger={<SurveyIcon/>} content="Request" pointing position="after"/>,
+      className: ""
     },
     {
       key: 'cv',
-      content: <MenuItem icon={<PollIcon {...{outline: true}} />} content="Công việc" />
+      icon: <Tooltip trigger={<PollIcon {...{outline: true}} />} content="Công việc" pointing position="after"/>,
+      className: ""
     },
     {
       key: 'da',
-      content: <MenuItem icon={<GridIcon {...{outline: true}} />} content="Dự án" />
+      icon: <Tooltip trigger={<GridIcon {...{outline: true}} />} content="Dự án" pointing position="after"/>,
+      className: ""
     },
     {
       key: 'vb-di',
-      content: <MenuItem icon={<SendIcon {...{outline: true}} />} content="VB đi" />
+      icon: <Tooltip trigger={<SendIcon {...{outline: true}} />} content="Văn bản đi" pointing position="after"/>,
+      className: ""
     },
     {
       key: 'vb-den',
-      content: <MenuItem icon={<DoorArrowLeftIcon {...{outline: true}} />} content="VB đến" />
+      icon: <Tooltip trigger={<DoorArrowLeftIcon {...{outline: true}} />} content="Văn bản đến" pointing position="after"/>,
+      className: ""
     }
   ]
+
+  const [items, setItems] = useState(initMenuItems);
+
+  useEffect(() => {
+
+  }, [items])
+
+  const updateActiveItem = (props) => {
+    let newItems = [...initMenuItems];
+    newItems[0].className = "";
+    newItems[props.activeIndex].className = "active";
+
+    setItems(newItems);
+  }
 
   return (
     <S.MenuBlock>
@@ -42,6 +74,9 @@ export const AppMenu: React.FunctionComponent<MenuProps> = (props) => {
         className="pt-0 pb-0 w-100 bg-transparent h-100 app-menu"
         iconOnly
         items={items}
+        onActiveIndexChange={(e, props) => {
+          updateActiveItem(props)
+        }}
       />
     </S.MenuBlock>
   );
@@ -56,7 +91,7 @@ const MenuItem: React.FunctionComponent<MenuItemProps> = (props) => {
   return (
     <div className="text-center">
       {props.icon}
-      <Text content={props.content} size="smaller" truncated className="d-block mt-1" />
+      <Text content={props.content} size="smaller" truncated className="d-block mt-1"/>
     </div>
   );
 }
