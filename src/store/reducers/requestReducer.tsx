@@ -1,5 +1,5 @@
 import { requestActionType } from '../actionTypes';
-import { IRequest } from '../../interfaces/requestInterfaces';
+import { IRequest } from '../../interfaces/RequestInterfaces';
 
 interface IRequestReducer {
     requests: IRequest[],

@@ -5,7 +5,6 @@ import {TextContainerTitle} from '../../components/Text';
 import * as S from './RequestDetail.style';
 import CustomScrollbars from "../../components/CustomScrollbars";
 import {Comment} from "../../components/Comment";
-import {Follower, IFollower} from "../../components/User";
 import RequestContent from "./RequestContent";
 
 const RequestDetail: React.FunctionComponent = () => {

@@ -1,10 +1,7 @@
 import {Button, Toolbar, Text} from "@fluentui/react-northstar";
 import {TvIcon, PollIcon, MoleculeIcon} from "@fluentui/react-icons-northstar";
 import React from "react";
-
-interface MainContainerToolbarProps {
-
-}
+import {MainContainerToolbarProps} from "../../interfaces/ContainerInterfaces";
 
 const ContainerToolbar: React.FunctionComponent<MainContainerToolbarProps> = (props) => {
   const items = [
