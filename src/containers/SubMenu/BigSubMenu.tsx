@@ -11,10 +11,7 @@ import {
   TrashCanIcon
 } from "@fluentui/react-icons-northstar";
 import CustomScrollbars from "../../components/CustomScrollbars";
-
-interface MoreButtonsProps {
-
-}
+import {MoreButtonsProps} from "../../interfaces/SubMenuInterfaces";
 
 const MoreButtons: React.FunctionComponent<MoreButtonsProps> = (props) => {
   return (

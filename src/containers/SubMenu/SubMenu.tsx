@@ -5,10 +5,7 @@ import SmallSubMenuToolbar from "./SmallSubMenuToolbar";
 import SmallSubMenu from "./SmallSubMenu";
 import BigSubMenu from "./BigSubMenu";
 import BigSubMenuToolbar from "./BigSubMenuToolbar";
-
-interface SubMenuProps {
-
-}
+import {SubMenuProps} from "../../interfaces/SubMenuInterfaces";
 
 export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
   // const { children, to, className } = props

@@ -1,10 +1,7 @@
 import {Button, Toolbar, MenuButton} from "@fluentui/react-northstar";
 import {TabsIcon, ChevronDownMediumIcon, AcceptIcon, ArrowDownIcon, CloseIcon, CircleIcon} from "@fluentui/react-icons-northstar";
 import React from "react";
-
-interface BigSubMenuToolbarProps {
-
-}
+import {BigSubMenuToolbarProps, SortButtonProps} from "../../interfaces/SubMenuInterfaces";
 
 const BigSubMenuToolbar: React.FunctionComponent<BigSubMenuToolbarProps> = (props) => {
   const items = [
@@ -45,10 +42,6 @@ const BigSubMenuToolbar: React.FunctionComponent<BigSubMenuToolbarProps> = (prop
       items={items}
     />
   )
-}
-
-interface SortButtonProps {
-
 }
 
 const SortButton: React.FunctionComponent<SortButtonProps> = (props) => {

@@ -1,4 +1,4 @@
-import {Button, ComponentEventHandler, Text, Tree, TreeItemProps} from "@fluentui/react-northstar";
+import {Button, Text, Tree, TreeItemProps} from "@fluentui/react-northstar";
 import {
   BookmarkIcon,
   CalendarIcon,
@@ -12,10 +12,8 @@ import {
 } from "@fluentui/react-icons-northstar";
 import React, {useEffect, useState} from "react";
 import CustomScrollbars from "../../components/CustomScrollbars";
+import {SmallSubMenuProps} from "../../interfaces/SubMenuInterfaces";
 
-interface SmallSubMenuProps {
-
-}
 const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
   const [selectedIndexes, setSelectedIndexes] = useState({
     itemIndex: 0,

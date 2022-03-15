@@ -1,17 +1,14 @@
 import {Button, Toolbar} from "@fluentui/react-northstar";
 import {MenuIcon} from "@fluentui/react-icons-northstar";
 import React from "react";
-
-interface SmallSubMenuToolbarProps {
-
-}
+import {SmallSubMenuToolbarProps} from "../../interfaces/SubMenuInterfaces";
 
 const SmallSubMenuToolbar: React.FunctionComponent<SmallSubMenuToolbarProps> = (props) => {
   const items = [
     {
       key: 'toggle',
       kind: 'custom',
-      content: <Button flat text iconOnly icon={<MenuIcon/>} primary/>,
+      content: <Button flat text iconOnly icon={<MenuIcon size={"small"} />} primary/>,
       className: 'pl-2 pr-2'
     },
     {
