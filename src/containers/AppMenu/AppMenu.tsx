@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import * as S from './AppMenu.style';
-import {Menu, Text, Tooltip} from '@fluentui/react-northstar';
+import {Menu, Tooltip} from '@fluentui/react-northstar';
 import {
   SendIcon,
   SurveyIcon,
@@ -10,10 +10,7 @@ import {
   ContentIcon
 
 } from '@fluentui/react-icons-northstar';
-
-interface MenuProps {
-
-}
+import {MenuProps} from "../../interfaces/AppMenuInterfaces";
 
 export const AppMenu: React.FunctionComponent<MenuProps> = (props) => {
   // const { children, to, className } = props
@@ -79,19 +76,5 @@ export const AppMenu: React.FunctionComponent<MenuProps> = (props) => {
         }}
       />
     </S.MenuBlock>
-  );
-}
-
-interface MenuItemProps {
-  icon: JSX.Element,
-  content: string
-}
-
-const MenuItem: React.FunctionComponent<MenuItemProps> = (props) => {
-  return (
-    <div className="text-center">
-      {props.icon}
-      <Text content={props.content} size="smaller" truncated className="d-block mt-1"/>
-    </div>
   );
 }

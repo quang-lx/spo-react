@@ -2,10 +2,7 @@ import {Input} from "@fluentui/react-northstar";
 import {SearchIcon} from "@fluentui/react-icons-northstar";
 import React from "react";
 import * as S from "./Header.style";
-
-interface SearchBarProps {
-
-}
+import {SearchBarProps} from "../../interfaces/HeaderInterfaces";
 
 const SearchBar: React.FunctionComponent<SearchBarProps> = () => {
   return (

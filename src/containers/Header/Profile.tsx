@@ -2,10 +2,8 @@ import * as S from "./Header.style";
 import {BellIcon, ContactCardIcon, ToDoListIcon} from "@fluentui/react-icons-northstar";
 import {Avatar, Button, Divider, ItemLayout, List, Popup, Text, Flex} from "@fluentui/react-northstar";
 import React from "react";
+import {ProfileProps, ProfilePopupProps, ProfilePopupContentProps} from "../../interfaces/HeaderInterfaces";
 
-interface ProfileProps {
-
-}
 const Profile: React.FunctionComponent<ProfileProps> = () => {
   return (
     <S.ProfileBlock>
@@ -20,9 +18,6 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
   )
 }
 
-interface ProfilePopupProps {
-
-}
 const ProfilePopup: React.FunctionComponent<ProfilePopupProps> = () => {
   return (
     <Popup
@@ -36,10 +31,6 @@ const ProfilePopup: React.FunctionComponent<ProfilePopupProps> = () => {
       content={<ProfilePopupContent/>}
     />
   )
-}
-
-interface ProfilePopupContentProps {
-
 }
 
 const ProfilePopupContent: React.FunctionComponent<ProfilePopupContentProps> = (props) => {

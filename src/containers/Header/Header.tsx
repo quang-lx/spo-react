@@ -4,10 +4,7 @@ import {Layout, Flex} from '@fluentui/react-northstar';
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 import Profile from "./Profile";
-
-interface HeaderProps {
-
-}
+import {HeaderProps} from "../../interfaces/HeaderInterfaces";
 
 export const Header: React.FunctionComponent<HeaderProps> = (props) => {
   // const { children, to, className } = props
