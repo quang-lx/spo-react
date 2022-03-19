@@ -15,7 +15,7 @@ const TaskFormRedux = () => {
     // const history = useNavigate()
     const { id } = useParams()
 
-    const { taskDetail } = useSelector((state: RootState) => state.todo)
+    const { taskDetail } = useSelector((state: RootState) => state.todoReducer)
 
     const [model, setModel] = useState<ITaskPost>({
         name: '',

@@ -1,5 +1,6 @@
-import {createGlobalStyle} from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
 import {ThemeType} from './theme';
+import {SmallSubMenuToolbarInner} from "../containers/SubMenu/SubMenu.style"
 
 export default createGlobalStyle<{ theme: ThemeType }>`
   html {
@@ -416,6 +417,21 @@ export default createGlobalStyle<{ theme: ThemeType }>`
         .ui-icon svg {
           margin-top: -0.25rem;
         }
+      }
+    }
+  }
+  
+  .sub-menu-block {
+    &:not(.active-small-sub-menu) {
+      .small-sub-menu-toolbar-inner {
+        width: 0;
+        z-index: 0;
+      }
+      .small-sub-menu-block {
+        width: 0;
+      }
+      .big-sub-menu-toolbar-title {
+        display: none;
       }
     }
   }

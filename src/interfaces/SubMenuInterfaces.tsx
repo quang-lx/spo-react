@@ -22,11 +22,16 @@ interface SortButtonProps {
 
 }
 
+interface ISmallSubMenuReducer {
+  open: boolean
+}
+
 export type {
   SubMenuProps,
   SmallSubMenuToolbarProps,
   SmallSubMenuProps,
   MoreButtonsProps,
   BigSubMenuToolbarProps,
-  SortButtonProps
+  SortButtonProps,
+  ISmallSubMenuReducer
 }

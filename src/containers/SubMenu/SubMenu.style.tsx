@@ -30,6 +30,7 @@ export const SubMenuToolbarContent = styled.div `
 export const SmallSubMenuToolbarInner = styled.div `
   width: ${props => props.theme.siteVariables.smallSubMenuWidth};
   border-right: 1px solid transparent;
+  z-index: 1;
 `
 
 export const BigSubMenuToolbarInner = styled.div `

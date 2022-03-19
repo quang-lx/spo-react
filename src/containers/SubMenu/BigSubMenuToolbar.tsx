@@ -11,7 +11,7 @@ const BigSubMenuToolbar: React.FunctionComponent<BigSubMenuToolbarProps> = (prop
       content: <Button disabled flat text icon={<TabsIcon/>}
                        content="Tất cả" className="p-0 text-black justify-content-start"
       />,
-      className: "overflow-hidden"
+      className: "big-sub-menu-toolbar-title overflow-hidden"
     },
     // {
     //   key: "sorted",

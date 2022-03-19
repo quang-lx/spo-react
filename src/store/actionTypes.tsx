@@ -9,5 +9,6 @@ export const RequestActionType = {
 
 export const SubMenuActionType = {
     GET_SUB_MENU: 'GET_SUB_MENU',
-    SET_SUB_MENU: 'SET_SUB_MENU'
+    SET_SUB_MENU: 'SET_SUB_MENU',
+    TOGGLE_SMALL_SUB_MENU: 'TOGGLE_SMALL_SUB_MENU'
 }

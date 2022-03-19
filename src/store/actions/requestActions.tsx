@@ -1,8 +1,8 @@
-import {requestActionType} from '../actionTypes';
+import {RequestActionType} from '../actionTypes';
 
 export const getList = () => {
   return {
-      type: requestActionType.GET_REQUESTS,
+      type: RequestActionType.GET_REQUESTS,
       payload: []
   }
 }
