@@ -1,26 +1,45 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {ISmallSubMenuReducer} from "../../interfaces/SubMenuInterfaces";
+import {ISubMenu} from "../../interfaces/SubMenuInterfaces";
 
-const initialState: ISmallSubMenuReducer = {
-  open: true
+const initialState: ISubMenu = {
+  smallSubMenu: {
+    open: true
+  },
+  bigSubMenu: {
+    title: "",
+    icon: "",
+    sort: {
+      active: 0,
+      field: "",
+      direction: "ASC"
+    }
+  }
 }
 
-const actionToggleSmallSubMenu = (state: ISmallSubMenuReducer) => {
-  console.log("actionToggleSmallSubMenu");
-  state.open = !state.open;
+const actionToggleSmallSubMenu = (state: ISubMenu) => {
+  state.smallSubMenu.open = !state.smallSubMenu.open;
+}
+
+const actionSetBigSubMenuToolbar = (state: ISubMenu, action) => {
+  // console.log(action);
+  state.bigSubMenu = {
+    ...state.bigSubMenu,
+    ...action.payload
+  }
 }
 
 const subMenuSlice = createSlice({
   name: "SubMenu",
   initialState,
   reducers: {
-    toggleSmallSubMenu: actionToggleSmallSubMenu
+    toggleSmallSubMenu: actionToggleSmallSubMenu,
+    setBigSubMenuToolbar: actionSetBigSubMenuToolbar
   },
   extraReducers: (builder) => {
 
   }
 })
 
-export const {toggleSmallSubMenu} = subMenuSlice.actions;
+export const {toggleSmallSubMenu, setBigSubMenuToolbar} = subMenuSlice.actions;
 
 export const subMenuReducer = subMenuSlice.reducer;

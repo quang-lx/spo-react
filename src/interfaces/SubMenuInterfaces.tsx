@@ -1,3 +1,5 @@
+import {TreeItemProps} from "@fluentui/react-northstar";
+
 interface SubMenuProps {
 
 }
@@ -26,6 +28,28 @@ interface ISmallSubMenuReducer {
   open: boolean
 }
 
+interface IBigSubMenuSort {
+  active: number
+  field: string,
+  direction?: string
+}
+
+interface IBigSubMenuReducer {
+  title: string,
+  icon?: string,
+  sort?: IBigSubMenuSort
+}
+
+interface ISubMenu {
+  smallSubMenu: ISmallSubMenuReducer,
+  bigSubMenu: IBigSubMenuReducer
+}
+
+interface ISmallSubMenuItem extends TreeItemProps{
+  itemtitle?: string,
+  itemicon?: string
+}
+
 export type {
   SubMenuProps,
   SmallSubMenuToolbarProps,
@@ -33,5 +57,8 @@ export type {
   MoreButtonsProps,
   BigSubMenuToolbarProps,
   SortButtonProps,
-  ISmallSubMenuReducer
+  ISmallSubMenuReducer,
+  ISubMenu,
+  ISmallSubMenuItem,
+  IBigSubMenuSort
 }

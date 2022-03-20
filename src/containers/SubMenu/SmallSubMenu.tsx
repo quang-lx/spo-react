@@ -12,31 +12,38 @@ import {
 } from "@fluentui/react-icons-northstar";
 import React, {useEffect, useState} from "react";
 import CustomScrollbars from "../../components/CustomScrollbars";
-import {SmallSubMenuProps} from "../../interfaces/SubMenuInterfaces";
+import {SmallSubMenuProps, ISmallSubMenuItem} from "../../interfaces/SubMenuInterfaces";
+import {useDispatch} from "react-redux";
+import {setBigSubMenuToolbar} from "../../store/reducers/subMenuReducer";
 
 const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
+  const dispatch = useDispatch();
+
   const [selectedIndexes, setSelectedIndexes] = useState({
     itemIndex: 0,
     parentIndex: -1
   });
-  const [items, setItems] = useState([] as TreeItemProps[]);
+  const [items, setItems] = useState([] as ISmallSubMenuItem[]);
 
-  const setActiveItem = (newItemIndex: number, newParentIndex: number = -1) => {
+  const setActiveItem = (newItemIndex: number, newParentIndex: number = -1, title: string = "", icon: string = "") => {
+    dispatch(setBigSubMenuToolbar({title, icon}))
     setSelectedIndexes({itemIndex: newItemIndex, parentIndex: newParentIndex});
   }
 
   const getNavs = () => {
-    let data: TreeItemProps[] = [
+    let data: ISmallSubMenuItem[] = [
       {
         id: 'all',
         title: <Button
           content={<Text content="Tất cả" weight="regular" size="medium"/>}
           className="p-0 justify-content-start"
-          icon={<TabsIcon />}
+          icon={<TabsIcon/>}
           text
           fluid
         />,
-        className: `tree-item-parent-node`
+        className: `tree-item-parent-node`,
+        itemtitle: "Tất cả",
+        itemicon: "TabsIcon"
       },
       {
         id: 'my',
@@ -48,33 +55,39 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
             title: <Button
               content={<Text content="Quan trọng" weight="regular" size="medium"/>}
               className="p-0 justify-content-start"
-              icon={<StarIcon />}
+              icon={<StarIcon/>}
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "Quan trọng",
+            itemicon: "StarIcon"
           },
           {
             id: 'my-2',
             title: <Button
               content={<Text content="Sắp đến hạn" weight="regular" size="medium"/>}
               className="p-0 justify-content-start"
-              icon={<RedbangIcon />}
+              icon={<RedbangIcon/>}
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "Sắp đến hạn",
+            itemicon: "RedbangIcon"
           },
           {
             id: 'my-3',
             title: <Button
               content={<Text content="Quá hạn" weight="regular" size="medium"/>}
               className="p-0 justify-content-start"
-              icon={<UrgentIcon />}
+              icon={<UrgentIcon/>}
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "Qúa hạn",
+            itemicon: "UrgentIcon"
           }
         ],
       },
@@ -92,7 +105,9 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "Hôm nay",
+            itemicon: "CalendarIcon"
           },
           {
             id: 'time-2',
@@ -103,7 +118,9 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "Tuần này",
+            itemicon: "CalendarIcon"
           },
           {
             id: 'time-3',
@@ -114,7 +131,9 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "Tháng này",
+            itemicon: "CalendarIcon"
           }
         ],
       },
@@ -132,7 +151,9 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "Tờ trình",
+            itemicon: "BookmarkIcon"
           },
           {
             id: 'recently-2',
@@ -143,7 +164,9 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "Báo cáo",
+            itemicon: "BookmarkIcon"
           }
         ],
       },
@@ -161,7 +184,9 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "QT PD giá trên 50tr",
+            itemicon: "CircleIcon"
           },
           {
             id: 'workflow-2',
@@ -172,7 +197,9 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "QT PD giá trên 100tr",
+            itemicon: "CircleIcon"
           },
           {
             id: 'workflow-3',
@@ -183,13 +210,16 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
               text
               fluid
             />,
-            className: ""
+            className: "",
+            itemtitle: "QT mua sắm cho tòa nhà 123456",
+            itemicon: "CircleIcon"
           }
         ],
       },
     ];
 
     setItems(data);
+    dispatch(setBigSubMenuToolbar({title: data[0].itemtitle, icon: data[0].itemicon}));
   }
 
   useEffect(() => {
@@ -198,11 +228,11 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
 
   useEffect(() => {
 
-  },[items]);
+  }, [items]);
 
   useEffect(() => {
 
-  },[selectedIndexes])
+  }, [selectedIndexes])
 
   const titleRenderer = (Component, restProps) => (
     <Component expanded={restProps.expanded} hasSubtree={restProps.hasSubtree} {...restProps}>
@@ -215,9 +245,13 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
 
   const processNavChilds = (childs, parentIndex) => {
     childs = childs.map((it, idx) => {
-      it = {...it, onClick: () => {setActiveItem(idx, parentIndex)}}
+      it = {
+        ...it, onClick: () => {
+          setActiveItem(idx, parentIndex, it.itemtitle, it.itemicon)
+        }
+      }
 
-      if(parentIndex === selectedIndexes.parentIndex && idx === selectedIndexes.itemIndex) {
+      if (parentIndex === selectedIndexes.parentIndex && idx === selectedIndexes.itemIndex) {
         it.className = it.className?.concat(" active");
       }
 
@@ -229,15 +263,19 @@ const SmallSubMenu: React.FunctionComponent<SmallSubMenuProps> = () => {
 
   const processNavs = (navs) => {
     navs = navs.map((item, index) => {
-      if(Array.isArray(item.items) && item.items.length) {
+      if (Array.isArray(item.items) && item.items.length) {
         let childs = item.items as unknown as TreeItemProps[];
         childs = processNavChilds(childs, index);
 
         item = {...item, items: childs}
       } else {
-        item = {...item, onClick: () => {setActiveItem(index)}}
+        item = {
+          ...item, onClick: () => {
+            setActiveItem(index, -1, item.itemtitle, item.itemicon)
+          }
+        }
 
-        if(index === selectedIndexes.itemIndex && selectedIndexes.parentIndex === -1) {
+        if (index === selectedIndexes.itemIndex && selectedIndexes.parentIndex === -1) {
           item.className = item.className?.concat(" active");
         }
       }

@@ -11,7 +11,7 @@ import {useSelector} from "react-redux";
 
 export const SubMenu: React.FunctionComponent<SubMenuProps> = (props) => {
   // const { children, to, className } = props
-  const {open} = useSelector((state: RootState) => state.subMenuReducer);
+  const {open} = useSelector((state: RootState) => state.subMenuReducer.smallSubMenu);
 
   useEffect(() => {
 

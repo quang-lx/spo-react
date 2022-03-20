@@ -425,13 +425,24 @@ export default createGlobalStyle<{ theme: ThemeType }>`
     &:not(.active-small-sub-menu) {
       .small-sub-menu-toolbar-inner {
         width: 0;
-        z-index: 0;
+        z-index: 1;
       }
       .small-sub-menu-block {
         width: 0;
       }
       .big-sub-menu-toolbar-title {
         display: none;
+      }
+    }
+  }
+  .big-sub-menu-toolbar {
+    .big-sub-menu-toolbar-sort {
+      .ui-menu__item {
+        &:not(.active) {
+          .ui-menu__itemicon {
+            color: transparent;
+          }
+        }
       }
     }
   }
