@@ -58,7 +58,8 @@ export const customTeamsTheme = {
         background: appTheme.siteVariables.mainColor,
         foregroundHover: appTheme.siteVariables.mainColor,
         backgroundHover: appTheme.siteVariables.mainColorHovered,
-        foreground1: appTheme.siteVariables.mainColor
+        foreground1: appTheme.siteVariables.mainColor,
+        background6: appTheme.siteVariables.bigSubMenuItemActiveBackgroundColor
       },
       default: {
         backgroundActive1: appTheme.siteVariables.bigSubMenuItemActiveBackgroundColor

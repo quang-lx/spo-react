@@ -1,7 +1,6 @@
 import * as React from "react";
-import {Avatar, Flex, Text} from "@fluentui/react-northstar";
+import {Avatar, Flex} from "@fluentui/react-northstar";
 import {} from "@fluentui/react-icons-northstar";
-import * as S from "./Follower.style";
 
 export interface IFollower {
   avatar?: string,
@@ -17,12 +16,12 @@ const Follower: React.FunctionComponent<FollowerProps> = (props) => {
 
   return (
     <Flex vAlign={"center"}>
-      {list?.map((user) => {
+      {list?.map((user, index) => {
         return (
-          <Avatar image={user.avatar} name={user.name}/>
+          <Avatar key={index} image={user.avatar} name={user.name}/>
         )
       })}
-      <Text className="ml-2" content="người theo dõi"/>
+      {/*<Text className="ml-2" content="người theo dõi"/>*/}
     </Flex>
   )
 }

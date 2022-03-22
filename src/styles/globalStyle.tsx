@@ -446,4 +446,23 @@ export default createGlobalStyle<{ theme: ThemeType }>`
       }
     }
   }
+  .request-detail-title {
+    .ui-text {
+      background-color: ${({theme}) => theme.siteVariables.colorScheme.brand.background6};
+      padding: 0.25rem 0.625em;
+      border-radius: 1px;
+      display: inline-block;
+    }
+    .request-detail-title-icon {
+      background-color: ${({theme}) => theme.siteVariables.mainColor};
+      svg {
+        margin-top: -4px;
+      }
+    }
+  }
+  
+  .request-description {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
 `

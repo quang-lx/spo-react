@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Segment, Label} from "@fluentui/react-northstar";
 
 export const ContentWrapper = styled.div `
   //background-color: white;
@@ -44,4 +45,25 @@ export const FollowerWrapper = styled.div `
 export const RequestContentWrapper = styled.div `
   padding: 0 1.125rem 0 1.25rem;
   margin-bottom: 3rem;
+`
+
+export const RequestContentInner = styled(Segment) `
+  padding: 1.67rem 2.5rem;
+  color: ${props => props.theme.siteVariables.colors.grey[750]}
+  
+`
+
+export const RequestDetailTitle = styled.div `
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
+
+export const DetailItemTitle = styled.div `
+  width: 10rem;
+  font-weight: 600;
+`
+
+export const DetailItemContent = styled.div `
+  max-width: calc(100% - 10rem);
 `

@@ -9,7 +9,21 @@ interface IRequestReducer {
   request: IRequest
 }
 
+interface IRequestDetailItem {
+  key?: string,
+  title: JSX.Element | string,
+  content: JSX.Element | string,
+  className?: string,
+  align?: 'start' | 'center' | 'end' | 'stretch'
+}
+
+interface IRequestDetailItems {
+  items: IRequestDetailItem[]
+}
+
 export type {
   IRequest,
-  IRequestReducer
+  IRequestReducer,
+  IRequestDetailItem,
+  IRequestDetailItems
 }

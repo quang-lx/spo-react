@@ -1,7 +1,6 @@
 import React from 'react';
 import {Flex, Text, Layout, List, Avatar, ItemLayout} from '@fluentui/react-northstar';
 import {TagIcon, UrgentIcon} from '@fluentui/react-icons-northstar';
-import {TextContainerTitle} from '../../components/Text';
 import * as S from './RequestDetail.style';
 import CustomScrollbars from "../../components/CustomScrollbars";
 import {Comment} from "../../components/Comment";
@@ -11,15 +10,6 @@ const RequestDetail: React.FunctionComponent = () => {
 
   return (
     <Flex column fill>
-      <Flex.Item>
-        <TextContainerTitle>
-          <Text
-            size="large"
-            content="Phát sinh tăng hạng mục xây dựng, nội thất, m&e ( điều chỉnh boq cho phù hợp): 121.914.600đ - phát sinh tăng hạng mục quảng cáo ( do thay đổi thiết kế sau khi chốt boq) : 11.520.000đ"
-            weight="semibold"
-          />
-        </TextContainerTitle>
-      </Flex.Item>
       <Flex.Item grow>
         <S.ContentWrapper>
           <Layout

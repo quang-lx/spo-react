@@ -8,7 +8,7 @@ import {
   ToolbarItemProps,
   Button,
   MenuButton,
-  Attachment
+  Attachment, AttachmentProps
 } from '@fluentui/react-northstar';
 import {
   AcceptIcon,
@@ -31,7 +31,8 @@ const CommentInput: React.FunctionComponent<CommentInputProps> = (props) => {
   return (
     <Flex className="comment-input">
       <S.CommentLeftColumn>
-        <Avatar image="https://yt3.ggpht.com/ytc/AKedOLTebUysiOUr2VCeE1wqYTQkrVM00kZZO2CgnL7t9g=s900-c-k-c0x00ffffff-no-rj"/>
+        <Avatar
+          image="https://yt3.ggpht.com/ytc/AKedOLTebUysiOUr2VCeE1wqYTQkrVM00kZZO2CgnL7t9g=s900-c-k-c0x00ffffff-no-rj"/>
       </S.CommentLeftColumn>
       <CommentInputBox/>
     </Flex>
@@ -39,13 +40,40 @@ const CommentInput: React.FunctionComponent<CommentInputProps> = (props) => {
 }
 
 const CommentInputBox: React.FunctionComponent = () => {
+  const files = [
+    {
+      key: "f1",
+      icon: <WordColorIcon/>,
+      header: "File word File word File word File word.docx",
+      actionable: true
+    },
+    {
+      key: "f2",
+      icon: <ExcelColorIcon/>,
+      header: "File excel.xlsx",
+      actionable: true
+    },
+    {
+      key: "f3",
+      icon: <PowerPointColorIcon/>,
+      header: "File powerpoint.pptx",
+      actionable: true
+    },
+    {
+      key: "f4",
+      icon: <FilesPdfIcon/>,
+      header: "File pdf.pdf",
+      actionable: true
+    }
+  ]
+
   return (
     <S.CommentInputBoxWrapper>
       <Flex column>
         <S.CommentInputBoxInner>
           <Flex column>
             <CommentInputText/>
-            <CommentInputAttachment/>
+            <CommentInputAttachment items={files}/>
           </Flex>
         </S.CommentInputBoxInner>
         <CommentInputButtons/>
@@ -54,68 +82,38 @@ const CommentInputBox: React.FunctionComponent = () => {
   )
 }
 
-const CommentInputAttachment = () => {
-  const handleClick = action => () => console.log(`'${action}' was clicked`)
+interface CommentAttachmentProps extends AttachmentProps {
+  key?: string
+}
+
+interface CommentInputAttachmentProps {
+  items: CommentAttachmentProps[],
+  className?: string
+}
+
+const CommentInputAttachment: React.FunctionComponent<CommentInputAttachmentProps> = (props) => {
+  const handleClick = (action, index) => () => console.log(`'${action}' was clicked`);
+  const {items, className} = props;
 
   return (
-    <S.CommentInputAttachmentWrapper>
+    <S.CommentInputAttachmentWrapper className={className}>
       <div className="row m-0">
-        <div className="col-md-6 p-0">
-          <Attachment
-            icon={<WordColorIcon />}
-            header="File word File word File word File word.docx"
-            actionable
-            action={
-              {
-                icon: <CloseIcon />,
-                onClick: handleClick('Remove'),
-                title: 'Close',
+        {items.map((item, index) =>
+          <div className="col-md-6 p-0" key={index}>
+            <Attachment
+              icon={item.icon}
+              header={item.header}
+              actionable={item.actionable}
+              action={
+                item.actionable ? {
+                  icon: <CloseIcon/>,
+                  onClick: handleClick('Remove', index),
+                  title: 'Close',
+                } : undefined
               }
-            }
-          />
-        </div>
-        <div className="col-md-6 p-0">
-          <Attachment
-            icon={<ExcelColorIcon />}
-            header="File excel.docx"
-            actionable
-            action={
-              {
-                icon: <CloseIcon />,
-                onClick: handleClick('Remove'),
-                title: 'Close',
-              }
-            }
-          />
-        </div>
-        <div className="col-md-6 p-0">
-          <Attachment
-            icon={<PowerPointColorIcon />}
-            header="File powerpoint.docx"
-            actionable
-            action={
-              {
-                icon: <CloseIcon />,
-                onClick: handleClick('Remove'),
-                title: 'Close',
-              }
-            }
-          />
-        </div>
-        <div className="col-md-6 p-0">
-          <Attachment
-            icon={<FilesPdfIcon />}
-            header="File pdf.docx"
-            actionable
-            action={
-              {
-                icon: <CloseIcon />,
-                onClick: handleClick('Remove'),
-                title: 'Close',
-              }
-            }
-          />
-        </div>
+            />
+          </div>
+        )}
       </div>
     </S.CommentInputAttachmentWrapper>
   )
@@ -152,7 +150,7 @@ const CommentInputButtons = () => {
 }
 
 const CommentPrivacyMenu = () => {
-  return(
+  return (
     <MenuButton
       trigger={
         <Button flat text
@@ -182,5 +180,7 @@ const CommentPrivacyMenu = () => {
     />
   )
 }
+
+export {CommentInputAttachment}
 
 export default CommentInput;
