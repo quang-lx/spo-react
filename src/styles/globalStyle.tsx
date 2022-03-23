@@ -54,11 +54,11 @@ export default createGlobalStyle<{ theme: ThemeType }>`
         
         &.active {
           .ui-tree__title {
-            background-color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredBackgroundColor};
-            color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredTextColor};
+            background-color: ${({theme}) => theme.siteVariables.colors.brand[300]};
+            color: ${({theme}) => theme.siteVariables.colors.brand[800]};
 
             button {
-              color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredTextColor};
+              color: ${({theme}) => theme.siteVariables.colors.brand[800]};
               
               .ui-icon__outline {
                 display: none;
@@ -87,11 +87,11 @@ export default createGlobalStyle<{ theme: ThemeType }>`
         }
 
         &:hover {
-          background-color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredBackgroundColor};
-          color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredTextColor};
+          background-color: ${({theme}) => theme.siteVariables.colors.brand[300]};
+          color: ${({theme}) => theme.siteVariables.colors.brand[800]};
           
           button {
-            color: ${({theme}) => theme.siteVariables.smallSubMenuItemHoveredTextColor};
+            color: ${({theme}) => theme.siteVariables.colors.brand[800]};
           }
         }
       }
@@ -112,7 +112,7 @@ export default createGlobalStyle<{ theme: ThemeType }>`
       
       &__item {
         position: relative;
-        border-bottom: 1px solid ${({theme}) => theme.siteVariables.borderColor};
+        border-bottom: 1px solid ${({theme}) => theme.siteVariables.colors.grey[150]};
         padding: 0.5rem 2rem 0.5rem 0.75rem;
         
         &:hover {
@@ -132,7 +132,7 @@ export default createGlobalStyle<{ theme: ThemeType }>`
             width: 0.25rem;
             top: 0;
             left: 0;
-            background-color: ${({theme}) => theme.siteVariables.mainColor};
+            background-color: ${({theme}) => theme.siteVariables.colors.brand[600]};
           }
         }
       }
@@ -388,7 +388,7 @@ export default createGlobalStyle<{ theme: ThemeType }>`
   }
   
   .text-mention {
-    color: ${({theme}) => theme.siteVariables.mainColor};
+    color: ${({theme}) => theme.siteVariables.colors.brand[600]};
   }
   
   #document-editor_editor_viewerContainer {
@@ -454,7 +454,7 @@ export default createGlobalStyle<{ theme: ThemeType }>`
       display: inline-block;
     }
     .request-detail-title-icon {
-      background-color: ${({theme}) => theme.siteVariables.mainColor};
+      background-color: ${({theme}) => theme.siteVariables.colors.brand[600]};
       svg {
         margin-top: -4px;
       }

@@ -26,7 +26,7 @@ export const CommentInputBoxWrapper = styled.div`
 
 export const ReplyCommentWrapper = styled.div`
   background-color: white;
-  border-top: 1px solid ${props => props.theme.siteVariables.borderColor};
+  border-top: 1px solid ${props => props.theme.siteVariables.colors.grey[150]};
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 `

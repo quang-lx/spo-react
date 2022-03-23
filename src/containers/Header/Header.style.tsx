@@ -3,7 +3,7 @@ import { Button } from '@fluentui/react-northstar';
 
 export const HeaderBlock = styled.div `
   height: ${props => props.theme.siteVariables.headerHeight};
-  background-color: ${props => props.theme.siteVariables.headerBackgroundColor};
+  background-color: ${props => props.theme.siteVariables.colors.brand[600]};
 `
 
 export const HeaderWrapper = styled.div `
@@ -20,7 +20,7 @@ export const ActionButton = styled(Button) `
   border-radius: 0;
   
   &:hover {
-    background-color: ${props => props.theme.siteVariables.headerItemHoveredBackgroundColor};
+    background-color: ${props => props.theme.siteVariables.colors.brand[800]};
   }
 `
 
@@ -33,7 +33,7 @@ export const HeaderAvatarWrapper = styled.div `
   cursor: pointer;
 
   &:hover {
-    background-color: ${props => props.theme.siteVariables.headerItemHoveredBackgroundColor};
+    background-color: ${props => props.theme.siteVariables.colors.brand[800]};
   }
 `
 

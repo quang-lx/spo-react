@@ -10,8 +10,8 @@ export const ContainerContent = styled.div`
 
 export const ContainerToolbarWrapper = styled.div`
   height: ${props => props.theme.siteVariables.toolbarHeight};
-  border-bottom: 1px solid ${props => props.theme.siteVariables.borderColor};
-  background-color: ${props => props.theme.siteVariables.containerToolbarBackgroundColor};
+  border-bottom: 1px solid ${props => props.theme.siteVariables.colors.grey[150]};
+  background-color: ${props => props.theme.siteVariables.colors.grey[100]};
 `
 
 export const ContainerToolbarInner = styled.div`

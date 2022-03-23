@@ -7,6 +7,22 @@ import {mergeThemes, teamsTheme} from '@fluentui/react-northstar';
 
 export const appTheme = {
   siteVariables: {
+    colors: {
+      brand: {
+        "50": "#EFF6FC",
+        "100": "#EFF6FC",
+        "200": "#DEECF9",
+        "300": "#C7E0F4",
+        "400": "#71AFE5",
+        "450": "#71AFE5",
+        "500": "#2B88D8",
+        "600": "#0078D4",
+        "700": "#106EBE",
+        "800": "#005A9E",
+        "900": "#004578",
+        "1000": "#004578"
+      }
+    },
     headerHeight: "3rem",
     menuWidth: "3rem",
     subMenuWidth: "33.4375rem",
@@ -15,25 +31,13 @@ export const appTheme = {
     profilePopupWidth: "20rem",
     toolbarHeight: "2.75rem",
     profileBlockMinWidth: "24rem",
-    mainColor: "#0078d4",
-    mainColorHovered: "#005a9e",
-    headerBackgroundColor: "#0078d4",
-    headerItemHoveredBackgroundColor: "#005a9e",
+    rightBarWidth: "13.375rem",
+    commentLeftColumnWidth: "2.5rem",
     menuBackgroundColor: "#f0f0f0",
     secondaryColor: "#616161",
     subMenuBackgroundColor: "#ffffff",
-    smallSubMenuBackgroundColor: "#f3f2f1",
-    subMenuToolbarBackgroundColor: "#f3f2f1",
-    containerToolbarBackgroundColor: "#f3f2f1",
-    mainContainerBackgroundColor: "#faf9f8",
-    borderColor: "#edebe9",
-    smallSubMenuItemHoveredBackgroundColor: "#c7e0f4",
-    smallSubMenuItemHoveredTextColor: "#005a9e",
-    bigSubMenuItemActiveBackgroundColor: "#c7e0f4",
     bigSubMenuItemHoveredBackgroundColor: "#f5f5f5",
     blackColor: "#201f1e",
-    rightBarWidth: "13.375rem",
-    commentLeftColumnWidth: "2.5rem",
     commentReplyBackgroundColor: "#fafafa",
     mentionHoveredBackground: "#ebebeb"
   }
@@ -42,39 +46,44 @@ export const appTheme = {
 export const customTeamsTheme = {
   siteVariables: {
     bodyColor: "#616161",
-    colors: {
-      brand: {
-       "600":  appTheme.siteVariables.mainColor
-      }
-    },
     contextualColors: {
       brand: {
-        "600":  appTheme.siteVariables.mainColor
+        "50": "#EFF6FC",
+        "100": "#EFF6FC",
+        "200": "#DEECF9",
+        "300": "#C7E0F4",
+        "400": "#71AFE5",
+        "450": "#71AFE5",
+        "500": "#2B88D8",
+        "600": "#0078d4",
+        "700": "#106EBE",
+        "800": "#005A9E",
+        "900": "#004578",
+        "1000": "#004578"
       }
     },
     colorScheme: {
       brand: {
-        foreground: appTheme.siteVariables.mainColor,
-        background: appTheme.siteVariables.mainColor,
-        foregroundHover: appTheme.siteVariables.mainColor,
-        backgroundHover: appTheme.siteVariables.mainColorHovered,
-        foreground1: appTheme.siteVariables.mainColor,
-        background6: appTheme.siteVariables.bigSubMenuItemActiveBackgroundColor
+        foreground: appTheme.siteVariables.colors.brand[600],
+        background: appTheme.siteVariables.colors.brand[600],
+        foregroundHover: appTheme.siteVariables.colors.brand[600],
+        backgroundHover: appTheme.siteVariables.colors.brand[800],
+        foreground1: appTheme.siteVariables.colors.brand[600],
+        background6: appTheme.siteVariables.colors.brand[300],
+        backgroundHover1: appTheme.siteVariables.colors.brand[300],
       },
       default: {
-        backgroundActive1: appTheme.siteVariables.bigSubMenuItemActiveBackgroundColor
+        backgroundActive1: appTheme.siteVariables.colors.brand[300],
       }
     }
   },
   componentVariables: {
     Menu: {
       color: appTheme.siteVariables.secondaryColor,
-      colorHover: appTheme.siteVariables.mainColor
+      colorHover: appTheme.siteVariables.colors.brand[600]
     }
   },
-  componentStyles: {
-
-  }
+  componentStyles: {}
 }
 
 export const theme = mergeThemes(teamsTheme, customTeamsTheme, appTheme)

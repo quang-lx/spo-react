@@ -4,7 +4,7 @@ export const MenuBlock = styled.div`
   width: ${props => props.theme.siteVariables.menuWidth};
   //height: calc(100% - ${props => props.theme.siteVariables.headerHeight});
   background-color: ${props => props.theme.siteVariables.menuBackgroundColor};
-  border-right: 1px solid ${props => props.theme.siteVariables.borderColor};
+  border-right: 1px solid ${props => props.theme.siteVariables.colors.grey[150]};
   
   .app-menu {
     //position: relative;
@@ -48,7 +48,7 @@ export const MenuBlock = styled.div`
         }
         
         &.active {
-          border-left-color: ${props => props.theme.siteVariables.mainColor};
+          border-left-color: ${props => props.theme.siteVariables.colors.brand[600]};
         }
       }
       &__itemcontent {

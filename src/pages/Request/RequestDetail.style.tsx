@@ -3,7 +3,7 @@ import {Segment, Label} from "@fluentui/react-northstar";
 
 export const ContentWrapper = styled.div `
   //background-color: white;
-  border-top: 1px solid ${props => props.theme.siteVariables.borderColor};
+  border-top: 1px solid ${props => props.theme.siteVariables.colors.grey[150]};
   height: 100%;
 `
 
@@ -11,7 +11,7 @@ export const AdditionInfo = styled.div `
   width: ${props => props.theme.siteVariables.rightBarWidth};
   //background-color: beige;
   //height: 3000px;
-  border-left: 1px solid ${props => props.theme.siteVariables.borderColor};
+  border-left: 1px solid ${props => props.theme.siteVariables.colors.grey[150]};
   padding: 0.5rem 0 0.5rem;
   height: 100%;
 `
