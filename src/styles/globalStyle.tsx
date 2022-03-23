@@ -465,4 +465,9 @@ export default createGlobalStyle<{ theme: ThemeType }>`
     word-wrap: break-word;
     white-space: pre-wrap;
   }
+  
+  .fit-content {
+    height: fit-content !important;
+    width: fit-content !important;
+  }
 `

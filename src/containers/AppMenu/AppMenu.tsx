@@ -6,34 +6,39 @@ import {
   SurveyIcon,
   GridIcon,
   PollIcon,
-  DoorArrowLeftIcon,
-  ContentIcon
-
+  DoorArrowLeftIcon
 } from '@fluentui/react-icons-northstar';
-import {MenuProps} from "../../interfaces/AppMenuInterfaces";
+import {MenuProps, IMenuItem} from "../../interfaces/AppMenuInterfaces";
+import {RoutePaths} from "../../routes/RenderRoutes";
+import { useNavigate } from "react-router-dom";
 
 export const AppMenu: React.FunctionComponent<MenuProps> = (props) => {
   // const { children, to, className } = props
-  const initMenuItems = [
+  const navigate = useNavigate();
+
+  const initMenuItems: IMenuItem[] = [
     {
       key: 'dashboard',
-      icon: <Tooltip trigger={<ContentIcon {...{outline: true}} />} content="Dashboard" pointing position="after"/>,
-      className: "active"
+      icon: <Tooltip trigger={<PollIcon {...{outline: true}}/>} content="Dashboard" pointing position="after"/>,
+      className: "active",
+      onClick: () => {navigate(RoutePaths.Home)}
     },
     {
       key: 'request',
       icon: <Tooltip trigger={<SurveyIcon/>} content="Request" pointing position="after"/>,
-      className: ""
-    },
-    {
-      key: 'cv',
-      icon: <Tooltip trigger={<PollIcon {...{outline: true}} />} content="Công việc" pointing position="after"/>,
-      className: ""
+      className: "",
+      onClick: () => {navigate(RoutePaths.Request)}
     },
     {
       key: 'da',
       icon: <Tooltip trigger={<GridIcon {...{outline: true}} />} content="Dự án" pointing position="after"/>,
       className: ""
+    },
+    {
+      key: 'cv',
+      icon: <Tooltip trigger={<PollIcon {...{outline: true, rotate: 90}} />} content="Công việc" pointing position="after"/>,
+      className: "",
+      onClick: () => {navigate(RoutePaths.WorkList)}
     },
     {
       key: 'vb-di',

@@ -1,7 +1,8 @@
 import {TreeItemProps} from "@fluentui/react-northstar";
 
 interface SubMenuProps {
-
+  hasSmallSubMenu?: boolean,
+  hasBigSubMenu?: boolean
 }
 
 interface SmallSubMenuToolbarProps {
