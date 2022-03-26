@@ -4,7 +4,7 @@ import React from "react";
 import {SmallSubMenuToolbarProps} from "../../interfaces/SubMenuInterfaces";
 import {useDispatch} from "react-redux";
 import {toggleSmallSubMenu} from "../../store/reducers/subMenuReducer";
-import {} from "@fluentui/react-icons"
+// import {} from "@fluentui/react-icons"
 
 const SmallSubMenuToolbar: React.FunctionComponent<SmallSubMenuToolbarProps> = (props) => {
   const dispatch = useDispatch();

@@ -9,7 +9,7 @@ import {
   RedbangIcon,
   TabsIcon
 } from "@fluentui/react-icons-northstar";
-import {} from "@fluentui/react-icons";
+// import {} from "@fluentui/react-icons";
 
 interface IconProps extends SvgIconProps {
   name: string | undefined
