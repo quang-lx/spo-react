@@ -7,7 +7,10 @@ import {
   StarIcon,
   UrgentIcon,
   RedbangIcon,
-  TabsIcon
+  TabsIcon,
+  MoleculeIcon,
+  PollIcon,
+  TvIcon
 } from "@fluentui/react-icons-northstar";
 // import {} from "@fluentui/react-icons";
 
@@ -37,6 +40,15 @@ const Icon: React.FunctionComponent<IconProps> = (props) => {
       break;
     case "RedbangIcon":
       icon = <RedbangIcon/>;
+      break;
+    case "MoleculeIcon":
+      icon = <MoleculeIcon/>;
+      break;
+    case "PollIcon":
+      icon = <PollIcon/>;
+      break;
+    case "TvIcon":
+      icon = <TvIcon/>;
       break;
     default:
       icon = <TabsIcon/>;

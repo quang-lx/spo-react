@@ -1,45 +1,30 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {ISubMenu} from "../../interfaces/SubMenuInterfaces";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {IContainer, IToolbarRawItem} from "../../interfaces/ContainerInterfaces";
 
-const initialState: ISubMenu = {
-  smallSubMenu: {
-    open: true
-  },
-  bigSubMenu: {
-    title: "",
-    icon: "",
-    sort: {
-      active: 0,
-      field: "",
-      direction: "ASC"
-    }
-  }
+const initialState: IContainer = {
+  toolbar: []
 }
 
-const actionToggleSmallSubMenu = (state: ISubMenu) => {
-  state.smallSubMenu.open = !state.smallSubMenu.open;
+const actionSetToolbar = (state, action: PayloadAction<IToolbarRawItem[]>) => {
+  state.toolbar = action.payload;
 }
 
-const actionSetBigSubMenuToolbar = (state: ISubMenu, action) => {
-  // console.log(action);
-  state.bigSubMenu = {
-    ...state.bigSubMenu,
-    ...action.payload
-  }
+const actionApprove = (state, action) => {
+  console.log(action);
 }
 
 const containerSlice = createSlice({
-  name: "SubMenu",
+  name: "Container",
   initialState,
   reducers: {
-    toggleSmallSubMenu: actionToggleSmallSubMenu,
-    setBigSubMenuToolbar: actionSetBigSubMenuToolbar
+    setToolbar: actionSetToolbar,
+    approve: actionApprove
   },
   extraReducers: (builder) => {
 
   }
 })
 
-export const {toggleSmallSubMenu, setBigSubMenuToolbar} = containerSlice.actions;
+export const {setToolbar} = containerSlice.actions;
 
 export const containerReducer = containerSlice.reducer;

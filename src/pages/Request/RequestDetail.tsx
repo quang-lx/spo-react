@@ -1,98 +1,99 @@
 import React, {useEffect, useState} from 'react';
-import {Flex, Text, Layout, List, Avatar, ItemLayout, Button} from '@fluentui/react-northstar';
-import {MoleculeIcon, PollIcon, TagIcon, TvIcon, UrgentIcon} from '@fluentui/react-icons-northstar';
+import {Flex, Text, Layout, List, Avatar, ItemLayout} from '@fluentui/react-northstar';
+import {TagIcon, UrgentIcon} from '@fluentui/react-icons-northstar';
 import * as S from './RequestDetail.style';
 import CustomScrollbars from "../../components/CustomScrollbars";
 import {Comment} from "../../components/Comment";
 import RequestContent from "./RequestContent";
 import {useDispatch} from "react-redux";
-import {IToolbarItem} from "../../interfaces/ContainerInterfaces";
+import {IToolbarRawItem} from "../../interfaces/ContainerInterfaces";
+import {useParams} from "react-router-dom";
+import {setToolbar} from "../../store/reducers/containerReducer";
 
 const RequestDetail: React.FunctionComponent = () => {
-  const [toolbarItems, setToolbarItems] = useState([
-    {
-      key: 'approve',
-      kind: 'custom',
-      content: <Button className="pl-2 pr-2" content="Phê duyệt" flat primary/>,
-      fitted: 'horizontally',
-      className: "ml-3"
-    },
-    // {
-    //   key: 'forward',
-    //   kind: 'custom',
-    //   content: <Button className="pl-2 pr-2" content="Chuyển xử lý" flat primary tinted/>,
-    //   fitted: 'horizontally',
-    //   className: "ml-2"
-    // },
-    {
-      key: 'return',
-      kind: 'custom',
-      content: <Button className="pl-2 pr-2" content="Trả lại" flat primary tinted/>,
-      fitted: 'horizontally',
-      className: "ml-2"
-    },
-    {
-      key: 'reject',
-      kind: 'custom',
-      content: <Button className="pl-2 pr-2" content="Từ chối" flat primary tinted/>,
-      fitted: 'horizontally',
-      className: "ml-2"
-    },
-    {
-      key: 'overview',
-      kind: 'custom',
-      content: <Button
-        className="p-0 unset-width"
-        icon={<TvIcon/>}
-        content={
-          <Text weight="regular">Tổng quan</Text>
-        }
-        flat
-        text
-        primary
-      />,
-      fitted: 'horizontally',
-      className: "ml-auto"
-    },
-    {
-      key: 'workflow',
-      kind: 'custom',
-      content: <Button
-        className="p-0 unset-width"
-        icon={<MoleculeIcon />}
-        content={
-          <Text weight="regular">Quy trình</Text>
-        }
-        flat
-        text
-        primary
-      />,
-      fitted: 'horizontally',
-      className: "ml-3"
-    },
-    {
-      key: 'task',
-      kind: 'custom',
-      content: <Button
-        className="p-0 unset-width"
-        icon={<PollIcon/>}
-        content={
-          <Text weight="regular">Công việc</Text>
-        }
-        flat
-        text
-        primary
-      />,
-      fitted: 'horizontally',
-      className: "ml-3"
-    }
-  ] as IToolbarItem[]);
+  const [toolbarItems, setToolbarItems] = useState([] as IToolbarRawItem[]);
+  const {id} = useParams();
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  const processToolbar = () => {
+    dispatch(setToolbar([
+      {
+        key: 'approve',
+        kind: 'custom',
+        fitted: 'horizontally',
+        className: "ml-3",
+        buttonContent: "Phê duyệt",
+        buttonFlat: true,
+        buttonPrimary: true,
+        buttonAction: "Container/approve",
+        actionPayload: {
+          id: 1,
+          comment: "Nội dung comment"
+        }
+      },
+      {
+        key: 'return',
+        kind: 'custom',
+        fitted: 'horizontally',
+        className: "pl-2 pr-2",
+        buttonContent: "Trả lại",
+        buttonFlat: true,
+        buttonPrimary: true,
+        buttonTinted: true
+      },
+      {
+        key: 'reject',
+        kind: 'custom',
+        fitted: 'horizontally',
+        className: "pl-2 pr-2",
+        buttonContent: "Từ chối",
+        buttonFlat: true,
+        buttonPrimary: true,
+        buttonTinted: true
+      },
+      {
+        key: 'overview',
+        kind: 'custom',
+        fitted: 'horizontally',
+        className: "ml-auto",
+        buttonContent: "Tổng quan",
+        buttonFlat: true,
+        buttonPrimary: true,
+        buttonText: true,
+        buttonIcon: "TvIcon",
+        buttonClassName: "p-0 unset-width"
+      },
+      {
+        key: 'workflow',
+        kind: 'custom',
+        fitted: 'horizontally',
+        className: "ml-3",
+        buttonContent: "Quy trình",
+        buttonPrimary: true,
+        buttonFlat: true,
+        buttonClassName: "p-0 unset-width",
+        buttonIcon: "MoleculeIcon",
+        buttonText: true
+      },
+      {
+        key: 'task',
+        kind: 'custom',
+        fitted: 'horizontally',
+        className: "ml-3",
+        buttonContent: "Công việc",
+        buttonPrimary: true,
+        buttonFlat: true,
+        buttonClassName: "p-0 unset-width",
+        buttonIcon: "PollIcon",
+        buttonText: true
+      }
+    ]));
+  }
 
-  }, [])
+  useEffect(() => {
+    processToolbar();
+  }, [id])
 
   return (
     <Flex column fill>
