@@ -1,12 +1,98 @@
-import React from 'react';
-import {Flex, Text, Layout, List, Avatar, ItemLayout} from '@fluentui/react-northstar';
-import {TagIcon, UrgentIcon} from '@fluentui/react-icons-northstar';
+import React, {useEffect, useState} from 'react';
+import {Flex, Text, Layout, List, Avatar, ItemLayout, Button} from '@fluentui/react-northstar';
+import {MoleculeIcon, PollIcon, TagIcon, TvIcon, UrgentIcon} from '@fluentui/react-icons-northstar';
 import * as S from './RequestDetail.style';
 import CustomScrollbars from "../../components/CustomScrollbars";
 import {Comment} from "../../components/Comment";
 import RequestContent from "./RequestContent";
+import {useDispatch} from "react-redux";
+import {IToolbarItem} from "../../interfaces/ContainerInterfaces";
 
 const RequestDetail: React.FunctionComponent = () => {
+  const [toolbarItems, setToolbarItems] = useState([
+    {
+      key: 'approve',
+      kind: 'custom',
+      content: <Button className="pl-2 pr-2" content="Phê duyệt" flat primary/>,
+      fitted: 'horizontally',
+      className: "ml-3"
+    },
+    // {
+    //   key: 'forward',
+    //   kind: 'custom',
+    //   content: <Button className="pl-2 pr-2" content="Chuyển xử lý" flat primary tinted/>,
+    //   fitted: 'horizontally',
+    //   className: "ml-2"
+    // },
+    {
+      key: 'return',
+      kind: 'custom',
+      content: <Button className="pl-2 pr-2" content="Trả lại" flat primary tinted/>,
+      fitted: 'horizontally',
+      className: "ml-2"
+    },
+    {
+      key: 'reject',
+      kind: 'custom',
+      content: <Button className="pl-2 pr-2" content="Từ chối" flat primary tinted/>,
+      fitted: 'horizontally',
+      className: "ml-2"
+    },
+    {
+      key: 'overview',
+      kind: 'custom',
+      content: <Button
+        className="p-0 unset-width"
+        icon={<TvIcon/>}
+        content={
+          <Text weight="regular">Tổng quan</Text>
+        }
+        flat
+        text
+        primary
+      />,
+      fitted: 'horizontally',
+      className: "ml-auto"
+    },
+    {
+      key: 'workflow',
+      kind: 'custom',
+      content: <Button
+        className="p-0 unset-width"
+        icon={<MoleculeIcon />}
+        content={
+          <Text weight="regular">Quy trình</Text>
+        }
+        flat
+        text
+        primary
+      />,
+      fitted: 'horizontally',
+      className: "ml-3"
+    },
+    {
+      key: 'task',
+      kind: 'custom',
+      content: <Button
+        className="p-0 unset-width"
+        icon={<PollIcon/>}
+        content={
+          <Text weight="regular">Công việc</Text>
+        }
+        flat
+        text
+        primary
+      />,
+      fitted: 'horizontally',
+      className: "ml-3"
+    }
+  ] as IToolbarItem[]);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+  }, [])
 
   return (
     <Flex column fill>
@@ -24,32 +110,10 @@ const RequestDetail: React.FunctionComponent = () => {
 }
 
 const RequestDetailContent: React.FunctionComponent = () => {
-  const items = [
-    {
-      key: 'ykien',
-      header: <Text content="Tóm tắt đề xuất" size="small" weight="semibold"/>,
-      content: <Text as="p" size="medium" className="text-pre-wrap">
-        Kính trình CEO và ban giám đốc.
-        <br/>BP.XDMN trình phát sinh lần 1 công trình Jiang Hu Aeon Mall Tân Phú.
-        <br/>- Phát sinh tăng hạng mục xây dựng, nội thất, M&E ( điều chỉnh BOQ cho phù hợp): 121.914.600đ
-        <br/>- Phát sinh tăng hạng mục quảng cáo ( do thay đổi thiết kế sau khi chốt BOQ) : 11.520.000đ
-        <br/>- Phát sinh giảm: -93.072.500đ
-        <br/>= Tổng phát sinh tăng giảm theo đơn giá dự kiến: 40.362.100đ (chưa VAT) (như file đính kèm : Biên bản hiện trường, BOQ phát sinh ).
-        <br/>
-        <br/>Kính trình anh chị xét duyệt.
-      </Text>,
-      className: "mb-2"
-    }
-  ];
-
   return (
     <S.Content>
       <CustomScrollbars disableHorizontalScrolling={true}>
         <S.ContentInner>
-          {/*<List items={items}/>*/}
-          {/*<S.FollowerWrapper>*/}
-          {/*  <Follower list={followers}/>*/}
-          {/*</S.FollowerWrapper>*/}
           <RequestContent/>
           <Comment/>
         </S.ContentInner>

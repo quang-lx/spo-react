@@ -13,12 +13,15 @@ import {Follower, IFollower} from "../../components/User";
 import {TextContainerTitle} from '../../components/Text';
 import {IRequestDetailItem, IRequestDetailItems} from "../../interfaces/RequestInterfaces";
 import {CommentInputAttachment} from "../../components/Comment/CommentInput";
+import {useParams} from "react-router-dom";
 
 interface RequestContentProps {
 
 }
 
 const RequestContent: React.FunctionComponent<RequestContentProps> = (props) => {
+  const params = useParams();
+
   const followers: IFollower[] = [
     {
       avatar: "https://i.ibb.co/Vjq1gg7/148714090-3979558975396760-8986126341265647886-n.jpg"
@@ -219,7 +222,7 @@ const RequestContent: React.FunctionComponent<RequestContentProps> = (props) => 
           <TextContainerTitle className={"mt-3 mb-3"}>
             <Text
               size="large"
-              content="V/v: Triển khai dự án Mua bản quyền Microsoft và Triển khai eOffice cho Hệ thống ALS"
+              content={`V/v: Triển khai dự án Mua bản quyền Microsoft và Triển khai eOffice cho Hệ thống ALS ${params.id}`}
               weight="semibold"
             />
           </TextContainerTitle>

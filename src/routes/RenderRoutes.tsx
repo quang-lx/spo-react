@@ -19,7 +19,7 @@ export const RenderRoutes: React.FunctionComponent = () => {
         <Route element={<SubMenuLayout />}>
           <Route path="request" element={<RequestDetail />} />
           <Route path="request/create" element={<RequestCreate />} />
-          <Route path="request/detail" element={<RequestDetail />} />
+          <Route path="request/detail/:id" element={<RequestDetail />} />
         </Route>
         <Route element={<SubMenuLayout hasBigSubMenu={false} />}>
           <Route path="work" element={<WorkList />} />
@@ -36,4 +36,8 @@ export const RoutePaths = {
   "RequestCreate": "/request/create",
   "RequestDetail": "/request/detail",
   "WorkList": "/work",
+}
+
+export const createRequestDetailLink = (id: number | string) => {
+  return `${RoutePaths.RequestDetail}/${id}`
 }

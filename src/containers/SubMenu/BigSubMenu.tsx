@@ -11,7 +11,9 @@ import {
   TrashCanIcon
 } from "@fluentui/react-icons-northstar";
 import CustomScrollbars from "../../components/CustomScrollbars";
-import {MoreButtonsProps} from "../../interfaces/SubMenuInterfaces";
+import {IBigSubMenuItem, MoreButtonsProps} from "../../interfaces/SubMenuInterfaces";
+import {useNavigate} from "react-router-dom";
+import {createRequestDetailLink} from "../../routes/RenderRoutes";
 
 const MoreButtons: React.FunctionComponent<MoreButtonsProps> = (props) => {
   return (
@@ -48,8 +50,9 @@ const MoreButtons: React.FunctionComponent<MoreButtonsProps> = (props) => {
 
 const BigSubMenu: React.FunctionComponent = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const items = [
+  const items: IBigSubMenuItem[] = [
     {
+      id: 1,
       key: "item-1",
       media: (
         <Avatar
@@ -74,6 +77,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 2,
       key: "item-2",
       className: "unseen cursor-pointer",
       media: (
@@ -97,6 +101,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 3,
       key: "item-3",
       className: "unseen cursor-pointer",
       media: (
@@ -114,6 +119,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
         weight="semibold" color="brand"/>
     },
     {
+      id: 4,
       key: "item-4",
       media: (
         <Avatar
@@ -132,6 +138,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 5,
       key: "item-5",
       media: (
         <Avatar
@@ -146,6 +153,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       className: "cursor-pointer"
     },
     {
+      id: 6,
       key: "item-6",
       className: "unseen cursor-pointer",
       media: (
@@ -163,6 +171,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 7,
       key: "item-7",
       media: (
         <Avatar
@@ -179,6 +188,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 8,
       key: "item-8",
       media: (
         <Avatar
@@ -203,6 +213,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 9,
       key: "item-9",
       className: "unseen cursor-pointer",
       media: (
@@ -226,6 +237,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 10,
       key: "item-10",
       className: "unseen",
       media: (
@@ -243,6 +255,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
         weight="semibold" color="brand"/>
     },
     {
+      id: 11,
       key: "item-11",
       media: (
         <Avatar
@@ -261,6 +274,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 12,
       key: "item-12",
       media: (
         <Avatar
@@ -274,6 +288,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
         content="KTCN. Tạm ứng tiền mặt hàng tháng để mua mẫu nguyên liệu phục vụ nghiên cứu và cảm quan sản phẩm"/>
     },
     {
+      id: 13,
       key: "item-13",
       className: "unseen cursor-pointer",
       media: (
@@ -291,6 +306,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 14,
       key: "item-14",
       media: (
         <Avatar
@@ -307,6 +323,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 15,
       key: "item-15",
       media: (
         <Avatar
@@ -331,6 +348,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 16,
       key: "item-16",
       className: "unseen cursor-pointer",
       media: (
@@ -354,6 +372,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 17,
       key: "item-17",
       className: "unseen",
       media: (
@@ -371,6 +390,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
         weight="semibold" color="brand"/>
     },
     {
+      id: 18,
       key: "item-18",
       media: (
         <Avatar
@@ -389,6 +409,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 19,
       key: "item-19",
       media: (
         <Avatar
@@ -402,6 +423,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
         content="KTCN. Tạm ứng tiền mặt hàng tháng để mua mẫu nguyên liệu phục vụ nghiên cứu và cảm quan sản phẩm"/>
     },
     {
+      id: 20,
       key: "item-20",
       className: "unseen cursor-pointer",
       media: (
@@ -419,6 +441,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 21,
       key: "item-21",
       media: (
         <Avatar
@@ -435,6 +458,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 22,
       key: "item-22",
       media: (
         <Avatar
@@ -459,6 +483,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 23,
       key: "item-23",
       className: "unseen cursor-pointer",
       media: (
@@ -482,6 +507,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 24,
       key: "item-24",
       className: "unseen",
       media: (
@@ -499,6 +525,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
         weight="semibold" color="brand"/>
     },
     {
+      id: 25,
       key: "item-25",
       media: (
         <Avatar
@@ -517,6 +544,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 26,
       key: "item-26",
       media: (
         <Avatar
@@ -530,6 +558,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
         content="KTCN. Tạm ứng tiền mặt hàng tháng để mua mẫu nguyên liệu phục vụ nghiên cứu và cảm quan sản phẩm"/>
     },
     {
+      id: 27,
       key: "item-27",
       className: "unseen cursor-pointer",
       media: (
@@ -547,6 +576,7 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     },
     {
+      id: 28,
       key: "item-28",
       media: (
         <Avatar
@@ -563,9 +593,13 @@ const BigSubMenu: React.FunctionComponent = (props) => {
       truncateHeader: true
     }
   ]
+  const navigate = useNavigate();
 
   const actionSelectItem = (e, newProps) => {
-    setSelectedIndex(newProps?.selectedIndex)
+    setSelectedIndex(newProps?.selectedIndex);
+    if(newProps.items.length > newProps.selectedIndex) {
+      navigate(createRequestDetailLink(newProps.items[newProps.selectedIndex].id))
+    }
   }
 
   return (
