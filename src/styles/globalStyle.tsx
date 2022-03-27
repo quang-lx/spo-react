@@ -470,4 +470,8 @@ export default createGlobalStyle<{ theme: ThemeType }>`
     height: fit-content !important;
     width: fit-content !important;
   }
+  
+  .ui-table__row {
+    padding: 0 0.625rem;
+  }
 `
