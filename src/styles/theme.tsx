@@ -71,6 +71,13 @@ export const customTeamsTheme = {
         foreground1: appTheme.siteVariables.colors.brand[600],
         background6: appTheme.siteVariables.colors.brand[300],
         backgroundHover1: appTheme.siteVariables.colors.brand[300],
+        foregroundActive: appTheme.siteVariables.colors.brand[600],
+        backgroundActive: appTheme.siteVariables.colors.brand[600],
+        foregroundFocus: appTheme.siteVariables.colors.brand[600],
+        backgroundFocus: appTheme.siteVariables.colors.brand[600],
+        foregroundActive1: appTheme.siteVariables.colors.brand[600],
+        backgroundActive1: appTheme.siteVariables.colors.brand[600],
+        borderFocus1: appTheme.siteVariables.colors.brand[600],
       },
       default: {
         backgroundActive1: appTheme.siteVariables.colors.brand[300],

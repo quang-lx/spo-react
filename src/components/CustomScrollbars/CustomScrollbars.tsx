@@ -4,11 +4,12 @@ import {Scrollbars} from 'react-custom-scrollbars';
 interface CustomScrollbarsProps {
   children: JSX.Element,
   disableHorizontalScrolling?: boolean,
-  disableVerticalScrolling?: boolean
+  disableVerticalScrolling?: boolean,
+  autoHide?: boolean
 }
 
 export const CustomScrollbars: React.FunctionComponent<CustomScrollbarsProps> = (props) => {
-  const {children, disableHorizontalScrolling} = props
+  const {children, disableHorizontalScrolling, autoHide} = props
 
   const renderTrackHorizontal = (props) => disableHorizontalScrolling
     ? <div {...props} className="track-horizontal hidden"/>
@@ -20,10 +21,14 @@ export const CustomScrollbars: React.FunctionComponent<CustomScrollbarsProps> = 
 
   return (
     <Scrollbars
-      autoHide
+      autoHide={autoHide}
       renderTrackHorizontal={renderTrackHorizontal}
     >
       {children}
     </Scrollbars>
   );
+}
+
+CustomScrollbars.defaultProps = {
+  autoHide: true
 }

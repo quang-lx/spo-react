@@ -10,9 +10,15 @@ import {
   TabsIcon,
   MoleculeIcon,
   PollIcon,
-  TvIcon
+  TvIcon,
+  ArrowDownIcon,
+  ParticipantAddIcon,
+  MeetingNewIcon,
+  AcceptIcon
 } from "@fluentui/react-icons-northstar";
-// import {} from "@fluentui/react-icons";
+import {
+  CircleSmall20Filled
+} from "@fluentui/react-icons";
 
 interface IconProps extends SvgIconProps {
   name: string | undefined
@@ -49,6 +55,21 @@ const Icon: React.FunctionComponent<IconProps> = (props) => {
       break;
     case "TvIcon":
       icon = <TvIcon/>;
+      break;
+    case "ArrowDownIcon":
+      icon = <ArrowDownIcon/>;
+      break;
+    case "CircleSmall20Filled":
+      icon = <CircleSmall20Filled/>;
+      break;
+    case "ParticipantAddIcon":
+      icon = <ParticipantAddIcon/>;
+      break;
+    case "MeetingNewIcon":
+      icon = <MeetingNewIcon/>;
+      break;
+    case "AcceptIcon":
+      icon = <AcceptIcon/>;
       break;
     default:
       icon = <TabsIcon/>;

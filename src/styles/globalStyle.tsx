@@ -474,4 +474,70 @@ export default createGlobalStyle<{ theme: ThemeType }>`
   .ui-table__row {
     padding: 0 0.625rem;
   }
+  
+  .col-checkbox {
+    max-width: 2.875rem;
+    width: 2.875rem;
+  }
+  .col-more {
+    max-width: 3.125rem;
+    width: 3.125rem;
+  }
+  .col-status {
+    max-width: 7.5rem;
+    width: 7.5rem;
+  }
+  .col-due {
+    max-width: 6.25rem;
+    width: 6.25rem;
+  }
+  .col-priority {
+    max-width: 5.75rem;
+    width: 5.75rem;
+  }
+  .col-source {
+    max-width: 16.75rem;
+    width: 16.75rem;
+  }
+  .col-resource {
+    max-width: 11.875rem;
+    width: 11.875rem;
+  }
+  .col-title {
+    min-width: 32.5rem;
+  }
+  .table-header-button {
+    padding: 0;
+    justify-content: start;
+    border: 0;
+    min-width: unset;
+  }
+  .work-list {
+    .track-horizontal {
+      opacity: 1 !important;
+      bottom: 0;
+      height: 0.75rem !important;
+      
+      div {
+        background-color: #c8c7c7 !important;
+      }
+    }
+  }
+  .work-list-table {
+    min-width: fit-content;
+    margin-bottom: 0.75rem;
+    
+    .ui-checkbox {
+      .ui-box {
+        border-radius: 0.25rem;
+      }
+    }
+  }
+  .work-list-table-header {
+    padding-top: 1rem;
+    height: 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
 `
