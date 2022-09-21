@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/spo-react/static/css/main.3e334fd3.chunk.css",
+    "main.js": "/spo-react/static/js/main.cb7184cc.chunk.js",
+    "main.js.map": "/spo-react/static/js/main.cb7184cc.chunk.js.map",
+    "runtime-main.js": "/spo-react/static/js/runtime-main.7bb7d4bd.js",
+    "runtime-main.js.map": "/spo-react/static/js/runtime-main.7bb7d4bd.js.map",
+    "static/css/2.abad34d3.chunk.css": "/spo-react/static/css/2.abad34d3.chunk.css",
+    "static/js/2.c920dcdd.chunk.js": "/spo-react/static/js/2.c920dcdd.chunk.js",
+    "static/js/2.c920dcdd.chunk.js.map": "/spo-react/static/js/2.c920dcdd.chunk.js.map",
+    "static/js/3.65c726c7.chunk.js": "/spo-react/static/js/3.65c726c7.chunk.js",
+    "static/js/3.65c726c7.chunk.js.map": "/spo-react/static/js/3.65c726c7.chunk.js.map",
+    "static/js/4.a8a95b80.chunk.js": "/spo-react/static/js/4.a8a95b80.chunk.js",
+    "static/js/4.a8a95b80.chunk.js.map": "/spo-react/static/js/4.a8a95b80.chunk.js.map",
+    "static/js/5.15aebe45.chunk.js": "/spo-react/static/js/5.15aebe45.chunk.js",
+    "static/js/5.15aebe45.chunk.js.map": "/spo-react/static/js/5.15aebe45.chunk.js.map",
+    "static/js/6.9f08be5b.chunk.js": "/spo-react/static/js/6.9f08be5b.chunk.js",
+    "static/js/6.9f08be5b.chunk.js.map": "/spo-react/static/js/6.9f08be5b.chunk.js.map",
+    "static/js/7.d315d949.chunk.js": "/spo-react/static/js/7.d315d949.chunk.js",
+    "static/js/7.d315d949.chunk.js.map": "/spo-react/static/js/7.d315d949.chunk.js.map",
+    "static/js/8.8d6be447.chunk.js": "/spo-react/static/js/8.8d6be447.chunk.js",
+    "static/js/8.8d6be447.chunk.js.map": "/spo-react/static/js/8.8d6be447.chunk.js.map",
+    "static/js/9.b1d84d4d.chunk.js": "/spo-react/static/js/9.b1d84d4d.chunk.js",
+    "static/js/9.b1d84d4d.chunk.js.map": "/spo-react/static/js/9.b1d84d4d.chunk.js.map",
+    "static/js/10.48fe9edc.chunk.js": "/spo-react/static/js/10.48fe9edc.chunk.js",
+    "static/js/10.48fe9edc.chunk.js.map": "/spo-react/static/js/10.48fe9edc.chunk.js.map",
+    "index.html": "/spo-react/index.html",
+    "static/css/2.abad34d3.chunk.css.map": "/spo-react/static/css/2.abad34d3.chunk.css.map",
+    "static/css/main.3e334fd3.chunk.css.map": "/spo-react/static/css/main.3e334fd3.chunk.css.map",
+    "static/js/2.c920dcdd.chunk.js.LICENSE.txt": "/spo-react/static/js/2.c920dcdd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7bb7d4bd.js",
+    "static/css/2.abad34d3.chunk.css",
+    "static/js/2.c920dcdd.chunk.js",
+    "static/css/main.3e334fd3.chunk.css",
+    "static/js/main.cb7184cc.chunk.js"
+  ]
+}

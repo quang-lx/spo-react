@@ -1,1 +1,0 @@
-export { AppMenu as default } from './AppMenu'
