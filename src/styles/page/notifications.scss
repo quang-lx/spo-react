@@ -1,0 +1,198 @@
+.notifications-page{
+    input{
+        background: #ebebeb;
+        border-radius: 8px;
+        border: none;
+        padding: 10px 10.75px 10px 40px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #5E5E5E;
+        box-sizing: border-box;
+        font-variant: tabular-nums;
+        list-style: none;
+        font-feature-settings: 'tnum', "tnum";
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        transition: all 0.3s;
+        
+    }
+    input:focus {
+        border-radius: 8px;
+        box-shadow: 0 0 0 2px rgba(7, 154, 240, 0.2);
+        border-right-width: 1px;
+        outline: 0;
+    }
+}
+
+
+.notification-item {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #DFDFDF;
+
+    .notification-action {
+        display: flex;
+        justify-content: space-between;
+
+        .notification-action-container {
+            flex: 1 1 auto;
+        }
+
+        .notification-status {
+            display: flex;
+            align-items: center;
+            visibility: hidden;
+            margin-left: 5.32481%;
+    
+            .circle-status {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: #0078d4;
+            }
+        }
+    }
+}
+
+.notification-item:first-child {
+    padding-top: 24.38px;
+}
+
+.notification-item:last-child {
+    padding-bottom: 32.36px;
+    border-bottom: none;
+}
+
+.notification-item.unread {
+
+    .notification-action {
+
+        .notification-action-title,
+        .notification-action-comment{
+            color: #0078d4 !important;
+        }
+
+        .notification-action-comment{
+            font-weight: bold;
+        }
+
+        .notification-status {
+            visibility: visible;
+        }
+    }
+}
+
+.notification-item-container {
+    display: flex;
+    // align-items: center;
+}
+
+.notification-user-avatar {
+    position: relative;
+}
+
+.notification-user-reaction {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 38px;
+    top: 38px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-user-reaction.document {
+    background: #5B5FC7;
+}
+
+.notification-user-reaction.tag {
+    background: #CA4532;
+}
+
+.notification-user-reaction.heart {
+    background: #FF3E6C;
+}
+
+.notification-user-reaction.smile {
+    background: #F25022;
+}
+
+.notification-user-reaction.like {
+    background: #3E6DC1;
+}
+
+.notification-item-container .notification-action {
+    flex: 1 1 auto;
+    margin-left: 15.86px;
+}
+
+.notification-item-container .notification-action-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification-action-title {
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: -0.24px;
+    color: #0F0F0F;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+
+.notification-action-comment {
+    max-height: 20px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1; 
+    -webkit-box-orient: vertical;
+}
+
+.notification-action-time {
+    font-size: 12px;
+    line-height: 16px;
+    color: #616161;
+}
+
+.notification-action-time .notification-action-day {
+    text-transform: capitalize;
+}
+
+.footer-icon > span {
+    position: relative;
+}
+
+.footer-icon .notification-count {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    border-radius: 50%;
+    background: #EA3939;
+    font-size: 8px;
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 8px;
+    line-height: 14px;
+}

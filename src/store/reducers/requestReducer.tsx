@@ -1,10 +1,6 @@
-import { requestActionType } from '../actionTypes';
-import { IRequest } from '../../interfaces/requestInterfaces';
+import { RequestActionType } from '../actionTypes';
+import { IRequest, IRequestReducer } from '../../interfaces/RequestInterfaces';
 
-interface IRequestReducer {
-    requests: IRequest[],
-    request: IRequest
-}
 const initialState: IRequestReducer = {
     requests: [],
     request: {} as IRequest
@@ -12,7 +8,7 @@ const initialState: IRequestReducer = {
 
 const requestReducer = (state = { ...initialState }, action) => {
     switch (action.type) {
-        case requestActionType.GET_REQUESTS:
+        case RequestActionType.GET_REQUESTS:
             return {
                 ...state,
                 ...action.payload

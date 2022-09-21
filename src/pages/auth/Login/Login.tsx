@@ -1,7 +1,8 @@
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import * as  S from './Login.style'
 import { Row, Col } from 'react-bootstrap'
 import Button from 'components/Button'
+import { Fragment } from "react";
 
 
 export function Login(props) {
@@ -13,26 +14,31 @@ export function Login(props) {
 
     // if user already "authenticated", redirect them to the app
     if (localStorage.getItem("token"))
-        return <Redirect to={"/app"} />;
+        return <Navigate to={"/app"} />;
 
     return (
-        <S.WelcomeContainer>
-            <Row>
-                <Col md="5">
-                    <S.WelcomeCard>
-                        <h1>Hello warrior</h1>
-                        <p>
-                            Let's start coding
-                        </p>
-                        <p>
-                            Yahhh ⚔️
-                        </p>
-                        <Button onClick={login}>
-                            Start battle
-                        </Button>
-                    </S.WelcomeCard>
-                </Col>
-            </Row>
-        </S.WelcomeContainer >
+        <Fragment>
+            <button onClick={login}>
+                Start battle
+            </button>
+        </Fragment>
+        // <S.WelcomeContainer>
+        //     <Row>
+        //         <Col md="5">
+        //             <S.WelcomeCard>
+        //                 <h1>Hello warrior</h1>
+        //                 <p>
+        //                     Let's start coding
+        //                 </p>
+        //                 <p>
+        //                     Yahhh ⚔️
+        //                 </p>
+                        // <Button onClick={login}>
+                        //     Start battle
+                        // </Button>
+        //             </S.WelcomeCard>
+        //         </Col>
+        //     </Row>
+        // </S.WelcomeContainer >
     );
 }

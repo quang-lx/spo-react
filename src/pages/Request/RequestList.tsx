@@ -2,12 +2,14 @@ import React, {useEffect} from 'react';
 // import { useSelector, useDispatch } from "react-redux";
 // import { RootState } from '../../store';
 // import { getList } from '../../store/actions/requestActions';
+import { Avatar, Button } from '@fluentui/react-northstar';
+import { BellIcon } from '@fluentui/react-icons-northstar';
 
 const RequestList: React.FunctionComponent = () => {
   // const requests = useSelector((state: RootState) => state.requestReducer.requests);
 
   const testFunction = () => {
-    console.log('use effect');
+    // console.log('use effect');
   }
 
   useEffect(() => {
@@ -15,7 +17,10 @@ const RequestList: React.FunctionComponent = () => {
   })
 
   return (
-    <div>This is Request List component</div>
+    <div className="test">
+      <Avatar name="User Profile"/>
+      <Button iconOnly icon={<BellIcon />} title="Button" text />
+    </div>
   );
 }
 

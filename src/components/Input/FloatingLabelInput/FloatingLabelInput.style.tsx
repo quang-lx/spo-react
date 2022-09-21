@@ -24,14 +24,14 @@ export const FloatingLabel = styled(FormGroup)`
     }
     input{
         border-width: 1px;
-        border-color: ${props => props.theme.grey};
+        border-color: ${props => props.theme.siteVariables.grey};
         font-size: 1rem;
         padding: 1.6rem 3rem 1.6rem 1rem;
         box-shadow:none !important;
         -webkit-background-clip: text;
         &:focus,
         &:not(:placeholder-shown){
-            border-color: ${props => props.theme.primary};
+            border-color: ${props => props.theme.siteVariables.primary};
         }
         &:focus,
         &:not(:placeholder-shown),
@@ -39,16 +39,16 @@ export const FloatingLabel = styled(FormGroup)`
             & ~ label{
                 transform: scale(0.9) translateY(-50%) translateX(-10%);
                 top:0;
-                color: ${props => props.theme.primary};
+                color: ${props => props.theme.siteVariables.primary};
             }
             & ~ .right-icon{
-                color: ${props => props.theme.primary} !important;
+                color: ${props => props.theme.siteVariables.primary} !important;
             } 
         }
         &.is-invalid{
-            border-color: ${props => props.theme.danger};
+            border-color: ${props => props.theme.siteVariables.danger};
             & ~ label{
-                color: ${props => props.theme.danger};
+                color: ${props => props.theme.siteVariables.danger};
             } 
         }
     }
@@ -57,7 +57,7 @@ export const FloatingLabel = styled(FormGroup)`
             top: 36%;
             right: 1.1rem;
             font-size: 1.4rem;
-            color: ${props => props.theme.lightBlue};
+            color: ${props => props.theme.siteVariables.lightBlue};
             transform: translateY(-50%);
             cursor:pointer;
         }
@@ -67,7 +67,7 @@ export const FloatingLabel = styled(FormGroup)`
             top: 36%;
             transform: translateY(-50%);
             margin-bottom: 0;
-            color: ${props => props.theme.lightBlue};
+            color: ${props => props.theme.siteVariables.lightBlue};
             background: white;
             transition: all .2s ease;
             z-index: 0;

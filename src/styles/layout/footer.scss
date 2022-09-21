@@ -1,0 +1,74 @@
+#footer {
+  height: 60px;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.14),
+    0px 1.6px 3.6px rgba(0, 0, 0, 0.12);
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 9999;
+  border-top: 1px solid rgb(225, 225, 225);
+  ul {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    li {
+      line-height: unset;
+      list-style: none;
+      flex: 1 1;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      .box-item {
+        .footer-item-label {
+          font-weight: 400;
+          font-size: 11px;
+          text-align: center;
+          letter-spacing: 0.06px;
+          font-family: "SF Pro Text", sans-serif !important;
+          // margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+
+#footer .footer-icon svg {
+  height: 21px;
+  width: 21px;
+}
+
+#footer ul li {
+  color: #212121;
+}
+
+#footer ul li #footer ul li-label {
+  line-height: unset;
+  padding: 0;
+}
+
+#footer ul li svg,
+#footer ul li path {
+  fill: black;
+}
+
+#footer ul li:hover,
+#footer ul li:focus {
+  color: #5b5fc7;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+#footer ul li:hover svg path,
+#footer ul li:focus svg path {
+  fill: #5b5fc7;
+}
+
+.ant-segmented-thumb.ant-segmented-thumb-motion-appear {
+  box-shadow: none;
+}

@@ -8,18 +8,18 @@ export const ThemeButton = styled(Button)`
     transition:all .3s ease;
     &.btn-primary{
         color: #fff;
-        background-color: ${props => props.theme.primary};
-        border-color: ${props => props.theme.primary};
+        background-color: ${props => props.theme.siteVariables.primary};
+        border-color: ${props => props.theme.siteVariables.primary};
         &:not(.disabled):not(:disabled){
             &:hover{
                 color: #fff;
-                background-color: ${props => lighten(.1, props.theme.primary)} !important;
-                border-color: ${props => lighten(.1, props.theme.primary)} !important;
+                background-color: ${props => lighten(.1, props.theme.siteVariables.primary)} !important;
+                border-color: ${props => lighten(.1, props.theme.siteVariables.primary)} !important;
             }
             &:active{
                 color: #fff;
-                background-color: ${props => lighten(.15, props.theme.primary)} !important;
-                border-color: ${props => lighten(.15, props.theme.primary)} !important;
+                background-color: ${props => lighten(.15, props.theme.siteVariables.primary)} !important;
+                border-color: ${props => lighten(.15, props.theme.siteVariables.primary)} !important;
             }
         }
         &.disabled,
@@ -29,18 +29,18 @@ export const ThemeButton = styled(Button)`
     }
     &.btn-secondary{
         color: #fff;
-        background-color: ${props => props.theme.secondary};
-        border-color: ${props => props.theme.secondary};
+        background-color: ${props => props.theme.siteVariables.secondary};
+        border-color: ${props => props.theme.siteVariables.secondary};
         &:not(.disabled):not(:disabled){
             &:hover{
                 color: #fff;
-                background-color: ${props => lighten(.1, props.theme.secondary)} !important;
-                border-color: ${props => lighten(.1, props.theme.secondary)} !important;
+                background-color: ${props => lighten(.1, props.theme.siteVariables.secondary)} !important;
+                border-color: ${props => lighten(.1, props.theme.siteVariables.secondary)} !important;
             }
             &:active{
                 color: #fff;
-                background-color: ${props => lighten(.15, props.theme.secondary)} !important;
-                border-color: ${props => lighten(.15, props.theme.secondary)} !important;
+                background-color: ${props => lighten(.15, props.theme.siteVariables.secondary)} !important;
+                border-color: ${props => lighten(.15, props.theme.siteVariables.secondary)} !important;
             }
         }
         &.disabled,

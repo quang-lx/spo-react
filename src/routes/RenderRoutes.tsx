@@ -1,103 +1,49 @@
-import { lazy } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
-const Login = lazy(() => import('pages/auth/Login'));
+import React, {lazy} from "react";
+import { Routes, Route} from "react-router-dom";
+import MainLayout from "../layouts/Main";
+import MainLayoutMobile from "../layouts/MainMobile";
+import SubMenuLayout from '../layouts/SubMenu';
+
+// const TaskFormRedux = lazy(() => import("pages/Test/Todo/TaskFormRedux"));
+// const TaskRedux = lazy(() => import("pages/Test/Todo/TaskRedux"));
+// const Login = lazy(() => import('pages/auth/Login'));
 const Home = lazy(() => import('pages/Home'));
-const Request = lazy(() => import('pages/Request/RequestList'));
+const Notification = lazy(() => import('pages/Notification'));
+// const Request = lazy(() => import('pages/Request/RequestList'));
+const RequestCreate = lazy(() => import('pages/Request/RequestCreate'));
+const RequestDetail = lazy(() => import('pages/Request/RequestDetail'));
+const WorkList = lazy(() => import('pages/Work/WorkList'));
 
-type routeItem = {
-    path: string,
-    key: string,
-    exact: boolean,
-    component: Function,
+export const RenderRoutes: React.FunctionComponent = () => {
+  return (
+    <Routes>
+      {/* <Route path="/" element={<MainLayout />}> */}
+      <Route path="/" element={<MainLayoutMobile />}>
+        <Route element={<SubMenuLayout />}>
+          <Route path="request" element={<RequestDetail />} />
+          <Route path="request/create" element={<RequestCreate />} />
+          <Route path="request/detail/:id" element={<RequestDetail />} />
+        </Route>
+        <Route element={<SubMenuLayout hasBigSubMenu={false} />}>
+          <Route path="work" element={<WorkList />} />
+        </Route>
+        <Route path="/notifications" element={<Notification />} />
+      </Route>
+      <Route path="/app" element={<Home />} />
+     
+    </Routes>
+  )
 }
 
-type routes = routeItem & {
-    routes?: routeItem[]
+export const RoutePaths = {
+  "Home": "/",
+  "Request": "/request",
+  "RequestCreate": "/request/create",
+  "RequestDetail": "/request/detail",
+  "WorkList": "/work",
+  "Notifications": "/notifications",
 }
 
-
-const ROUTES: routes[] = [
-    {
-        path: "/",
-        key: "ROOT",
-        exact: true,
-        component: () => {
-            if (!localStorage.getItem("token")) {
-                return <Redirect to={"/login"} />;
-            }
-            return <Redirect to={"/app"} />;
-        },
-        routes: []
-    },
-    {
-        path: "/login",
-        key: "LOGIN",
-        exact: true,
-        component: Login,
-        routes: []
-    },
-    {
-        path: "/app",
-        exact: false,
-        key: "APP",
-        component: props => {
-            if (!localStorage.getItem("token")) {
-                return <Redirect to={"/"} />;
-            }
-            return <RenderRoutes {...props} />;
-        },
-        routes: [
-            {
-                path: "/app",
-                key: "APP_ROOT",
-                exact: true,
-                component: Home,
-            }
-        ],
-    },
-    {
-        path: "/request",
-        exact: false,
-        key: "REQUEST",
-        component: props => {
-            if (!localStorage.getItem("token")) {
-                return <Redirect to={"/"} />;
-            }
-            return <RenderRoutes {...props} />;
-        },
-        routes: [
-            {
-                path: "/request",
-                key: "REQUEST_LIST",
-                exact: true,
-                component: Request,
-            }
-        ],
-    }
-];
-
-export default ROUTES
-
-
-export function RenderRoutes({ routes }: { routes: routes[] }) {
-    return (
-        <Switch>
-            {routes.map((route, i) => {
-                return <RouteWithSubRoutes {...route} />;
-            })}
-
-            <Route component={() => <h1>Not Found!</h1>} />
-        </Switch>
-    );
-}
-
-function RouteWithSubRoutes(route: routes) {
-    return (
-        <Route
-            key={route.key}
-            path={route.path}
-            exact={route.exact}
-            render={props => <route.component {...props} routes={route.routes} />}
-        />
-    );
+export const createRequestDetailLink = (id: number | string) => {
+  return `${RoutePaths.RequestDetail}/${id}`
 }
